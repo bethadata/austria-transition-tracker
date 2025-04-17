@@ -1,11 +1,10 @@
 
 title: Austria Transition Tracker
-author: B.Thaler
+author: BethaData
 description: >- # this means to ignore newlines until "baseurl:"
 baseurl: / # the subpath of your site, e.g. /blog
-url: https://bernhardthaler.github.io # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: thalerbe 
-repo_name: https://github.com/bernhardthaler/austria-transition-tracker
+url: https://bethadata.github.io # the base hostname & protocol for your site, e.g. http://example.com
+repo_name: https://github.com/bethadata/austria-transition-tracker
 
 # Build settings
 theme: minima
