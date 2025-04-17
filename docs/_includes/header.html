@@ -1,0 +1,175 @@
+<!-- <header class="site-header" role="banner">
+
+  <div class="wrapper-wide">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.header_pages -%}
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    {%- if page_paths -%}
+      <nav class="site-nav">
+        <div class="trigger">
+          {%- for path in page_paths -%}
+            {%- assign my_page = site.pages | where: "path", path | first -%}
+            {%- if my_page.title -%}
+            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </nav>
+    {%- endif -%}
+  </div>
+</header> -->
+
+
+
+<header class="site-header" role="banner">
+  <div class="wrapper-wide">
+    <div class="header-content">
+      {%- assign default_paths = site.pages | map: "path" -%}
+      {%- assign page_paths = site.sector_pages -%}
+      <!-- Site Title -->
+      <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+
+      <!-- Navigation -->
+      {%- if page_paths -%}
+        <nav class="site-nav">
+          <!-- Home link -->
+          <a class="site-link" href="{{ "/" | relative_url }}">HOME</a>
+
+          <!-- Energy link -->
+          <a class="site-link" href="{{ "/energy" | relative_url }}">ENERGY</a>
+
+          <!-- Fossil fuels link -->
+          <a class="site-link" href="{{ "/fossil_fuels" | relative_url }}">FOSSIL FUELS</a>
+
+          <!-- Dropdown for Sector -->
+          <div class="dropdown">
+            <button class="dropbtn">
+              SECTORS
+              <span class="arrow"></span>
+            </button>
+            <div class="dropdown-content">
+              {%- for path in page_paths -%}
+                {%- assign my_page = site.pages | where: "path", path | first -%}
+                {%- if my_page.title -%}
+                  <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+
+          <!-- About link -->
+          <a class="site-link" href="{{ "/blog" | relative_url }}">BLOG</a>
+
+          <!-- About link -->
+          <a class="site-link" href="{{ "/about" | relative_url }}">ABOUT</a>
+
+
+
+        </nav>
+      {%- endif -%}
+    </div>
+  </div>
+</header>
+
+
+<style>
+/* Wrapper for the site title and navigation */
+.wrapper-wide {
+  max-width: 1800px; /* Set a maximum width for the header content */
+  margin: 0 auto; /* Center the header by adding auto margins */
+  padding: 0 10px; /* Add space at the edges for responsiveness */
+  box-sizing: border-box; /* Ensure padding is included in total width */
+}
+
+/* Ensure header-content spans the full width of wrapper-wide */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Stretch across the available space */
+}
+
+/* Adjust the site title */
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  margin: 0; /* Remove default margin */
+}
+
+/* Navigation remains the same */
+.site-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px; /* Space between links */
+}
+/* 
+.site-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px 16px;
+} */
+
+.site-link:hover {
+  background-color: #3e8e41;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid white;
+  margin-left: 8px;
+}
+
+.dropbtn:hover {
+  background-color: #3e8e41;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+</style>
