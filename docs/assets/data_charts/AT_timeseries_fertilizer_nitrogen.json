@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_fertilizer_nitrogen",
             "data_source": "eurostat (aei_fm_usefert)",
             "info": null,
-            "created": "2025-04-17"
+            "created": "2025-07-16"
       },
       "fertilizer": {
             "2000-01-01": 137849.0,

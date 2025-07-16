@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_transport_final_energy_use_share",
             "data_source": "eurostat energy balances (nrg_bal_c)",
             "info": null,
-            "created": "2025-04-17"
+            "created": "2025-07-16"
       },
       "Total": {
             "Natural gas": {

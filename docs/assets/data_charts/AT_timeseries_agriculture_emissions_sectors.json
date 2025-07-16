@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_agriculture_emissions_sectors",
             "data_source": "EEA for sectoral, UBA (Klimadashboard) for total emissions",
             "info": "<Other> scaled to match total emissions from UBA, 2023 sectoral data extrapolated",
-            "created": "2025-04-17"
+            "created": "2025-07-16"
       },
       "Fermentation (cows)": {
             "1990-01-01": 5.054584784386833,

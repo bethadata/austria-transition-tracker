@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_animal_feestock_population",
             "data_source": "eursotat (apro_mt_lscatl, apro_mt_lspig, apro_mt_lssheep, apro_mt_lsgoat)",
             "info": null,
-            "created": "2025-04-17"
+            "created": "2025-07-16"
       },
       "Cow / cattle": {
             "1993-01-01": 2333.89,

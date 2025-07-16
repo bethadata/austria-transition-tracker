@@ -34,7 +34,7 @@ def download_and_save(name = "",
     for option in options: 
         specs = eurostat.get_par_values(code, option)
         names = eurostat.get_dic(code, option, frmt = "dict")
-        options_dict[option] = {"specs": specs, "names": names}
+        options_dict[option] = {"specs": specs, "names": names}#
         my_filter_pars[option] = specs 
         
     for f in filters: 

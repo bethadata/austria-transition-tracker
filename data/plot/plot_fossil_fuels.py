@@ -112,6 +112,8 @@ fossil_categories = {"Gas": ["Natural gas"],
                      "Oil": ["Gasoline", "Diesel", "Heating gas oil", "Refinery gas"],
                      "Coal": ["Coke oven coke", "Hard coal - coke ovens",
                               "Hard coal - industry sector", "Hard coal - electricity sector"]}
+months = {1: "Jan", 2: "Feb", 3: "Mar", 4: "Apr", 5: "May", 6: "Jun",
+          7: "Jul", 8: "Aug", 9: "Sep", 10: "Oct", 11: "Nov", 12: "Dec"}
 
 
 dark2 = px.colors.qualitative.Dark2
@@ -329,7 +331,7 @@ def plot_emissions_fuels():
     return data_raw
 
 def extrapolate_emissions_by_cons(consumption, 
-                          years_extrapolate = [2024], 
+                          years_extrapolate = [2024,2025], 
                           train_start = 2019,
                           train_end = 2023,
                           plot = False): 
@@ -733,11 +735,6 @@ def plot_ng_separation():
                           "Buildings": data["data"]["Buildings"],
                           "Public electricity / heat": data["data"]["Public electricity / heat"],
                           "Total": data["data"]["Total"]}}
-    
-    # total_temp = data["data"]["Total"].copy()
-    # data["data"].pop("Total")
-    # data["data"]["Total"] = total_temp 
-    
     plot_with_toggle(title = "<b>Austria:</b> monthly natural gas consumption by sector",
                   filename = "AT_timeseries_gas_sectoral_consumption_monthly",
                   unit = "Energy (TWh)", 
@@ -750,34 +747,93 @@ def plot_ng_separation():
 
 
     ### yearly with bars 
-    data_yearly_raw = {cat: {} for cat in data_plot["data"]}
-    for cat in data_plot["data"]: 
-        years = []
-        for t in range(len(data_plot["data"][cat]["x"])): 
-            date = data_plot["data"][cat]["x"][t]
-            if date.year in years: 
-                date_save = datetime(year = date.year, month = 1, day = 1)
-            else: 
-                years.append(date.year) 
-                date_save = datetime(year = date.year, month = 1, day = 1)
-                data_yearly_raw[cat][date_save] = 0 
-            data_yearly_raw[cat][date_save] += data_plot["data"][cat]["y"][t]
-
-
-    data_yearly_abs = {"data": {cat: {"x": np.array([date for date in data_yearly_raw[cat]]),
-                              "y": np.array([data_yearly_raw[cat][date] for date in data_yearly_raw[cat]])}
-                        for cat in data_yearly_raw}}  
     
+    max_month = data_plot["data"][cat]["x"][-1].month 
+    
+    if max_month == 12: 
+        data_yearly_raw = {cat: {} for cat in data_plot["data"]}
 
-    plot_with_toggle(title = "<b>Austria:</b> yearly natural gas consumption by sector",
-                  filename = "AT_timeseries_gas_sectoral_consumption_yearly",
-                  unit = "Energy (TWh)", 
-                  data_plot = data_yearly_abs,
-                  time_res = "yearly",
-                  show_plot = True,
-                  source_text = "eurotsat (NRG_CB_GASM)",
-                  info_text = "Bulidings data before 09/2023 not available.",
-                  initial_visible = "bar")
+        for cat in data_plot["data"]: 
+            years = []
+            for t in range(len(data_plot["data"][cat]["x"])): 
+                date = data_plot["data"][cat]["x"][t]
+                if date.year in years: 
+                    date_save = datetime(year = date.year, month = 1, day = 1)
+                else: 
+                    years.append(date.year) 
+                    date_save = datetime(year = date.year, month = 1, day = 1)
+                    data_yearly_raw[cat][date_save] = 0 
+                data_yearly_raw[cat][date_save] += data_plot["data"][cat]["y"][t]
+    
+        data_yearly_abs = {"data": {cat: {"x": np.array([date for date in data_yearly_raw[cat]]),
+                                  "y": np.array([data_yearly_raw[cat][date] for date in data_yearly_raw[cat]])}
+                            for cat in data_yearly_raw}}  
+        
+    
+        plot_with_toggle(title = "<b>Austria:</b> yearly natural gas consumption by sector",
+                      filename = "AT_timeseries_gas_sectoral_consumption_yearly",
+                      unit = "Energy (TWh)", 
+                      data_plot = data_yearly_abs,
+                      time_res = "yearly",
+                      show_plot = True,
+                      source_text = "eurotsat (NRG_CB_GASM)",
+                      info_text = "Bulidings data before 09/2023 not available.",
+                      initial_visible = "bar")
+        
+    else: 
+        data_yearly_raw = {}
+        for cat in data_plot["data"]: 
+            if cat != "Total": 
+                data_yearly_raw[f"{cat}: Jan-{months[max_month]}"] = {}
+                data_yearly_raw[f"{cat}: {months[max_month+1]}-Dec"] = {} 
+            else: 
+                data_yearly_raw["Total"] = {}
+        
+        for cat in data_plot["data"]: 
+            if cat != "Total": 
+                years = []
+                for t in range(len(data_plot["data"][cat]["x"])): 
+                    date = data_plot["data"][cat]["x"][t]
+                    if date.year in years: 
+                        date_save = datetime(year = date.year, month = 1, day = 1)
+                    else: 
+                        years.append(date.year) 
+                        date_save = datetime(year = date.year, month = 1, day = 1)
+                        data_yearly_raw[f"{cat}: Jan-{months[max_month]}"][date_save] = 0 
+                        data_yearly_raw[f"{cat}: {months[max_month+1]}-Dec"][date_save] = 0 
+                    if data_plot["data"][cat]["x"][t].month <= max_month: 
+                        data_yearly_raw[f"{cat}: Jan-{months[max_month]}"][date_save] += data_plot["data"][cat]["y"][t]
+                    else: 
+                        data_yearly_raw[f"{cat}: {months[max_month+1]}-Dec"][date_save] += data_plot["data"][cat]["y"][t]
+            else: 
+                years = []
+                for t in range(len(data_plot["data"][cat]["x"])): 
+                    date = data_plot["data"][cat]["x"][t]
+                    if date.year in years: 
+                        date_save = datetime(year = date.year, month = 1, day = 1)
+                    else: 
+                        years.append(date.year) 
+                        date_save = datetime(year = date.year, month = 1, day = 1)
+                        data_yearly_raw[cat][date_save] = 0 
+                    data_yearly_raw[cat][date_save] += data_plot["data"][cat]["y"][t]
+                    
+        data_yearly_abs = {"data": {cat: {"x": np.array([date for date in data_yearly_raw[cat]]),
+                                  "y": np.array([data_yearly_raw[cat][date] for date in data_yearly_raw[cat]])}
+                            for cat in data_yearly_raw}}  
+        
+    
+        plot_with_toggle(title = "<b>Austria:</b> yearly natural gas consumption by sector",
+                      filename = "AT_timeseries_gas_sectoral_consumption_yearly",
+                      unit = "Energy (TWh)", 
+                      data_plot = data_yearly_abs,
+                      time_res = "yearly",
+                      colors = [dark2[0], set2[0], dark2[1], set2[1], dark2[2], set2[2]],
+                      show_plot = True,
+                      source_text = "eurotsat (NRG_CB_GASM)",
+                      info_text = "Bulidings data before 09/2023 not available.",
+                      initial_visible = "bar")
+        
+        
 
     return data
                                            

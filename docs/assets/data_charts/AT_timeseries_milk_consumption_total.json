@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_milk_consumption_total",
             "data_source": "Statcube, Statistik Austria",
             "info": "Food consumption per year",
-            "created": "2025-04-17"
+            "created": "2025-07-16"
       },
       "Milk": {
             "1995-01-01": 578.368,

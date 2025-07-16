@@ -449,7 +449,7 @@ def plot_with_toggle(title="",
     #     ymax_area = max(max(y_data), ymax_area)
     
     # ymax_area = ymax_area * plotmax_fac
-    # ymax_bar = ymax_area  # Same as area for stacked bar charts
+    ymax_bar = ymax_area  # Same as area for stacked bar charts
     
     # Add traces for each chart type
     for data in data_plot["data"]:
