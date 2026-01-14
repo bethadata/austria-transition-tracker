@@ -181,7 +181,7 @@ def plot():
         if siec not in ["Domestic consumption"]: 
             data_total += data_plot["data"][siec]["y"]
         data["data"]["Total"]["y"] = data_total 
-    
+
     
     data_rel = {"data": {}}
     data_rel_cons = {"data": {}}
@@ -240,7 +240,8 @@ def plot():
     for siec in data_plot["data"]: 
         if siec not in ["Domestic consumption"]:
             data_total += np.array(data_monthly["data"][siec]["y"])
-        
+
+
     for siec in data_plot["data"]: 
         if siec not in ["Domestic consumption"]:
             data_rel["data"][siec] = {"x": data_monthly["data"][siec]["x"],
@@ -248,7 +249,6 @@ def plot():
             data_rel_cons["data"][siec] =  {"x": data_monthly["data"][siec]["x"],
                                       "y": np.array(data_monthly["data"][siec]["y"]*100)/ np.array(
                                           data_monthly["data"]["Domestic consumption"]["y"])}
-            
             
     plot_with_toggle(title = "<b>Monthly electricity production AT (gross)</b>: energy ",
                   filename = "AT_timeseries_elec_prod_monthly",
@@ -288,4 +288,5 @@ def plot():
 
 
 if __name__ == "__main__": 
+    print("Starting ...")
     data_plot = plot()

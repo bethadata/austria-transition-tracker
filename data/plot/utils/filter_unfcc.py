@@ -14,7 +14,7 @@ from .filter import filter_uba_sectoral_emisssions
 # from filter import filter_uba_sectoral_emisssions
 
 data = pd.read_excel(os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                                  "../../data_raw/unfcc/unfcc_Austria_2023.xlsx"))
+                                  "../../data_raw/unfcc/unfcc_Austria_2024.xlsx"))
 
 data["Sector Name"] = data["Sector Name"].ffill()
 data["Gas"] = data["Gas"].ffill()

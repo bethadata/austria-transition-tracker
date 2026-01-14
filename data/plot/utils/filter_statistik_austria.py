@@ -12,14 +12,16 @@ from datetime import datetime
 
 
 def filter_heating_systems(start_year = 2003,
-                     end_year= 2022): 
+                     end_year= 2024): 
 
     data_raw = pd.read_excel(os.path.join(os.path.dirname(__file__), 
-                      "../../data_raw/statistik_austria/08Heizungen2003Bis2022NachBundeslaendernUndVerwendetemEnergietraeger.xlsx"),
+                      "../../data_raw/statistik_austria/08Heizungen2003Bis2024NachBundeslaendernUndVerwendetemEnergietraeger.xlsx"),
                              skiprows = 1, sheet_name = "Österreich")
     data_raw = data_raw.fillna(0)
     data_raw = data_raw.replace("Kohle, Koks, Briketts2", "Kohle, Koks, Briketts")
-    
+    data_raw = data_raw.replace("Heizöl, Flüssiggas3", "Heizöl, Flüssiggas")
+    data_raw = data_raw.replace("Erdgas4", "Erdgas")
+
     heaters = {"Heat pumps / solar": "Solar, Wärmepumpen",
                "Biomass": "Holz, Hackschnitzel, Pellets, Holzbriketts",
                "District heat": "Fernwärme",
@@ -41,7 +43,7 @@ def filter_heating_systems(start_year = 2003,
             if data_raw["Energieträger"][index] == heaters[heater]: 
                 data["data"][heater]["y"].append(data_raw['Anzahl Wohnungen („Hauptwohnsitze“) insgesamt'][index])
                 data["data"][heater]["y"].append(data_raw['Anzahl Wohnungen („Hauptwohnsitze“) insgesamt'][index])
-             
+
     data_rel = {"data": {heater: {} for heater in heaters}}
     
     for heater in heaters: 

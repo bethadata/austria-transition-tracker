@@ -331,9 +331,9 @@ def plot_emissions_fuels():
     return data_raw
 
 def extrapolate_emissions_by_cons(consumption, 
-                          years_extrapolate = [2024,2025], 
+                          years_extrapolate = [2025], 
                           train_start = 2019,
-                          train_end = 2023,
+                          train_end = 2024,
                           plot = False): 
 
     times_train = pd.date_range(start = datetime(year = train_start, month = 1, day =1),

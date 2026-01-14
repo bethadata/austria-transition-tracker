@@ -32,7 +32,12 @@ def filter_econtrol_monthly():
                               "Natural gas": ["#89097m"],
                               "Coal": ["#89093m"],
                                "Waste": [],
-                              "Other": ["#89096m","#89095m", "#99106m","#113482m", "#89103m"],
+                              "Other": ["#89096m","#89095m", "#99106m", "#89103m"],
+                              #89096m: derivates of solid fossils 
+                              #89095m: derivates of oil
+                              #99106m: other (sonstige) fuels - probably mainly waste 
+                              #113482m: geothermal (exluded because of data error and not really relevant)
+                              #89103m: not known 
                               "Domestic consumption": ["#89110m"]
                               }.items(): 
         

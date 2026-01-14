@@ -515,7 +515,7 @@ def filter_eurostat_cars(file = "AT_cars_road_eqs_carpda",
         data_out = data_out_2 
         
         ### get newest monthly data 
-        this_year = datetime.today().year
+        this_year = datetime.today().year-1
         
         ### in case this year -1 is not present in eurostat 
         if years_eurostat[-1] < this_year-1: 

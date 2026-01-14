@@ -22,7 +22,7 @@ nrg_bal_sectors = eurostat.get_dic(code, "nrg_bal", full = False, frmt = "dict")
 
 data_dict_raw = {siec: {} for siec in siec_dict_names}
 years = [2013 +i for i in range(11)]
-years = [2023]
+years = [2024]
 for year in years:
     print("Saving energy balance: %s" %(year))
     

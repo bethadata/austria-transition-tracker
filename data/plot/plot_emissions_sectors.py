@@ -110,9 +110,9 @@ def plot(show_plot=False):
         else: 
             # source_text = "Austria NIR 2023, UBA (Klimadashboard), sectoral data 2022 extrapolated"
             source_text = "EEA for sectoral, UBA (Klimadashboard) for total emissions"
-            info_text =  "<Other> scaled to match total emissions from UBA, 2023 sectoral data extrapolated"
+            info_text =  "<Other> scaled to match total emissions from UBA, 2024 sectoral data extrapolated"
             plot_type = "area" 
-    
+            print(data_emissions)
             plot_with_toggle(title = "<b>AT %s GHG emissions</b> by sub-sectors" %(sector),
                           filename = "AT_timeseries_"+sectors[sector]["file"]+"_emissions_sectors",
                           unit = "Emissions (Mt<sub>CO2e</sub>)", 
