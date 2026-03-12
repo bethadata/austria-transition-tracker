@@ -125,27 +125,28 @@ def download_all():
                                   "siec": "C0000X0350-0370"})  
     
     
-    ### livestock population 
-    download_and_save(name = "bovine_population", 
-                      code = "apro_mt_lscatl",
-                      options = ["animals"],
-                      filters = {"month": "M12"})  
+    # ### livestock population 
+    # download_and_save(name = "bovine_population", 
+    #                   code = "apro_mt_lscatl",
+    #                   options = ["animals"],
+    #                   filters = {"month": "M12"})  
     
-    download_and_save(name = "pig_population", 
-                      code = "apro_mt_lspig",
-                      options = ["animals"],
-                      filters = {"month": "M12"})      
+    # download_and_save(name = "pig_population", 
+    #                   code = "apro_mt_lspig",
+    #                   options = ["animals"],
+    #                   filters = {"month": "M12"})      
     
-    download_and_save(name = "sheep_population", 
-                      code = "apro_mt_lssheep",
-                      options = ["animals"],
-                      filters = {"month": "M12"})      
+    # download_and_save(name = "sheep_population", 
+    #                   code = "apro_mt_lssheep",
+    #                   options = ["animals"],
+    #                   filters = {"month": "M12"})      
     
-    download_and_save(name = "goat_population", 
-                      code = "apro_mt_lsgoat",
-                      options = ["animals"],
-                      filters = {"month": "M12"})   
+    # download_and_save(name = "goat_population", 
+    #                   code = "apro_mt_lsgoat",
+    #                   options = ["animals"],
+    #                   filters = {"month": "M12"})   
 
+    ### electricity 
     download_and_save(name = "electricity_fuel_type", 
                       code = "nrg_cb_pem",
                       options = ["siec"])       
