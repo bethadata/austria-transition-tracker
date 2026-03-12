@@ -1,13 +1,25 @@
 # AUSTRIA TRANSITION TRACKER
 
-Welcome to the Austria energy and sustainability transition tracker. 
-This pages collects available data from various sources and tries to update them regularly to provide a comprehensive overview over the energy transition and related topics in Austria. 
+Welcome to the **Austria energy and sustainability transition tracker**. 
+The projet collects available data from various sources and publishes them on a static dashboard to provide a comprehensive overview over the energy transition and related topics in Austria. 
 
-## Directories 
-Under "data" you can find all python scripts to download and plot all charts. Note that some data sets (e.g., Statistics Austria) are updated manually. The "data/plot" diretory contains all chart-generating scripts, including pre-processing scripts ("utils") for data filtering. The "data/source" directory contains automatic downloading scripts for all eurostat-relevant data. <br>
-Under "docs" you find all html/css/md files relevant for the homepage. 
+## Structure
+The folder "services" contains the data-scraping and plot-creation services, both realized with python. Note that some data sets (e.g., Statistics Austria) are updated manually.
+Under "page" you find all html/css/md files relevant for the static page.
 
-## Setting up the site locally 
-To run the site on a localhost, install <a href = "https://jekyllrb.com/docs/installation/windows/">Jekyll and Bundler via Ruby </a>. If Jekyll has been installed, run "bundle exec jekyll serve" in the "docs" directory. You should then be able to navigate to the site via "localhost:3000" in any browser. 
+## Setup locally
 
+#### Static page
+To run the site locally, install <a href = "https://jekyllrb.com/docs/installation/windows/">Jekyll and Bundler via Ruby </a>. If Jekyll has been installed, run "bundle exec jekyll serve" in the "page" directory. You should then be able to navigate to the site via "localhost:3000" in your browser and visualize all data. 
 
+#### Data-scraping and plot-creating 
+Dependencies are found in **services/pyproject.toml**, setup is recommended using [Poetry](https://python-poetry.org/).
+
+Within the **config.py**, you have to assign your local directory of the project to the **BASEPATH**-variable, which will define where data-files and charts will be saved.
+
+For automatic data scraping of eurostat data and other automatized data-sources run **services/scrape_data.py**. Other data sources such as E-control, Statistik Austria, umweltbundesamt, or national inventory reports, have to be downloaded manually. 
+
+To create or update all chartes run **services/create_charts.py**. 
+
+#### Automatization and github-publishing
+Finally, for setting up an automatic build process of the whole dashobard, including data download, chart creating, and github publishing, you can use the **services/main.py**. Note that for *.githhub*-pages publishing, a corresponding remote branch has to be set within your local repository. 
