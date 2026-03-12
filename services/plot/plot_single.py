@@ -683,7 +683,7 @@ def save_figure(fig, filename, data_plot, unit_fac, source_text, info_text, plot
             for i in range(len(x)):
                 data_dict[data][x[i].strftime('%Y-%m-%d')] = data_plot["data"][data]["y"][i]
                 
-    with open(BASEPATH + "/page/assets/data_charts/%s.json" %(filename), "w") as fp:
+    with open(BASEPATH + "/docs/assets/data_charts/%s.json" %(filename), "w") as fp:
         json.dump(data_dict, fp, indent = 6)
     
     
@@ -691,7 +691,7 @@ def save_figure(fig, filename, data_plot, unit_fac, source_text, info_text, plot
     
     ### CCS INJEDCTIONS 
     fig.write_html(
-        BASEPATH + "/page/_includes/%s.html" % filename,
+        BASEPATH + "/docs/_includes/%s.html" % filename,
         include_plotlyjs="cdn",
         default_width="100%",
         config={
@@ -722,10 +722,10 @@ def save_figure(fig, filename, data_plot, unit_fac, source_text, info_text, plot
     )
     
     ### Load old file and add the custom legend toggle button to the modeBarButtons config
-    with open(BASEPATH + "/page/_includes/%s.html" % filename, "r") as fp_old:
+    with open(BASEPATH + "/docs/_includes/%s.html" % filename, "r") as fp_old:
         lines = fp_old.readlines()
     
-    with open(BASEPATH + "/page/_includes/%s.html" % filename, "w") as fp_new:
+    with open(BASEPATH + "/docs/_includes/%s.html" % filename, "w") as fp_new:
         for line in lines:
             if "modeBarButtons" in line:
                 text_before = line.split("\"zoom2d\"")[0]
@@ -756,11 +756,11 @@ def save_figure(fig, filename, data_plot, unit_fac, source_text, info_text, plot
                 )
     
     ### load old file and add the custom download button to the modeBarButtons config 
-    fp_old = open(BASEPATH + "/page/_includes/%s.html" %(filename), "r") 
+    fp_old = open(BASEPATH + "/docs/_includes/%s.html" %(filename), "r") 
     lines = fp_old.readlines() 
     fp_old.close()
     
-    fp_new = open(BASEPATH+"/page/_includes/%s.html" %(filename), "w") 
+    fp_new = open(BASEPATH+"/docs/_includes/%s.html" %(filename), "w") 
     for line in lines:
         if "modeBarButtons" in line: 
             text_before = line.split("\"zoom2d\"")[0]
@@ -773,7 +773,7 @@ def save_figure(fig, filename, data_plot, unit_fac, source_text, info_text, plot
             
             
     # ### load old file and ajdust button forms 
-    # with open("../../page/_includes/%s.html" %(filename), "r")  as file:
+    # with open("../../docs/_includes/%s.html" %(filename), "r")  as file:
     #     html = file.read()
     # custom_css = """
     # <style>
@@ -797,7 +797,7 @@ def save_figure(fig, filename, data_plot, unit_fac, source_text, info_text, plot
     #     html = html.replace("<body>", "<body>" + custom_css)
         
     
-    # with open("../../page/_includes/%s.html" %(filename), "w")  as file: 
+    # with open("../../docs/_includes/%s.html" %(filename), "w")  as file: 
     #     file.write(html)
         
     

@@ -17,7 +17,7 @@ def publish():
         run(["git", "push"])
         logger.info("Pushed changes to github")
     else:
-        print("No changes, no push.")
+        logger.info("No changes, no push.")
 
 
 if __name__ == "__main__": 

@@ -145,7 +145,7 @@ def plot_data_fossils(data, year_plot = 2022):
 
     plt.tight_layout()
     plt.savefig(os.path.join(os.path.dirname(__file__), 
-                             "../../../page/assets/images/fossil_fuel_consumption_estimation.png"), dpi = 400)
+                             "../../../docs/assets/images/fossil_fuel_consumption_estimation.png"), dpi = 400)
             
 
 

@@ -33,5 +33,5 @@ trigger = CronTrigger(hour = 0, minute = 0)
 scheduler.add_job(build_dashboard, trigger=trigger)
 
 if __name__ == "__main__": 
-    build_dashboard()
+    # build_dashboard()
     uvicorn.run(app, host = "0.0.0.0", port = 8200)

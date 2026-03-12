@@ -596,7 +596,7 @@ def plot_extrapolation_demo():
     
     plt.tight_layout() 
     plt.savefig(os.path.join(os.path.dirname(__file__), 
-                             "../../page/assets/images/emissions_projection_2022.png"), dpi = 400)
+                             "../../docs/assets/images/emissions_projection_2022.png"), dpi = 400)
     
 
     return data_out 
@@ -687,7 +687,7 @@ def plot_emission_estimate_demo():
     
     plt.tight_layout() 
     plt.savefig(os.path.join(os.path.dirname(__file__), 
-                             "../../page/assets/images/emissions_estimation.png"), dpi = 400)
+                             "../../docs/assets/images/emissions_estimation.png"), dpi = 400)
     
     return emissions    
 
