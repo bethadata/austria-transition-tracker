@@ -2,7 +2,7 @@
 """
 Created on Wed Feb 12 13:20:43 2025
 
-@author: Bernhard
+@author: bethadata
 """
 
 import os 

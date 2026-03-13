@@ -2,7 +2,7 @@
 """
 Created on Mon Dec 23 14:07:07 2024
 
-@author: Bernhard
+@author: bethadata
 """
 
 

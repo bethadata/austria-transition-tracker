@@ -2,7 +2,7 @@
 """
 Created on Sat Feb 10 18:24:03 2024
 
-@author: Bernhard
+@author: bethadata
 """
 
 from .plot_single import plot_single_go

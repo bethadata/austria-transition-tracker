@@ -2,7 +2,7 @@
 """
 Created on Sun Jan 21 17:10:55 2024
 
-@author: Bernhard
+@author: bethadata
 """
 from loguru import logger 
 import eurostat 

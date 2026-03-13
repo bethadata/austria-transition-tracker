@@ -7,10 +7,13 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 from create_charts import plot_all 
 from scrape_data import scrape_all
+from publish_github import publish
 
 def build_dashboard(): 
     scrape_all()
     plot_all()
+    publish()
+
 
 ### scheduler process 
 @asynccontextmanager

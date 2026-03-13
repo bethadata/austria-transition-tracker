@@ -2,7 +2,7 @@
 """
 Created on Sat Mar 16 09:51:56 2024
 
-@author: Bernhard
+@author: bethadata
 """
 
 import pandas as pd 

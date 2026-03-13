@@ -2,7 +2,7 @@
 """
 Created on Sat Oct 19 10:32:07 2024
 
-@author: Bernhard
+@author: bethadata
 """
 
 import plotly.express as px

@@ -12,6 +12,7 @@ def publish():
     status = run(["git", "status", "--porcelain"])
 
     if status.stdout.strip() != "":
+        logger.info("Pushing to github ...")
         run(["git", "add", "."])
         run(["git", "commit", "-m", "Automatic dashboard update"])
         run(["git", "push"])

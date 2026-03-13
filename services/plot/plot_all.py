@@ -2,7 +2,7 @@
 """
 Created on Sun Feb  4 12:02:41 2024
 
-@author: Bernhard
+@author: bethadata
 """
     
 import plotly.io as pio

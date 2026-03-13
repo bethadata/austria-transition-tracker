@@ -2,7 +2,7 @@
 """
 Created on Sat Feb 17 19:11:17 2024
 
-@author: Bernhard
+@author: bethadata
 """
 
 import numpy as np 

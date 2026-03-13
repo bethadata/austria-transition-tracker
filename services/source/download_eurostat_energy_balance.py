@@ -5,7 +5,7 @@ Created on Sun Feb 26 14:04:43 2023
 Energy balance: 
         https://ec.europa.eu/eurostat/databrowser/view/NRG_BAL_C/default/table?lang=en&category=nrg.nrg_quant.nrg_quanta.nrg_bal
 
-@author: bernhardthaler
+@author: bethadata
 """
 
 import eurostat 
