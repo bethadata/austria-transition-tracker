@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_consumption_heating_oil_monthly",
             "data_source": "eurostat (NRG_CB_OILM)",
             "info": null,
-            "created": "2026-03-13"
+            "created": "2026-03-14"
       },
       "Monthly": {
             "2008-01-01": 165.0,
