@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_consumption_hard_coal_industry_yearly",
             "data_source": "eurostat (NRG_CB_SFFM)",
             "info": "Extrapolations based on monthly available data scaled with past trends",
-            "created": "2026-03-14"
+            "created": "2026-03-17"
       },
       "Observed: Jan - Dec": {
             "2008-01-01": 511.0,
