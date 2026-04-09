@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_meat_consumption_per_capita",
             "data_source": "Statcube, Statistik Austria",
             "info": "Human consumption per capita in kg",
-            "created": "2026-03-17"
+            "created": "2026-04-09"
       },
       "Total": {
             "1994-01-01": 64.3,

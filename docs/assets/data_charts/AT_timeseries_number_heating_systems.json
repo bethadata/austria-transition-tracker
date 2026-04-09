@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_number_heating_systems",
             "data_source": "Source: Statistik Austria",
             "info": null,
-            "created": "2026-03-17"
+            "created": "2026-04-09"
       },
       "Heat pumps / solar": {
             "2003-01-01": 103602,
