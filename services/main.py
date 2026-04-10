@@ -10,30 +10,45 @@ from scrape_data import scrape_all
 from publish_github import publish
 
 def build_dashboard(): 
-    scrape_all()
-    plot_all()
-    publish()
+    try:
+        logger.info("Starting dashboard build...")
+        scrape_all()
+        plot_all()
+        publish()
+        logger.info("Dashboard build completed.")
+    except Exception as e:
+        logger.exception("Dashboard build failed!")
 
 
 ### scheduler process 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info('Start scheduler')
+    scheduler = BackgroundScheduler(timezone="Europe/Vienna")
+    
+    trigger = CronTrigger(hour=0, minute=1, timezone="Europe/Vienna")
+    scheduler.add_job(
+        build_dashboard,
+        trigger=trigger,
+        misfire_grace_time=3600,   # allow 1 hour delay
+        coalesce=True,
+        max_instances=1
+    )
+
     scheduler.start()
-    yield
-    logger.info('stop scheduler')
-    scheduler.shutdown()
+    logger.info("Scheduler started")
+
+    try:
+        yield
+    finally:
+        scheduler.shutdown()
+        logger.info("Scheduler stopped")
 
 ### scheduling server 
 app = FastAPI(lifespan=lifespan)
-scheduler = BackgroundScheduler()
 
 @app.get('/')
 def index():
     return 'running'
-
-trigger = CronTrigger(hour = 0, minute = 0)
-scheduler.add_job(build_dashboard, trigger=trigger)
 
 if __name__ == "__main__": 
     build_dashboard()

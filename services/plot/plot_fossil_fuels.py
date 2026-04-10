@@ -333,7 +333,7 @@ def plot_emissions_fuels():
     return data_raw
 
 def extrapolate_emissions_by_cons(consumption, 
-                          years_extrapolate = [2025], 
+                          years_extrapolate = [2025,2026], 
                           train_start = 2019,
                           train_end = 2024,
                           plot = False): 
@@ -843,9 +843,9 @@ def plot_ng_separation():
 if __name__ == "__main__":
     print("Plotting ...")
     # extrapolate_fossil_fuels()
-    # data = extrapolate_emissions(plot = True)
+    data = extrapolate_emissions(plot = True)
     
-    data = plot_ng_separation()
+    # data = plot_ng_separation()
     
     # data = plot_extrapolation_demo()
     # plot_emission_estimate_demo()
