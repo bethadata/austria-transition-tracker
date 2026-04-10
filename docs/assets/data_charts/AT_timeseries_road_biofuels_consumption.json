@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_road_biofuels_consumption",
             "data_source": "eurostat (NRG_CB_OILM | NRG_CB_OILM)",
             "info": null,
-            "created": "2026-04-10"
+            "created": "2026-04-11"
       },
       "Blended biodiesel monthly": {
             "2010-01-01": 21.0,
