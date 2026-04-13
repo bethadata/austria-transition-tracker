@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_energy_industry_emissions_sectors",
             "data_source": "EEA for sectoral, UBA (Klimadashboard) for total emissions",
             "info": "<Other> scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
-            "created": "2026-04-11"
+            "created": "2026-04-13"
       },
       "Electricity and heat generation": {
             "1990-01-01": 11.09819297098548,
