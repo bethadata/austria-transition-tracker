@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_number_fuel_new_cars_yearly",
             "data_source": "eurostat (road_eqr_carpda) & Statistik Austria",
             "info": "Data 2025 up to 11/2025",
-            "created": "2026-04-13"
+            "created": "2026-04-14"
       },
       "Electric": {
             "2013-01-01": 654.0,

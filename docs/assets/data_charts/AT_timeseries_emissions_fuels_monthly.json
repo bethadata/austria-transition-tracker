@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_emissions_fuels_monthly",
             "data_source": "eurostat & own estimation",
             "info": null,
-            "created": "2026-04-13"
+            "created": "2026-04-14"
       },
       "Gas": {
             "2008-01-01": 2.184797938681655,
