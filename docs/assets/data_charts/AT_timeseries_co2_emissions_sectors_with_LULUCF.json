@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_co2_emissions_sectors_with_LULUCF",
             "data_source": "Umweltbundesamt (Klimadashboard)",
             "info": null,
-            "created": "2026-04-15"
+            "created": "2026-04-16"
       },
       "LULUCF": {
             "1990-01-01": -13.756040791468283,

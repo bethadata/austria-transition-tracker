@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_elec_energy_use",
             "data_source": "eurostat energy balances (nrg_bal_c) up to 2015, E-control from 2015 up to 2/2026",
             "info": "Note: no Waste-data available in E-control data.",
-            "created": "2026-04-15"
+            "created": "2026-04-16"
       },
       "PV": {
             "1990-01-01": 0.0,
