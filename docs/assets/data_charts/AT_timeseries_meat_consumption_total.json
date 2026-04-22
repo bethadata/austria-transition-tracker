@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_meat_consumption_total",
             "data_source": "Statcube, Statistik Austria",
             "info": "Human consumption per year",
-            "created": "2026-04-22"
+            "created": "2026-04-23"
       },
       "Total": {
             "1994-01-01": 515.969,

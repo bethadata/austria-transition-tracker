@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_agriculture_final_energy_use",
             "data_source": "eurostat energy balances (nrg_bal_c)",
             "info": null,
-            "created": "2026-04-22"
+            "created": "2026-04-23"
       },
       "Total": {
             "Natural gas": {
