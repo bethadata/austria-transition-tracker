@@ -777,7 +777,7 @@ def plot_ng_separation():
                     unit = "Energy (TWh)", 
                     data_plot = data_yearly_abs,
                     time_res = "yearly",
-                    show_plot = True,
+                    show_plot = False,
                     source_text = "eurotsat (NRG_CB_GASM)",
                     info_text = "Bulidings data before 09/2023 not available.",
                     initial_visible = "bar")

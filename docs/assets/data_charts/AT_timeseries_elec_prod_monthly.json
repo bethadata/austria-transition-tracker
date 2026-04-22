@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_elec_prod_monthly",
             "data_source": "E-control (MoMeGes)",
             "info": null,
-            "created": "2026-04-16"
+            "created": "2026-04-22"
       },
       "PV": {
             "2015-01-01": 0.029964849999999998,
