@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_dh_energy_use",
             "data_source": "eurostat energy balances (nrg_bal_c)",
             "info": null,
-            "created": "2026-04-23"
+            "created": "2026-04-24"
       },
       "Natural gas": {
             "1990-01-01": 3.0230555555555556,

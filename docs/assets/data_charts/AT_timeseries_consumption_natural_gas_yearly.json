@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_consumption_natural_gas_yearly",
             "data_source": "eurostat (NRG_CB_GASM)",
             "info": "Extrapolations based on monthly available data scaled with past trends",
-            "created": "2026-04-23"
+            "created": "2026-04-24"
       },
       "Observed: Jan - Mar": {
             "2008-01-01": 112136.0,
