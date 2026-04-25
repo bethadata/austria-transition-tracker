@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_co2_emissions_sectors",
             "data_source": "Umweltbundesamt (Klimadashboard)",
             "info": null,
-            "created": "2026-04-24"
+            "created": "2026-04-26"
       },
       "Transport": {
             "1990-01-01": 13.7638584284405,

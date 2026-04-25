@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_gas_sectoral_consumption_monthly",
             "data_source": "eurotsat (NRG_CB_GASM)",
             "info": "Bulidings data before 09/2023 not available.",
-            "created": "2026-04-24"
+            "created": "2026-04-26"
       },
       "Industry / Other": {
             "2019-01-01": 10.572308920524073,

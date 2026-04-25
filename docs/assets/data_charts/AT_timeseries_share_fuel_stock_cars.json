@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_share_fuel_stock_cars",
             "data_source": "eurostat (road_eqs_carpda) and Statistik Austria",
             "info": "Data of 2024 until 12/2024, Hybrids of 2024 indclude also Plugin-Hybrids<br>Others before 2013 include also Hybrids",
-            "created": "2026-04-24"
+            "created": "2026-04-26"
       },
       "Electric": {
             "1995-01-01": 0.0038123457669604864,
