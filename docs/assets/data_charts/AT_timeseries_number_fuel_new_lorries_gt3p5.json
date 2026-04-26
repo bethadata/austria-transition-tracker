@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_number_fuel_new_lorries_gt3p5",
             "data_source": "eurostat (road_eqr_lormot)",
             "info": null,
-            "created": "2026-04-26"
+            "created": "2026-04-27"
       },
       "Electric": {
             "2013-01-01": 0.0,
