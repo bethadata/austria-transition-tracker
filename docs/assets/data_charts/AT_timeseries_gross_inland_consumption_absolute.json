@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_gross_inland_consumption_absolute",
             "data_source": "eurostat energy balances (nrg_bal_c)",
             "info": null,
-            "created": "2026-04-27"
+            "created": "2026-04-28"
       },
       "Natural gas": {
             "1990-01-01": 60.899749444444446,
