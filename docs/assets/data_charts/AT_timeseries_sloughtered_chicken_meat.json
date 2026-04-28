@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_sloughtered_chicken_meat",
             "data_source": "eurostat (apro_mt_pheadm)",
             "info": null,
-            "created": "2026-04-28"
+            "created": "2026-04-29"
       },
       "Monthly": {
             "2008-01-01": 9.3,

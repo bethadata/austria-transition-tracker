@@ -3,7 +3,7 @@
             "chart": "AT_timeseries_consumption_refinery_gas_monthly",
             "data_source": "eurostat (NRG_CB_OILM)",
             "info": null,
-            "created": "2026-04-28"
+            "created": "2026-04-29"
       },
       "Monthly": {
             "2008-01-01": 43.0,
