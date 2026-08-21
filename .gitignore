@@ -41,3 +41,13 @@ Thumbs.db
 # ----------------------
 .cache/
 coverage/
+
+# ----------------------
+# Claude Code (never published)
+# ----------------------
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+.claude/
+.claudeignore
+.mcp.json
