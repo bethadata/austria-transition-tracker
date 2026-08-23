@@ -6,6 +6,10 @@ __pycache__/
 *.pyo
 *.pyd
 *.so
+
+# Repo paths live in the tracked services/paths.py — nothing per-machine in them.
+# config.py stays ignored so that any future secret or per-machine value has an
+# already-protected place to go, instead of being added to a tracked module.
 config.py
 
 # Poetry

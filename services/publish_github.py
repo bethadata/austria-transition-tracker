@@ -1,7 +1,7 @@
 import subprocess
 from loguru import logger 
 
-from config import BASEPATH 
+from paths import BASEPATH
 
 
 def run(cmd):

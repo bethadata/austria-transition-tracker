@@ -4,7 +4,7 @@ import numpy as np
 import plotly.express as px
 import json 
 import datetime 
-from config import BASEPATH
+from paths import BASEPATH
 
 greys = get_colorscale("Greys")
 

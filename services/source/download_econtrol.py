@@ -1,5 +1,5 @@
 import requests
-from config import BASEPATH 
+from paths import BASEPATH
 from loguru import logger 
 
 

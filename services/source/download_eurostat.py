@@ -8,7 +8,7 @@ from loguru import logger
 import eurostat 
 import pandas as pd 
 import os 
-from config import BASEPATH 
+from paths import BASEPATH
 
 def download_and_save(name = "",
                       code = "",

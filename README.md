@@ -20,7 +20,7 @@ in the "page" directory
 ### Data-scraping and plot-creating 
 Dependencies are found in **services/pyproject.toml**, setup is recommended using [Poetry](https://python-poetry.org/).
 
->Within the **config.py**, you have to assign your local directory of the project to the **BASEPATH**-variable, which will define where data-files and charts will be saved.
+>No configuration step is needed. **services/paths.py** holds a single **BASEPATH** variable that defines where data-files and charts are saved; it derives itself from the file's own location and so resolves to the repository root — edit it only if your dashboard lives outside this checkout.
 
 - For automatic data scraping of eurostat data and other automatized data-sources run **services/scrape_data.py**. Other data sources such as E-control, Statistik Austria, umweltbundesamt, or national inventory reports, have to be downloaded manually. 
 
