@@ -55,3 +55,13 @@ AGENTS.md
 .claude/
 .claudeignore
 .mcp.json
+
+# ----------------------
+# Raw data
+# ----------------------
+# Only the two API-cached sources are ignored — scrape_data.py reproduces them.
+# The manual drops (statistik_austria/, umweltbundesamt/, unfcc/,
+# national_inventory_report/, other/) stay tracked: they cannot be re-downloaded
+# by the pipeline, so git is the only backup they have.
+services/data_raw/eurostat/
+services/data_raw/e_control/
