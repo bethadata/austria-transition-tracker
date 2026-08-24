@@ -2,9 +2,8 @@ import plotly.graph_objects as go
 from plotly.colors import get_colorscale 
 import numpy as np
 import plotly.express as px
-import json 
-import datetime 
-from paths import BASEPATH
+from . import manifest
+from . import pages
 
 greys = get_colorscale("Greys")
 
@@ -383,7 +382,9 @@ def plot_single_go(title = "",
     
     """ show and save plot """
     if show_plot: fig.show(renderer = "browser")     
-    if save: save_figure(fig, filename, data_plot, unit_fac, source_text, info_text, plot_type)
+    if save: save_figure(filename, title, unit, data_plot, plot_type, time_res,
+                         unit_fac=unit_fac, source_text=source_text,
+                         info_text=info_text, initial_visible=None)
     
 
 
@@ -653,151 +654,42 @@ def plot_with_toggle(title="",
         align = "right"))      
 
     if show_plot: fig.show(renderer = "browser")
-    if save: save_figure(fig, filename, data_plot, unit_fac, source_text, info_text, plot_type) 
+    if save: save_figure(filename, title, unit, data_plot, plot_type, time_res,
+                         unit_fac=unit_fac, source_text=source_text,
+                         info_text=info_text, initial_visible=initial_visible)
     
 
 
 
-def save_figure(fig, filename, data_plot, unit_fac, source_text, info_text, plot_type): 
-    
-    ### SAVING DATA 
-    data_dict = {"meta": {"chart": filename,
-                          "data_source": source_text,
-                          "info": info_text,
-                          "created": datetime.datetime.today().strftime("%Y-%m-%d")
-        }}
-    
-    if plot_type == "area_button": 
-        for bal in data_plot:
-            data_dict[bal] = {}
-            for data in data_plot[bal]["data"]:
-                data_dict[bal][data] = {}
-                x = data_plot[bal]["data"][data]["x"]
-                for i in range(len(x)):
-                    data_dict[bal][data][x[i].strftime('%Y-%m-%d')] = data_plot[bal]["data"][data]["y"][i]/unit_fac
-    
-    else:
-        for data in data_plot["data"]:
-            data_dict[data] = {}
-            x = data_plot["data"][data]["x"]
-            for i in range(len(x)):
-                data_dict[data][x[i].strftime('%Y-%m-%d')] = data_plot["data"][data]["y"][i]
-                
-    with open(BASEPATH + "/docs/assets/data_charts/%s.json" %(filename), "w") as fp:
-        json.dump(data_dict, fp, indent = 6)
-    
-    
-    
-    
-    ### CCS INJEDCTIONS 
-    fig.write_html(
-        BASEPATH + "/docs/_includes/%s.html" % filename,
-        include_plotlyjs="cdn",
-        default_width="100%",
-        config={
-            "modeBarButtons": [
-                [
-                    "zoom2d",
-                    "pan2d",
-                    "zoomIn2d",
-                    "zoomOut2d",
-                    "resetViews",
-                ]
-            ],
-        },
-        div_id=filename,  # Explicitly set the div_id to the filename
+def save_figure(filename, title, unit, data_plot, plot_type, time_res,
+                unit_fac=1, source_text=None, info_text=None, initial_visible=None):
+    """Hand the chart to the manifest. No HTML: the frontend renders from data.
+
+    This used to also write a complete standalone Plotly document per chart into
+    docs/_includes/ -- 4.3 MB of generated HTML that Jekyll then inlined into a
+    page, producing nested HTML documents -- and then patch two modebar buttons
+    into it by reading the file back and splitting a line on the literal
+    "zoom2d". Both the second copy of every data point and the string surgery
+    are gone; the toggle, legend and download buttons are frontend behaviour now.
+    """
+    # area_button was an undocumented sixth plot_type whose data_plot is nested
+    # one level deeper: a chart with a dataset selector. Named for what it is.
+    if plot_type == "area_button":
+        plot_type = "groups"
+
+    page, section, order = pages.lookup(manifest.chart_id(filename))
+    return manifest.register(
+        filename=filename,
+        title=title,
+        unit=unit,
+        data_plot=data_plot,
+        plot_type=plot_type,
+        time_res=time_res,
+        unit_fac=unit_fac,
+        source_text=source_text,
+        info_text=info_text,
+        initial_visible=initial_visible,
+        page=page,
+        section=section,
+        order=order,
     )
-
-    """ Add legend toggle button as direct JS code in the HTML file """
-    toggle_button = (
-        "{name: 'Toggle Legend',"
-        "icon: {'width': 500,"
-        "'height': 499,"
-        "'path': 'M256,32C132.3,32,32,132.3,32,256S132.3,480,256,480,480,379.7,480,256,379.7,32,256,32ZM360,288H264v96H248V288H152V272h96V176h16v96h96Z'},"
-        "click: () => {"
-        "    var gd = document.getElementById('%s');"  # Use the div ID of the Plotly chart
-        "    var currentLegend = gd.layout.showlegend;"
-        "    Plotly.relayout(gd, {'showlegend': !currentLegend});"
-        "}}," % filename
-    )
-    
-    ### Load old file and add the custom legend toggle button to the modeBarButtons config
-    with open(BASEPATH + "/docs/_includes/%s.html" % filename, "r") as fp_old:
-        lines = fp_old.readlines()
-    
-    with open(BASEPATH + "/docs/_includes/%s.html" % filename, "w") as fp_new:
-        for line in lines:
-            if "modeBarButtons" in line:
-                text_before = line.split("\"zoom2d\"")[0]
-                text_after = line.split("\"zoom2d\"")[1]
-                new_text = text_before + toggle_button + "\"zoom2d\"" + text_after
-                fp_new.write(new_text)
-            else:
-                fp_new.write(line)
-            
-    
-    """ add download button as direct js code in html file """
-    custom_button = (""
-        "{name: \'Download data\',"
-        "icon: {\'width\': 500,"
-                "\'height': 499,"
-                "\'path': 'M256,409.7,152.05,305.75,173.5,284.3l67.33,67.32V34h30.34V351.62L338.5,284.3,360,305.75ZM445.92,351v93.22a3.61,3.61,0,0,1-3.47,3.48H69.15a3.3,3.3,0,0,1-3.07-3.48V351H35.74v93.22A33.66,33.66,0,0,0,69.15,478h373.3a33.85,33.85,0,0,0,33.81-33.82V351Z'},"     
-                "click: () => {"
-                "var filename = \'%s.json\';"
-                # "var jsonUrl = \'{{site.baseurl}}assets/data_charts/%s.json\';"
-                "var jsonUrl = \'{{ \'/assets/data_charts/%s.json\' | relative_url }}\';"
-                "var link = document.createElement(\'a\');"
-                "link.href = jsonUrl;"
-                "link.setAttribute(\'download\', filename);"
-                "document.body.appendChild(link);"
-                "link.click(); "
-                "document.body.removeChild(link);}"                      
-                "},"  %(filename, filename)
-                )
-    
-    ### load old file and add the custom download button to the modeBarButtons config 
-    fp_old = open(BASEPATH + "/docs/_includes/%s.html" %(filename), "r") 
-    lines = fp_old.readlines() 
-    fp_old.close()
-    
-    fp_new = open(BASEPATH+"/docs/_includes/%s.html" %(filename), "w") 
-    for line in lines:
-        if "modeBarButtons" in line: 
-            text_before = line.split("\"zoom2d\"")[0]
-            text_after = line.split("\"zoom2d\"")[1]
-            new_text = text_before + custom_button + "\"zoom2d\"" + text_after 
-            fp_new.write(new_text)
-        else:
-            fp_new.write(line)
-            
-            
-            
-    # ### load old file and ajdust button forms 
-    # with open("../../docs/_includes/%s.html" %(filename), "r")  as file:
-    #     html = file.read()
-    # custom_css = """
-    # <style>
-    #  .plotly .custom-toggle-btn {
-    #      padding: 2px 5px !important; /* Adjust padding inside the button */
-    #      font-size: 10px !important; /* Adjust font size */
-    #      height: 20px !important;    /* Adjust button height */
-    #      line-height: 20px !important; /* Align text inside the button */
-    #      background-color: #f0f0f0 !important; /* Optional: Set background color */
-    #      border: 1px solid #ccc !important;   /* Optional: Add border */
-    #      border-radius: 3px !important;      /* Optional: Rounded corners */
-    #      cursor: pointer !important;         /* Change cursor to pointer */
-    #  }
-    # </style>
-    # """
-
-    # # Inject the CSS after the <body> tag if <head> does not exist
-    # if "<head>" in html:
-    #     html = html.replace("</head>", custom_css + "</head>")
-    # elif "<body>" in html:
-    #     html = html.replace("<body>", "<body>" + custom_css)
-        
-    
-    # with open("../../docs/_includes/%s.html" %(filename), "w")  as file: 
-    #     file.write(html)
-        
-    

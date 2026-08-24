@@ -336,7 +336,8 @@ def extrapolate_emissions_by_cons(consumption,
                           years_extrapolate = [2025,2026], 
                           train_start = 2019,
                           train_end = 2024,
-                          plot = False): 
+                          plot = False,
+                          save = False): 
 
     times_train = pd.date_range(start = datetime(year = train_start, month = 1, day =1),
                           end = datetime(year = train_end, month = 1, day = 1),
@@ -445,13 +446,18 @@ def extrapolate_emissions_by_cons(consumption,
     data_plot["meta"] = {"uncertainty": {"Projeted emissions": [0] + total_std},
                          "areas": ["Energy sectors", "Other sectors"]}
     
-    if plot:
+    # `plot` opens a browser window, `save` writes the chart. They used to be the
+    # same flag, so the only way to refresh this chart was to also pop a browser
+    # -- which is why the orchestrator left it off and the front page served a
+    # projection that had not been rebuilt in months.
+    if plot or save:
         plot_single_go(title = "<b>Austrian GHG emissions</b>: projection",
                       filename = "AT_timeseries_emissions_projection_yearly",
                       unit = "Emissions (Mt<sub>CO2e</sub>)",
                       data_plot = data_plot,
                       time_res = "yearly",
                       show_plot = plot,
+                      save = save,
                       unit_fac= 1, 
                       source_text = f"Umweltbundesamt, eurostat & own projection (train years {train_start}-{train_end})",
                       plot_type = "line")
@@ -466,9 +472,9 @@ def extrapolate_emissions_by_cons(consumption,
     
 
 
-def extrapolate_emissions(plot = True): 
+def extrapolate_emissions(plot = True, save = True): 
     consumption = extrapolate_fossil_fuels(plot = False)
-    extrapolate_emissions_by_cons(consumption, plot = plot) 
+    extrapolate_emissions_by_cons(consumption, plot = plot, save = save) 
     
 
 def plot_extrapolation_demo(): 
@@ -743,7 +749,7 @@ def plot_ng_separation():
                   data_plot = data_plot,
                   time_res = "monthly",
                   show_plot = False,
-                  source_text = "eurotsat (NRG_CB_GASM)",
+                  source_text = "eurostat (NRG_CB_GASM)",
                   info_text = "Bulidings data before 09/2023 not available.",
                   initial_visible = "bar")
 
@@ -778,7 +784,7 @@ def plot_ng_separation():
                     data_plot = data_yearly_abs,
                     time_res = "yearly",
                     show_plot = False,
-                    source_text = "eurotsat (NRG_CB_GASM)",
+                    source_text = "eurostat (NRG_CB_GASM)",
                     info_text = "Bulidings data before 09/2023 not available.",
                     initial_visible = "bar")
         
@@ -831,7 +837,7 @@ def plot_ng_separation():
     #                   time_res = "yearly",
     #                   colors = [dark2[0], set2[0], dark2[1], set2[1], dark2[2], set2[2]],
     #                   show_plot = False,
-    #                   source_text = "eurotsat (NRG_CB_GASM)",
+    #                   source_text = "eurostat (NRG_CB_GASM)",
     #                   info_text = "Bulidings data before 09/2023 not available.",
     #                   initial_visible = "bar")
         

@@ -127,7 +127,7 @@ def plot():
                     data_plot=data_plot,
                     show_plot = False,
                     time_res = "yearly",
-                    source_text = "Source: eurostat (nrg_bal_c)") 
+                    source_text = "eurostat (nrg_bal_c)") 
 
 
     ### heating systems buildings 
@@ -140,7 +140,7 @@ def plot():
                   time_res = "yearly",
                   show_plot = False,
                   colors = list([colors_heatings[label] for label in colors_heatings]),
-                  source_text = "Source: Statistik Austria",
+                  source_text = "Statistik Austria",
                   plot_type = "area",
                   plotmax_fac = 1,
                   initial_visible = "bar")
@@ -152,7 +152,7 @@ def plot():
                   time_res = "yearly",
                   show_plot = False,
                     colors = list([colors_heatings[label] for label in colors_heatings]),
-                  source_text = "Source: Statistik Austria",
+                  source_text = "Statistik Austria",
                   initial_visible = "bar")
 
          

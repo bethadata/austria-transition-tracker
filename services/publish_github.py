@@ -14,8 +14,7 @@ PUBLISH_BRANCH = "main"
 # output and nothing else. Anything else dirty in the tree is the author's, and
 # an automated run has no business deciding to commit it.
 PUBLISH_PATHS = [
-    "docs/assets/data_charts",
-    "docs/_includes",
+    "public/data",
     "services/data_raw",
 ]
 

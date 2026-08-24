@@ -128,7 +128,7 @@ def plot():
                         unit = "Thousand", 
                         data_plot=data_plot,
                         time_res = "yearly",
-                        source_text = "eursotat (apro_mt_lscatl, apro_mt_lspig, apro_mt_lssheep, apro_mt_lsgoat)",
+                        source_text = "eurostat (apro_mt_lscatl, apro_mt_lspig, apro_mt_lssheep, apro_mt_lsgoat)",
                         show_plot = False)        
     
  

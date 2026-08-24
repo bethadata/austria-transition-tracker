@@ -1,0 +1,2149 @@
+{
+  "charts": [
+    {
+      "id": "heating_oil_consumption",
+      "order": 3,
+      "page": "buildings",
+      "section": "energy_use",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "NRG_CB_OILM",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "oil_thousand_tons"
+    },
+    {
+      "id": "natural_gas_oil_coal_buildings",
+      "order": 99,
+      "page": "buildings",
+      "section": "energy_use",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "type": "line",
+      "unit": "energy_twh"
+    },
+    {
+      "id": "share_heating_systems",
+      "order": 5,
+      "page": "buildings",
+      "section": "heating_systems",
+      "series": [
+        "heat_pumps_solar",
+        "biomass",
+        "district_heat",
+        "electricity",
+        "natural_gas",
+        "oil",
+        "coal"
+      ],
+      "source": {
+        "key": "statistik_austria"
+      },
+      "time_res": "yearly",
+      "type": "area",
+      "unit": "share_pct"
+    },
+    {
+      "id": "number_heating_systems",
+      "initial": "bar",
+      "order": 4,
+      "page": "buildings",
+      "section": "heating_systems",
+      "series": [
+        "heat_pumps_solar",
+        "biomass",
+        "district_heat",
+        "electricity",
+        "natural_gas",
+        "oil",
+        "coal"
+      ],
+      "source": {
+        "key": "statistik_austria"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "number"
+    },
+    {
+      "id": "consumption_natural_gas_monthly",
+      "order": 0,
+      "page": "fossil-fuels",
+      "section": "natural_gas",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "NRG_CB_GASM",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "consumption_tjgcv"
+    },
+    {
+      "id": "consumption_natural_gas_yearly",
+      "order": 1,
+      "page": "fossil-fuels",
+      "section": "natural_gas",
+      "series": [
+        "observed_jan_jun",
+        "observed_jul_dec",
+        "extrapolated_jul_dec",
+        "total"
+      ],
+      "source": {
+        "code": "NRG_CB_GASM",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "total": "total",
+      "type": "bar",
+      "unit": "consumption_tjgcv"
+    },
+    {
+      "id": "consumption_gasoline_monthly",
+      "order": 4,
+      "page": "fossil-fuels",
+      "section": "oil",
+      "series": [
+        "gasoline_monthly",
+        "gasoline_12_month_average",
+        "bio_gasoline_monthly",
+        "bio_gasoline_12_month_average"
+      ],
+      "source": {
+        "code": "NRG_CB_OILM",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_gasoline_yearly",
+      "order": 5,
+      "page": "fossil-fuels",
+      "section": "oil",
+      "series": [
+        "observed_jan_jun",
+        "observed_jul_dec",
+        "extrapolated_jul_dec",
+        "total"
+      ],
+      "source": {
+        "code": "NRG_CB_OILM",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "total": "total",
+      "type": "bar",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_diesel_monthly",
+      "order": 6,
+      "page": "fossil-fuels",
+      "section": "oil",
+      "series": [
+        "diesel_monthly",
+        "diesel_12_month_average",
+        "bio_diesel_monthly",
+        "bio_diesel_12_month_average"
+      ],
+      "source": {
+        "code": "NRG_CB_OILM",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_diesel_yearly",
+      "order": 7,
+      "page": "fossil-fuels",
+      "section": "oil",
+      "series": [
+        "observed_jan_jun",
+        "observed_jul_dec",
+        "extrapolated_jul_dec",
+        "total"
+      ],
+      "source": {
+        "code": "NRG_CB_OILM",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "total": "total",
+      "type": "bar",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_heating_oil_monthly",
+      "order": 8,
+      "page": "fossil-fuels",
+      "section": "oil",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "NRG_CB_OILM",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_heating_oil_yearly",
+      "order": 9,
+      "page": "fossil-fuels",
+      "section": "oil",
+      "series": [
+        "observed_jan_jun",
+        "observed_jul_dec",
+        "extrapolated_jul_dec",
+        "total"
+      ],
+      "source": {
+        "code": "NRG_CB_OILM",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "total": "total",
+      "type": "bar",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_refinery_gas_monthly",
+      "order": 10,
+      "page": "fossil-fuels",
+      "section": "oil",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "NRG_CB_OILM",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_refinery_gas_yearly",
+      "order": 11,
+      "page": "fossil-fuels",
+      "section": "oil",
+      "series": [
+        "observed_jan_jun",
+        "observed_jul_dec",
+        "extrapolated_jul_dec",
+        "total"
+      ],
+      "source": {
+        "code": "NRG_CB_OILM",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "total": "total",
+      "type": "bar",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_hard_coal_electricity_monthly",
+      "order": 12,
+      "page": "fossil-fuels",
+      "section": "coal",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "NRG_CB_SFFM",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_hard_coal_electricity_yearly",
+      "order": 13,
+      "page": "fossil-fuels",
+      "section": "coal",
+      "series": [
+        "observed_jan_may",
+        "observed_jun_dec",
+        "extrapolated_jun_dec",
+        "total"
+      ],
+      "source": {
+        "code": "NRG_CB_SFFM",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "total": "total",
+      "type": "bar",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_hard_coal_industry_monthly",
+      "order": 14,
+      "page": "fossil-fuels",
+      "section": "coal",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "NRG_CB_SFFM",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_hard_coal_industry_yearly",
+      "order": 15,
+      "page": "fossil-fuels",
+      "section": "coal",
+      "series": [
+        "observed_jan_may",
+        "observed_jun_dec",
+        "extrapolated_jun_dec",
+        "total"
+      ],
+      "source": {
+        "code": "NRG_CB_SFFM",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "total": "total",
+      "type": "bar",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_hard_coal_coke_ovens_monthly",
+      "order": 16,
+      "page": "fossil-fuels",
+      "section": "coal",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "NRG_CB_SFFM",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_hard_coal_coke_ovens_yearly",
+      "order": 17,
+      "page": "fossil-fuels",
+      "section": "coal",
+      "series": [
+        "observed_jan_may",
+        "observed_jun_dec",
+        "extrapolated_jun_dec",
+        "total"
+      ],
+      "source": {
+        "code": "NRG_CB_SFFM",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "total": "total",
+      "type": "bar",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_coke_oven_coke_monthly",
+      "order": 18,
+      "page": "fossil-fuels",
+      "section": "coal",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "NRG_CB_SFFM",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "consumption_coke_oven_coke_yearly",
+      "order": 19,
+      "page": "fossil-fuels",
+      "section": "coal",
+      "series": [
+        "observed_jan_may",
+        "observed_jun_dec",
+        "extrapolated_jun_dec",
+        "total"
+      ],
+      "source": {
+        "code": "NRG_CB_SFFM",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "total": "total",
+      "type": "bar",
+      "unit": "consumption_1000_tons"
+    },
+    {
+      "id": "emissions_fuels_yearly",
+      "initial": "bar",
+      "order": 3,
+      "page": "overview",
+      "section": "projection",
+      "series": [
+        "gas",
+        "oil",
+        "coal"
+      ],
+      "source": {
+        "key": "own_estimation_projected"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "emissions_mtco2"
+    },
+    {
+      "areas": [
+        "energy_sectors",
+        "other_sectors"
+      ],
+      "id": "emissions_projection_yearly",
+      "order": 1,
+      "page": "overview",
+      "section": "projection",
+      "series": [
+        "energy_sectors",
+        "other_sectors",
+        "projeted_emissions",
+        "historic_emissions"
+      ],
+      "source": {
+        "key": "own_projection"
+      },
+      "time_res": "yearly",
+      "total": "historic_emissions",
+      "type": "line",
+      "uncertainty": [
+        "projeted_emissions"
+      ],
+      "unit": "emissions_mtco2e"
+    },
+    {
+      "id": "emissions_fuels_monthly",
+      "order": 2,
+      "page": "overview",
+      "section": "projection",
+      "series": [
+        "gas",
+        "oil",
+        "coal"
+      ],
+      "source": {
+        "key": "own_estimation"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "emissions_mtco2"
+    },
+    {
+      "id": "gas_sectoral_consumption_monthly",
+      "initial": "bar",
+      "order": 2,
+      "page": "fossil-fuels",
+      "section": "natural_gas",
+      "series": [
+        "industry_other",
+        "buildings",
+        "public_electricity_heat",
+        "total"
+      ],
+      "source": {
+        "code": "NRG_CB_GASM",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "energy_twh"
+    },
+    {
+      "id": "gas_sectoral_consumption_yearly",
+      "initial": "bar",
+      "order": 3,
+      "page": "fossil-fuels",
+      "section": "natural_gas",
+      "series": [
+        "industry_other",
+        "buildings",
+        "public_electricity_heat",
+        "total"
+      ],
+      "source": {
+        "code": "NRG_CB_GASM",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "energy_twh"
+    },
+    {
+      "id": "slaughtered_pig_meat",
+      "order": 5,
+      "page": "agriculture",
+      "section": "animal_products",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "apro_mt_pheadm",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "meat_thousand_tons"
+    },
+    {
+      "id": "slaughtered_chicken_meat",
+      "order": 7,
+      "page": "agriculture",
+      "section": "animal_products",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "apro_mt_pheadm",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "meat_thousand_tons"
+    },
+    {
+      "id": "slaughtered_cattle_meat",
+      "order": 6,
+      "page": "agriculture",
+      "section": "animal_products",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "apro_mt_pheadm",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "meat_thousand_tons"
+    },
+    {
+      "id": "raw_cow_milk",
+      "order": 4,
+      "page": "agriculture",
+      "section": "animal_products",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "apro_mk_colm",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "milk_thousand_tons"
+    },
+    {
+      "id": "fertilizer_nitrogen",
+      "order": 8,
+      "page": "agriculture",
+      "section": "animal_products",
+      "series": [
+        "fertilizer"
+      ],
+      "source": {
+        "code": "aei_fm_usefert",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "type": "line",
+      "unit": "tons"
+    },
+    {
+      "id": "animal_livestock_population",
+      "order": 3,
+      "page": "agriculture",
+      "section": "animal_products",
+      "series": [
+        "cow_cattle",
+        "pig",
+        "sheep",
+        "goat"
+      ],
+      "source": {
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "type": "line",
+      "unit": "thousand"
+    },
+    {
+      "id": "road_fuels_consumption",
+      "order": 3,
+      "page": "transport",
+      "section": "fuel_consumption",
+      "series": [
+        "diesel_monthly",
+        "diesel_12_month_average",
+        "gasoline_monthly",
+        "gasoline_12_month_average"
+      ],
+      "source": {
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "fuel_thousand_tons"
+    },
+    {
+      "id": "road_biofuels_consumption",
+      "order": 4,
+      "page": "transport",
+      "section": "fuel_consumption",
+      "series": [
+        "blended_biodiesel_monthly",
+        "blended_biodiesel_12_month_average",
+        "blended_biogasoline_monthly",
+        "blended_biogasoline_12_month_average"
+      ],
+      "source": {
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "fuel_thousand_tons"
+    },
+    {
+      "id": "kerosene_consumption",
+      "order": 5,
+      "page": "transport",
+      "section": "fuel_consumption",
+      "series": [
+        "monthly",
+        "12_month_average"
+      ],
+      "source": {
+        "code": "NRG_CB_OILM",
+        "key": "eurostat"
+      },
+      "time_res": "monthly",
+      "type": "line",
+      "unit": "fuel_thousand_tons"
+    },
+    {
+      "id": "share_fuel_new_cars",
+      "initial": "area",
+      "order": 6,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "electric",
+        "hybrid_plugin",
+        "hybrid",
+        "diesel",
+        "gasoline",
+        "other"
+      ],
+      "source": {
+        "code": "road_eqr_carpda",
+        "key": "eurostat_statistik_austria"
+      },
+      "time_res": "monthly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "share_pct"
+    },
+    {
+      "id": "number_fuel_new_cars",
+      "initial": "line",
+      "order": 7,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "electric",
+        "hybrid_plugin",
+        "hybrid",
+        "diesel",
+        "gasoline",
+        "other",
+        "total"
+      ],
+      "source": {
+        "code": "road_eqr_carpda",
+        "key": "eurostat_statistik_austria"
+      },
+      "time_res": "monthly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "number"
+    },
+    {
+      "id": "share_fuel_new_cars_yearly",
+      "initial": "bar",
+      "order": 8,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "electric",
+        "hybrid_plugin",
+        "hybrid",
+        "diesel",
+        "gasoline",
+        "other"
+      ],
+      "source": {
+        "code": "road_eqr_carpda",
+        "key": "eurostat_statistik_austria"
+      },
+      "time_res": "monthly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "share_pct"
+    },
+    {
+      "id": "number_fuel_new_cars_yearly",
+      "initial": "bar",
+      "order": 9,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "electric",
+        "hybrid_plugin",
+        "hybrid",
+        "diesel",
+        "gasoline",
+        "other"
+      ],
+      "source": {
+        "code": "road_eqr_carpda",
+        "key": "eurostat_statistik_austria"
+      },
+      "time_res": "monthly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "number"
+    },
+    {
+      "id": "share_fuel_stock_cars",
+      "initial": "bar",
+      "order": 10,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "electric",
+        "hybrid_plugin",
+        "hybrid",
+        "diesel",
+        "gasoline",
+        "other"
+      ],
+      "source": {
+        "code": "road_eqs_carpda",
+        "key": "eurostat_statistik_austria"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "share_pct"
+    },
+    {
+      "id": "number_fuel_stock_cars",
+      "initial": "bar",
+      "order": 11,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "electric",
+        "hybrid_plugin",
+        "hybrid",
+        "diesel",
+        "gasoline",
+        "other",
+        "total"
+      ],
+      "source": {
+        "code": "road_eqs_carpda",
+        "key": "eurostat_statistik_austria"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "number"
+    },
+    {
+      "id": "share_fuel_new_lorries_le3p5",
+      "initial": "bar",
+      "order": 16,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "electric",
+        "hybrid_plugin",
+        "hybrid",
+        "diesel",
+        "gasoline",
+        "other"
+      ],
+      "source": {
+        "code": "road_eqr_lormot",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "share_pct"
+    },
+    {
+      "id": "number_fuel_new_lorries_le3p5",
+      "initial": "bar",
+      "order": 17,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "electric",
+        "hybrid_plugin",
+        "hybrid",
+        "diesel",
+        "gasoline",
+        "other",
+        "total"
+      ],
+      "source": {
+        "code": "road_eqr_lormot",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "number"
+    },
+    {
+      "id": "share_fuel_new_lorries_gt3p5",
+      "initial": "bar",
+      "order": 18,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "electric",
+        "hybrid_plugin",
+        "hybrid",
+        "diesel",
+        "gasoline",
+        "other"
+      ],
+      "source": {
+        "code": "road_eqr_lormot",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "share_pct"
+    },
+    {
+      "id": "number_fuel_new_lorries_gt3p5",
+      "initial": "bar",
+      "order": 19,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "electric",
+        "hybrid_plugin",
+        "hybrid",
+        "diesel",
+        "gasoline",
+        "other",
+        "total"
+      ],
+      "source": {
+        "code": "road_eqr_lormot",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "number"
+    },
+    {
+      "id": "rail_tracks_abs",
+      "initial": "line",
+      "order": 20,
+      "page": "transport",
+      "section": "rail",
+      "series": [
+        "electrified",
+        "non_electrified",
+        "total"
+      ],
+      "source": {
+        "code": "rail_if_line_tr",
+        "key": "eurostat_statistik_austria"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "length_km"
+    },
+    {
+      "id": "rail_tracks_rel",
+      "initial": "bar",
+      "order": 21,
+      "page": "transport",
+      "section": "rail",
+      "series": [
+        "electrified",
+        "non_electrified"
+      ],
+      "source": {
+        "code": "rail_if_line_tr",
+        "key": "eurostat_statistik_austria"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "share_pct"
+    },
+    {
+      "id": "natural_gas_coal_oil_energy_sector",
+      "order": 99,
+      "page": "energy-industry",
+      "section": "energy_use",
+      "series": [
+        "natural_gas_electricity_and_district_heat_generation",
+        "coal_electricity_and_district_heat_generation",
+        "oil_electricity_and_district_heat_generation"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat"
+      },
+      "time_res": "yearly",
+      "type": "line",
+      "unit": "energy_twh"
+    },
+    {
+      "id": "long_term_storage_c_disposal",
+      "initial": "bar",
+      "order": 1,
+      "page": "waste",
+      "section": "overview",
+      "series": [
+        "austria"
+      ],
+      "source": {
+        "key": "eea"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "emissions_mtco2e"
+    },
+    {
+      "id": "co2_emissions_sectors",
+      "order": 0,
+      "page": "overview",
+      "section": "overview",
+      "series": [
+        "transport",
+        "energy_and_industry",
+        "agriculture",
+        "buildings",
+        "waste",
+        "fluorinated_gases",
+        "total"
+      ],
+      "source": {
+        "key": "uba"
+      },
+      "time_res": "yearly",
+      "total": "total",
+      "type": "area",
+      "unit": "emissions_mtco2e"
+    },
+    {
+      "id": "co2_emissions_sectors_shares",
+      "order": 5,
+      "page": "overview",
+      "section": "lulucf_shares",
+      "series": [
+        "transport",
+        "energy_and_industry",
+        "agriculture",
+        "buildings",
+        "waste",
+        "fluorinated_gases"
+      ],
+      "source": {
+        "key": "uba"
+      },
+      "time_res": "yearly",
+      "type": "area",
+      "unit": "emission_share_pct"
+    },
+    {
+      "id": "buildings_emissions_sectors",
+      "initial": "bar",
+      "order": 0,
+      "page": "buildings",
+      "section": "overview",
+      "series": [
+        "residential_private",
+        "commercial_public",
+        "other",
+        "total"
+      ],
+      "source": {
+        "key": "eea_uba"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "emissions_mtco2e"
+    },
+    {
+      "id": "energy_industry_emissions_sectors",
+      "initial": "bar",
+      "order": 0,
+      "page": "energy-industry",
+      "section": "overview",
+      "series": [
+        "electricity_and_heat_generation",
+        "iron_and_steel",
+        "cement_minerals",
+        "chemical_industry",
+        "pulp_paper",
+        "petroleum_refining",
+        "construction",
+        "other",
+        "total"
+      ],
+      "source": {
+        "key": "eea_uba"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "emissions_mtco2e"
+    },
+    {
+      "id": "agriculture_emissions_sectors",
+      "initial": "bar",
+      "order": 0,
+      "page": "agriculture",
+      "section": "overview",
+      "series": [
+        "fermentation_cows",
+        "organic_fertilizer_manure_management",
+        "soil_fertilization",
+        "energy_use",
+        "other",
+        "total"
+      ],
+      "source": {
+        "key": "eea_uba"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "emissions_mtco2e"
+    },
+    {
+      "id": "waste_emissions_sectors",
+      "initial": "bar",
+      "order": 0,
+      "page": "waste",
+      "section": "overview",
+      "series": [
+        "solid_waste_disposal_landfills",
+        "biological_waste_treatment",
+        "waste_water_treatment",
+        "waste_incineration_incl_for_power_heat_generation",
+        "other",
+        "total"
+      ],
+      "source": {
+        "key": "eea_uba"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "emissions_mtco2e"
+    },
+    {
+      "id": "transport_emissions_sectors",
+      "initial": "bar",
+      "order": 0,
+      "page": "transport",
+      "section": "overview",
+      "series": [
+        "passenger_cars",
+        "light_duty_vehilces",
+        "heavy_duty_vehicles_and_buses",
+        "mopeds_and_motorcycles",
+        "other",
+        "total"
+      ],
+      "source": {
+        "key": "eea_uba"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "emissions_mtco2e"
+    },
+    {
+      "id": "fluorinated_gases_emissions_sectors",
+      "initial": "bar",
+      "order": 0,
+      "page": "f-gases",
+      "section": "overview",
+      "series": [
+        "refrigeration_and_air_conditioning",
+        "electronics_industry",
+        "magnesium_industry",
+        "aluminium_industry",
+        "other",
+        "total"
+      ],
+      "source": {
+        "key": "eea_uba"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "emissions_mtco2e"
+    },
+    {
+      "id": "lulucf_emissions_sectors",
+      "order": 0,
+      "page": "lulucf",
+      "section": "overview",
+      "series": [
+        "forests",
+        "cropland",
+        "grassland",
+        "wetlands",
+        "settlements",
+        "other_land",
+        "wood_products",
+        "total"
+      ],
+      "source": {
+        "key": "eea"
+      },
+      "time_res": "yearly",
+      "total": "total",
+      "type": "area_neg",
+      "unit": "emissions_mtco2e"
+    },
+    {
+      "id": "co2_emissions_sectors_with_lulucf",
+      "order": 4,
+      "page": "overview",
+      "section": "lulucf_shares",
+      "series": [
+        "lulucf",
+        "transport",
+        "energy_and_industry",
+        "agriculture",
+        "buildings",
+        "waste",
+        "fluorinated_gases",
+        "total"
+      ],
+      "source": {
+        "key": "uba"
+      },
+      "time_res": "yearly",
+      "total": "total",
+      "type": "area_neg",
+      "unit": "emissions_mtco2e"
+    },
+    {
+      "id": "dh_energy_use",
+      "initial": "bar",
+      "order": 10,
+      "page": "energy",
+      "section": "district_heating",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "waste",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "energy_twh"
+    },
+    {
+      "id": "dh_energy_use_share",
+      "order": 11,
+      "page": "energy",
+      "section": "district_heating",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "waste",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "type": "area",
+      "unit": "share_pct"
+    },
+    {
+      "id": "elec_energy_use",
+      "initial": "bar",
+      "order": 7,
+      "page": "energy",
+      "section": "electricity",
+      "series": [
+        "pv",
+        "wind",
+        "hydro",
+        "biomass",
+        "natural_gas",
+        "coal",
+        "waste",
+        "other",
+        "domestic_consumption"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_econtrol_spliced"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "energy_twh"
+    },
+    {
+      "id": "elec_energy_use_share",
+      "order": 8,
+      "page": "energy",
+      "section": "electricity",
+      "series": [
+        "pv",
+        "wind",
+        "hydro",
+        "biomass",
+        "natural_gas",
+        "coal",
+        "waste",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_econtrol_spliced"
+      },
+      "time_res": "yearly",
+      "type": "bar",
+      "unit": "share_pct"
+    },
+    {
+      "id": "elec_energy_use_share_cons",
+      "order": 9,
+      "page": "energy",
+      "section": "electricity",
+      "series": [
+        "pv",
+        "wind",
+        "hydro",
+        "biomass",
+        "natural_gas",
+        "coal",
+        "waste",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_econtrol_spliced"
+      },
+      "time_res": "yearly",
+      "type": "bar",
+      "unit": "share_pct"
+    },
+    {
+      "id": "elec_prod_monthly",
+      "order": 4,
+      "page": "energy",
+      "section": "electricity",
+      "series": [
+        "pv",
+        "wind",
+        "hydro",
+        "biomass",
+        "natural_gas",
+        "coal",
+        "waste",
+        "other",
+        "domestic_consumption"
+      ],
+      "source": {
+        "key": "e_control"
+      },
+      "time_res": "monthly",
+      "type": "area",
+      "unit": "energy_twh"
+    },
+    {
+      "id": "elec_prod_monthly_share",
+      "order": 5,
+      "page": "energy",
+      "section": "electricity",
+      "series": [
+        "pv",
+        "wind",
+        "hydro",
+        "biomass",
+        "natural_gas",
+        "coal",
+        "waste",
+        "other"
+      ],
+      "source": {
+        "key": "e_control"
+      },
+      "time_res": "monthly",
+      "type": "area",
+      "unit": "share_pct"
+    },
+    {
+      "id": "elec_prod_monthly_share_cons",
+      "initial": "area",
+      "order": 6,
+      "page": "energy",
+      "section": "electricity",
+      "series": [
+        "pv",
+        "wind",
+        "hydro",
+        "biomass",
+        "natural_gas",
+        "coal",
+        "waste",
+        "other"
+      ],
+      "source": {
+        "key": "e_control"
+      },
+      "time_res": "monthly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "share_pct"
+    },
+    {
+      "id": "gross_inland_consumption_share",
+      "initial": "bar",
+      "order": 1,
+      "page": "energy",
+      "section": "consumption",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "renewable_electricity",
+        "ambient_heat",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "share_pct"
+    },
+    {
+      "id": "gross_inland_consumption_absolute",
+      "initial": "bar",
+      "order": 0,
+      "page": "energy",
+      "section": "consumption",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "renewable_electricity",
+        "ambient_heat",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "energy_twh"
+    },
+    {
+      "groups": [
+        "total",
+        "households",
+        "commercial"
+      ],
+      "id": "buildings_final_energy_use_share",
+      "order": 2,
+      "page": "buildings",
+      "section": "energy_use",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "electricity",
+        "district_heat",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "type": "groups",
+      "unit": "share_pct"
+    },
+    {
+      "groups": [
+        "total",
+        "households",
+        "commercial"
+      ],
+      "id": "buildings_final_energy_use",
+      "order": 1,
+      "page": "buildings",
+      "section": "energy_use",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "electricity",
+        "district_heat",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "type": "groups",
+      "unit": "energy_twh"
+    },
+    {
+      "groups": [
+        "total",
+        "iron_and_steel",
+        "chemicals",
+        "pulp_and_paper",
+        "non_metallic_minerals",
+        "non_ferrous_metals",
+        "transport_equipment",
+        "machinery",
+        "mining",
+        "food_industry",
+        "wood_industry",
+        "construction",
+        "textile",
+        "other"
+      ],
+      "id": "industry_final_energy_use_share",
+      "order": 2,
+      "page": "energy-industry",
+      "section": "energy_use",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "electricity",
+        "district_heat",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "type": "groups",
+      "unit": "share_pct"
+    },
+    {
+      "groups": [
+        "total",
+        "iron_and_steel",
+        "chemicals",
+        "pulp_and_paper",
+        "non_metallic_minerals",
+        "non_ferrous_metals",
+        "transport_equipment",
+        "machinery",
+        "mining",
+        "food_industry",
+        "wood_industry",
+        "construction",
+        "textile",
+        "other"
+      ],
+      "id": "industry_final_energy_use",
+      "order": 1,
+      "page": "energy-industry",
+      "section": "energy_use",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "electricity",
+        "district_heat",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "type": "groups",
+      "unit": "energy_twh"
+    },
+    {
+      "groups": [
+        "total"
+      ],
+      "id": "agriculture_final_energy_use_share",
+      "order": 2,
+      "page": "agriculture",
+      "section": "energy_use",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "electricity",
+        "district_heat",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "type": "groups",
+      "unit": "share_pct"
+    },
+    {
+      "groups": [
+        "total"
+      ],
+      "id": "agriculture_final_energy_use",
+      "order": 1,
+      "page": "agriculture",
+      "section": "energy_use",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "electricity",
+        "district_heat",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "type": "groups",
+      "unit": "energy_twh"
+    },
+    {
+      "groups": [
+        "total",
+        "rail",
+        "road",
+        "domestic_aviation",
+        "domestic_shipping",
+        "pipelines",
+        "other"
+      ],
+      "id": "transport_final_energy_use_share",
+      "order": 2,
+      "page": "transport",
+      "section": "energy_use",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "electricity",
+        "district_heat",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "type": "groups",
+      "unit": "share_pct"
+    },
+    {
+      "groups": [
+        "total",
+        "rail",
+        "road",
+        "domestic_aviation",
+        "domestic_shipping",
+        "pipelines",
+        "other"
+      ],
+      "id": "transport_final_energy_use",
+      "order": 1,
+      "page": "transport",
+      "section": "energy_use",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "electricity",
+        "district_heat",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "type": "groups",
+      "unit": "energy_twh"
+    },
+    {
+      "id": "total_final_energy_use_share",
+      "initial": "bar",
+      "order": 3,
+      "page": "energy",
+      "section": "consumption",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "electricity",
+        "district_heat",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "share_pct"
+    },
+    {
+      "id": "total_final_energy_use",
+      "initial": "bar",
+      "order": 2,
+      "page": "energy",
+      "section": "consumption",
+      "series": [
+        "natural_gas",
+        "oil",
+        "coal",
+        "biomass",
+        "electricity",
+        "district_heat",
+        "other"
+      ],
+      "source": {
+        "code": "nrg_bal_c",
+        "key": "eurostat_energy_balances"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "energy_twh"
+    },
+    {
+      "id": "meat_consumption_total",
+      "initial": "bar",
+      "order": 9,
+      "page": "agriculture",
+      "section": "animal_products",
+      "series": [
+        "total",
+        "chicken_poultry",
+        "pigmeat",
+        "cows_cattle",
+        "other"
+      ],
+      "source": {
+        "key": "statcube"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "meat_consumption_kt"
+    },
+    {
+      "id": "meat_consumption_per_capita",
+      "initial": "bar",
+      "order": 10,
+      "page": "agriculture",
+      "section": "animal_products",
+      "series": [
+        "total",
+        "chicken_poultry",
+        "pigmeat",
+        "cows_cattle",
+        "other"
+      ],
+      "source": {
+        "key": "statcube"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "meat_consumption_per_capita_kg"
+    },
+    {
+      "id": "milk_consumption_total",
+      "initial": "bar",
+      "order": 11,
+      "page": "agriculture",
+      "section": "animal_products",
+      "series": [
+        "milk",
+        "cheese",
+        "butter",
+        "cream"
+      ],
+      "source": {
+        "key": "statcube"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "milk_consumption_t"
+    },
+    {
+      "id": "milk_consumption_per_capita",
+      "initial": "bar",
+      "order": 12,
+      "page": "agriculture",
+      "section": "animal_products",
+      "series": [
+        "milk",
+        "cheese",
+        "butter",
+        "cream"
+      ],
+      "source": {
+        "key": "statcube"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "milk_consumption_per_capita_kg"
+    },
+    {
+      "id": "monthly_registrations_brands_absolute",
+      "initial": "bar",
+      "order": 13,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "tesla",
+        "vw",
+        "bmw",
+        "audi",
+        "skoda",
+        "byd",
+        "renault",
+        "hyundai",
+        "cupra",
+        "mercedes",
+        "kia",
+        "other",
+        "total"
+      ],
+      "source": {
+        "key": "statistik_austria"
+      },
+      "time_res": "monthly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "number"
+    },
+    {
+      "id": "monthly_registrations_brands_shares",
+      "initial": "bar",
+      "order": 12,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "tesla",
+        "vw",
+        "bmw",
+        "audi",
+        "skoda",
+        "byd",
+        "renault",
+        "hyundai",
+        "cupra",
+        "mercedes",
+        "kia",
+        "other"
+      ],
+      "source": {
+        "key": "statistik_austria"
+      },
+      "time_res": "monthly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "share_pct"
+    },
+    {
+      "id": "yearly_registrations_brands_absolute",
+      "initial": "bar",
+      "order": 15,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "tesla",
+        "vw",
+        "bmw",
+        "audi",
+        "skoda",
+        "byd",
+        "renault",
+        "hyundai",
+        "cupra",
+        "mercedes",
+        "kia",
+        "other",
+        "total"
+      ],
+      "source": {
+        "key": "statistik_austria"
+      },
+      "time_res": "monthly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "total": "total",
+      "type": "toggle",
+      "unit": "number"
+    },
+    {
+      "id": "yearly_registrations_brands_shares",
+      "initial": "bar",
+      "order": 14,
+      "page": "transport",
+      "section": "vehicles",
+      "series": [
+        "tesla",
+        "vw",
+        "bmw",
+        "audi",
+        "skoda",
+        "byd",
+        "renault",
+        "hyundai",
+        "cupra",
+        "mercedes",
+        "kia",
+        "other"
+      ],
+      "source": {
+        "key": "statistik_austria"
+      },
+      "time_res": "monthly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "share_pct"
+    },
+    {
+      "id": "land_use_abs",
+      "initial": "bar",
+      "order": 1,
+      "page": "lulucf",
+      "section": "land_use",
+      "series": [
+        "forests",
+        "settlements",
+        "crop_land",
+        "grass_land",
+        "wet_land",
+        "other"
+      ],
+      "source": {
+        "key": "nir"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "area_kha"
+    },
+    {
+      "id": "land_use_rel",
+      "initial": "bar",
+      "order": 2,
+      "page": "lulucf",
+      "section": "land_use",
+      "series": [
+        "forests",
+        "settlements",
+        "crop_land",
+        "grass_land",
+        "wet_land",
+        "other"
+      ],
+      "source": {
+        "key": "nir"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "unit": "share_pct"
+    }
+  ],
+  "generated": "2026-08-24"
+}

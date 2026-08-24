@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 from apscheduler.schedulers.background import BackgroundScheduler 
 
-from create_charts import plot_all 
+from create_charts import main as build_charts
 from scrape_data import scrape_all
 from publish_github import publish
 
@@ -13,7 +13,10 @@ def build_dashboard():
     try:
         logger.info("Starting dashboard build...")
         scrape_all()
-        plot_all()
+        # build_charts, not plot_all: plot_all() only draws. Writing the
+        # manifest and pruning stale data files happen around it, and without
+        # them the frontend reads a manifest that predates the run.
+        build_charts()
         publish()
         logger.info("Dashboard build completed.")
     except Exception as e:

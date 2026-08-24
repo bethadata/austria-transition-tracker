@@ -37,25 +37,22 @@ def pandas_to_dict(data, options, unit):
     for option in options: 
         data_filtered = data_filtered[data_filtered[option] == options[option]]
         
+    # A gap is NaN, not 0. Both an empty selection and a NaN cell used to become
+    # a real zero here, which is indistinguishable from a measured zero -- in a
+    # stacked-area emissions chart that silently understates a sector instead of
+    # breaking the line. NaN rather than None because these values are summed
+    # with numpy downstream; the JSON writer turns it into null (a gap).
     data_trim = {}
     for time in data_filtered.keys():
-        ### monthly data 
-        if "-" in time and len(time) == 7:
-            if len(data_filtered[time]) == 0: 
-                data_trim[time] = 0
-            else:
-                data_trim[time] = float(data_filtered[time].iloc[0])
-            
-        ### yearly data 
-        elif ("20" in time or "19" in time) and len(time) == 4: 
-            if len(data_filtered[time]) == 0: 
-                data_trim[time] = 0
-            else:
-                data_trim[time] = float(data_filtered[time].iloc[0])
-        
-        if time in data_trim and np.isnan(data_trim[time]): 
-            data_trim[time] = 0
-            
+        is_monthly = "-" in time and len(time) == 7
+        is_yearly = ("20" in time or "19" in time) and len(time) == 4
+        if not (is_monthly or is_yearly):
+            continue
+        if len(data_filtered[time]) == 0:
+            data_trim[time] = np.nan
+        else:
+            data_trim[time] = float(data_filtered[time].iloc[0])
+
     return data_trim 
         
         
@@ -77,7 +74,9 @@ def filter_eurostat_monthly(name = "meat",
     
     data = pd.read_excel(os.path.join(os.path.dirname(__file__), 
                               "../../data_raw/eurostat/%s_%s_%s.xlsx" %(geo, name, code)))
-    data = data.fillna(0)
+    # No fillna(0) here: this is the series that gets plotted directly, so an
+    # unpublished month must stay a gap. Filling it made the newest months read
+    # as a collapse to zero rather than as data that has not arrived yet.
     data_trim = pandas_to_dict(data, options, unit)
 
     ### syntax change chicken => poultry of eurostat 
@@ -97,7 +96,10 @@ def filter_eurostat_monthly(name = "meat",
 
     years_trim = [time for time in data_trim]
     for time in years_trim: 
-        if sum(data[time]) > 0: 
+        # nansum, not sum: this probe asks "does this month have any real data
+        # yet", and a single unpublished cell makes a plain sum NaN, so the
+        # comparison silently fails and end_year is never assigned at all.
+        if np.nansum(data[time]) > 0: 
             end_year = int(time.split("-")[0])
             last_month = int(time.split("-")[1])
 
@@ -176,7 +178,14 @@ def filter_car_registrations():
                                        {"mot_nrg": subcat}, 
                                        "NR")
             for y in years_eurostat:
-                data_yearly[cat][str(y)] += data_trim[str(y)]
+                # Summing subtypes into a category: a subtype the source does
+                # not list contributes nothing, so a gap is 0 *here*. It is not
+                # 0 in pandas_to_dict, where a gap is a gap -- and one NaN
+                # reaching this += would otherwise poison the category, then
+                # every month derived from it, then every share divided by it.
+                value = data_trim[str(y)]
+                if not np.isnan(value):
+                    data_yearly[cat][str(y)] += value
     
     times_eurostat = pd.date_range(
         start = datetime(year = years_eurostat[0], month = 1, day = 1),
@@ -271,7 +280,9 @@ def filter_eurostat_yearly(name = "meat",
     
     data = pd.read_excel(os.path.join(os.path.dirname(__file__), 
                               "../../data_raw/eurostat/%s_%s_%s.xlsx" %(geo, name, code)))
-    data = data.fillna(0)
+    # No fillna(0) here: this is the series that gets plotted directly, so an
+    # unpublished month must stay a gap. Filling it made the newest months read
+    # as a collapse to zero rather than as data that has not arrived yet.
     data_trim = pandas_to_dict(data, options, unit)    
 
     ### find last key with columns 
@@ -472,7 +483,14 @@ def filter_eurostat_cars(file = "AT_cars_road_eqs_carpda",
                                        options, 
                                        "NR")
             for y in years_eurostat:
-                data_yearly[cat][str(y)] += data_trim[str(y)]
+                # Summing subtypes into a category: a subtype the source does
+                # not list contributes nothing, so a gap is 0 *here*. It is not
+                # 0 in pandas_to_dict, where a gap is a gap -- and one NaN
+                # reaching this += would otherwise poison the category, then
+                # every month derived from it, then every share divided by it.
+                value = data_trim[str(y)]
+                if not np.isnan(value):
+                    data_yearly[cat][str(y)] += value
     
     times_eurostat = pd.date_range(
         start = datetime(year = years_eurostat[0], month = 1, day = 1),

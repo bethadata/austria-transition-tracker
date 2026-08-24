@@ -1,0 +1,304 @@
+{
+  "agriculture_emissions_sectors": {
+    "info": "scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
+    "title": "AT Agriculture GHG emissions by sub-sectors"
+  },
+  "agriculture_final_energy_use": {
+    "title": "Agriculture: final energy use"
+  },
+  "agriculture_final_energy_use_share": {
+    "title": "Agriculture: final energy use - shares"
+  },
+  "animal_livestock_population": {
+    "title": "Cow/Pig/Sheep/Goats: population"
+  },
+  "buildings_emissions_sectors": {
+    "info": "scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
+    "title": "AT Buildings GHG emissions by sub-sectors"
+  },
+  "buildings_final_energy_use": {
+    "title": "Buildings: final energy use"
+  },
+  "buildings_final_energy_use_share": {
+    "title": "Buildings: final energy use - shares"
+  },
+  "co2_emissions_sectors": {
+    "title": "Austrian GHG emissions by sectors (without LULUCF)"
+  },
+  "co2_emissions_sectors_shares": {
+    "title": "Austrian GHG emission shares by sectors (without LULUCF)"
+  },
+  "co2_emissions_sectors_with_lulucf": {
+    "title": "Austrian GHG emissions by sectors (with LULUCF)"
+  },
+  "consumption_coke_oven_coke_monthly": {
+    "title": "Coke oven coke: monthly consumption"
+  },
+  "consumption_coke_oven_coke_yearly": {
+    "info": "Extrapolations based on monthly available data scaled with past trends",
+    "title": "Coke oven coke: yearly consumption"
+  },
+  "consumption_diesel_monthly": {
+    "title": "Diesel: monthly consumption"
+  },
+  "consumption_diesel_yearly": {
+    "info": "Extrapolations based on monthly available data scaled with past trends",
+    "title": "Diesel: yearly consumption"
+  },
+  "consumption_gasoline_monthly": {
+    "title": "Gasoline: monthly consumption"
+  },
+  "consumption_gasoline_yearly": {
+    "info": "Extrapolations based on monthly available data scaled with past trends",
+    "title": "Gasoline: yearly consumption"
+  },
+  "consumption_hard_coal_coke_ovens_monthly": {
+    "title": "Hard coal - coke ovens: monthly consumption"
+  },
+  "consumption_hard_coal_coke_ovens_yearly": {
+    "info": "Extrapolations based on monthly available data scaled with past trends",
+    "title": "Hard coal - coke ovens: yearly consumption"
+  },
+  "consumption_hard_coal_electricity_monthly": {
+    "title": "Hard coal - electricity sector: monthly consumption"
+  },
+  "consumption_hard_coal_electricity_yearly": {
+    "info": "Extrapolations based on monthly available data scaled with past trends",
+    "title": "Hard coal - electricity sector: yearly consumption"
+  },
+  "consumption_hard_coal_industry_monthly": {
+    "title": "Hard coal - industry sector: monthly consumption"
+  },
+  "consumption_hard_coal_industry_yearly": {
+    "info": "Extrapolations based on monthly available data scaled with past trends",
+    "title": "Hard coal - industry sector: yearly consumption"
+  },
+  "consumption_heating_oil_monthly": {
+    "title": "Heating gas oil: monthly consumption"
+  },
+  "consumption_heating_oil_yearly": {
+    "info": "Extrapolations based on monthly available data scaled with past trends",
+    "title": "Heating gas oil: yearly consumption"
+  },
+  "consumption_natural_gas_monthly": {
+    "title": "Natural gas: monthly consumption"
+  },
+  "consumption_natural_gas_yearly": {
+    "info": "Extrapolations based on monthly available data scaled with past trends",
+    "title": "Natural gas: yearly consumption"
+  },
+  "consumption_refinery_gas_monthly": {
+    "title": "Refinery gas: monthly consumption"
+  },
+  "consumption_refinery_gas_yearly": {
+    "info": "Extrapolations based on monthly available data scaled with past trends",
+    "title": "Refinery gas: yearly consumption"
+  },
+  "dh_energy_use": {
+    "title": "District heat generation (gross): energy"
+  },
+  "dh_energy_use_share": {
+    "title": "District heat generation (gross): energy shares"
+  },
+  "elec_energy_use": {
+    "info": "Note: no Waste-data available in E-control data.",
+    "title": "Yearly electricity production AT (gross): energy"
+  },
+  "elec_energy_use_share": {
+    "info": "Note: no Waste-data available in E-control data.",
+    "title": "Yearly electricity production AT (gross): shares of production"
+  },
+  "elec_energy_use_share_cons": {
+    "info": "Note: no Waste-data available in E-control data.",
+    "title": "Yearly electricity production AT (gross): shares of consumption"
+  },
+  "elec_prod_monthly": {
+    "title": "Monthly electricity production AT (gross): energy"
+  },
+  "elec_prod_monthly_share": {
+    "title": "Monthly electricity production AT (gross): shares of production"
+  },
+  "elec_prod_monthly_share_cons": {
+    "title": "Monthly electricity production AT (gross): shares of consumption"
+  },
+  "emissions_fuels_monthly": {
+    "title": "Austrian CO2 emissions by fuels: monthly"
+  },
+  "emissions_fuels_yearly": {
+    "title": "Austrian CO2 emissions by fuels: yearly (incl. projection)"
+  },
+  "emissions_projection_yearly": {
+    "title": "Austrian GHG emissions: projection"
+  },
+  "energy_industry_emissions_sectors": {
+    "info": "scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
+    "title": "AT Energy & Industry GHG emissions by sub-sectors"
+  },
+  "fertilizer_nitrogen": {
+    "title": "Inorganic fertilizer: Nitrogen consumption"
+  },
+  "fluorinated_gases_emissions_sectors": {
+    "info": "scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
+    "title": "AT Fluorinated Gases GHG emissions by sub-sectors"
+  },
+  "gas_sectoral_consumption_monthly": {
+    "info": "Bulidings data before 09/2023 not available.",
+    "title": "Austria: monthly natural gas consumption by sector"
+  },
+  "gas_sectoral_consumption_yearly": {
+    "info": "Bulidings data before 09/2023 not available.",
+    "title": "Austria: yearly natural gas consumption by sector"
+  },
+  "gross_inland_consumption_absolute": {
+    "title": "AT gross inland consumption: absolute"
+  },
+  "gross_inland_consumption_share": {
+    "title": "AT gross inland consumption: shares"
+  },
+  "heating_oil_consumption": {
+    "title": "Heating oil: monthly consumption Austria"
+  },
+  "industry_final_energy_use": {
+    "title": "Industry: final energy use"
+  },
+  "industry_final_energy_use_share": {
+    "title": "Industry: final energy use - shares"
+  },
+  "kerosene_consumption": {
+    "title": "Kerosene / Aviation fuel: monthly consumption Austria (incl. biofuels)"
+  },
+  "land_use_abs": {
+    "title": "Land use: absolute area"
+  },
+  "land_use_rel": {
+    "title": "Land use: shares"
+  },
+  "long_term_storage_c_disposal": {
+    "title": "Austrian long-term Storage of C in Waste Disposal Sites"
+  },
+  "lulucf_emissions_sectors": {
+    "title": "AT LULUCF GHG emissions by sub-sectors"
+  },
+  "meat_consumption_per_capita": {
+    "info": "Human consumption per capita in kg",
+    "title": "Meat consumption in Austria: per capita"
+  },
+  "meat_consumption_total": {
+    "info": "Human consumption per year",
+    "title": "Meat consumption in Austria: total"
+  },
+  "milk_consumption_per_capita": {
+    "info": "Food consumption per capita in kg",
+    "title": "Milk product consumption in Austria: per capita"
+  },
+  "milk_consumption_total": {
+    "info": "Food consumption per year",
+    "title": "Milk product consumption in Austria: total"
+  },
+  "monthly_registrations_brands_absolute": {
+    "info": "Only top 10 car brands (over all years) shown.",
+    "title": "AT new monthly BEV registrations: car brands absolute number"
+  },
+  "monthly_registrations_brands_shares": {
+    "info": "Only top 10 car brands (over all years) shown.",
+    "title": "AT new monthly BEV registrations: car brands shares"
+  },
+  "natural_gas_coal_oil_energy_sector": {
+    "title": "Natural gas / Coal / Oil: yearly consumption Electrcity & Disricht Heat generation"
+  },
+  "natural_gas_oil_coal_buildings": {
+    "title": "Natural gas / Oil / Coal: yearly consumption Building sector"
+  },
+  "number_fuel_new_cars": {
+    "title": "AT new monthly car registrations: fuel type absolute number"
+  },
+  "number_fuel_new_cars_yearly": {
+    "info": "Data 2025 up to 11/2025",
+    "title": "AT new yearly car registrations: fuel type absolute number"
+  },
+  "number_fuel_new_lorries_gt3p5": {
+    "title": "AT new lorry (>3.5t) registrations: fuel type absolute number"
+  },
+  "number_fuel_new_lorries_le3p5": {
+    "title": "AT new lorry (≤3.5t) registrations: fuel type absolute number"
+  },
+  "number_fuel_stock_cars": {
+    "info": "Data of 2024 until 12/2024, Hybrids of 2024 indclude also Plugin-Hybrids Others before 2013 include also Hybrids",
+    "title": "AT registered cars: fuel type absolute number"
+  },
+  "number_heating_systems": {
+    "title": "Heating system absolute numbers: main types"
+  },
+  "rail_tracks_abs": {
+    "title": "AT rail track lengths: absolute length"
+  },
+  "rail_tracks_rel": {
+    "title": "AT rail track lengths: shares electrified/non-electrified"
+  },
+  "raw_cow_milk": {
+    "title": "Raw cow milk: monthly deliveries"
+  },
+  "road_biofuels_consumption": {
+    "title": "Road biofuels: monthly consumption (incl. biofuels)"
+  },
+  "road_fuels_consumption": {
+    "title": "Road fuels: monthly consumption (incl. biofuels)"
+  },
+  "share_fuel_new_cars": {
+    "title": "AT new monthly car registrations: fuel type share"
+  },
+  "share_fuel_new_cars_yearly": {
+    "info": "Data 2025 up to 11/2025",
+    "title": "AT new yearly car registrations: fuel type share"
+  },
+  "share_fuel_new_lorries_gt3p5": {
+    "title": "AT new lorry (>3.5t) registrations: fuel type share"
+  },
+  "share_fuel_new_lorries_le3p5": {
+    "title": "AT new lorry (≤3.5t) registrations: fuel type share"
+  },
+  "share_fuel_stock_cars": {
+    "info": "Data of 2024 until 12/2024, Hybrids of 2024 indclude also Plugin-Hybrids Others before 2013 include also Hybrids",
+    "title": "AT registered cars: fuel type share"
+  },
+  "share_heating_systems": {
+    "title": "Heating system shares: main types"
+  },
+  "slaughtered_cattle_meat": {
+    "title": "Cattle/cows: monthly slaughtered"
+  },
+  "slaughtered_chicken_meat": {
+    "title": "Chicken: monthly slaughtered"
+  },
+  "slaughtered_pig_meat": {
+    "title": "Pigs: monthly sloughtered"
+  },
+  "total_final_energy_use": {
+    "title": "AT final energy use: absolute"
+  },
+  "total_final_energy_use_share": {
+    "title": "AT final energy use: shares"
+  },
+  "transport_emissions_sectors": {
+    "info": "scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
+    "title": "AT Transport GHG emissions by sub-sectors"
+  },
+  "transport_final_energy_use": {
+    "title": "Transport: final energy use"
+  },
+  "transport_final_energy_use_share": {
+    "title": "Transport: final energy use - shares"
+  },
+  "waste_emissions_sectors": {
+    "info": "scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
+    "title": "AT Waste GHG emissions by sub-sectors"
+  },
+  "yearly_registrations_brands_absolute": {
+    "info": "Only top 10 car brands (over all years) shown.",
+    "title": "AT new yearly BEV registrations: car brands absolute number"
+  },
+  "yearly_registrations_brands_shares": {
+    "info": "Only top 10 car brands (over all years) shown.",
+    "title": "AT new yearly BEV registrations: car brands shares"
+  }
+}
