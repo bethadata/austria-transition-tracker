@@ -52,6 +52,7 @@ coverage/
 CLAUDE.md
 CLAUDE.local.md
 AGENTS.md
+REFACTOR.md
 .claude/
 .claudeignore
 .mcp.json
