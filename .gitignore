@@ -66,3 +66,9 @@ REFACTOR.md
 # by the pipeline, so git is the only backup they have.
 services/data_raw/eurostat/
 services/data_raw/e_control/
+
+# ----------------------
+# Frontend build
+# ----------------------
+node_modules/
+dist/

@@ -1,0 +1,81 @@
+{
+  "agriculture": {
+    "sections": {
+      "animal_products": "Tierische Produkte und Konsum",
+      "energy_use": "Energieverbrauch",
+      "overview": "Überblick"
+    },
+    "title": "Landwirtschaft"
+  },
+  "buildings": {
+    "sections": {
+      "energy_use": "Energieverbrauch",
+      "heating_systems": "Heizsysteme",
+      "overview": "Überblick"
+    },
+    "title": "Gebäude"
+  },
+  "energy": {
+    "intro": "Strom, Fernwärme und die Energiebilanz Österreichs insgesamt. Bruttowerte enthalten den Eigenverbrauch des Sektors und die Netzverluste.",
+    "sections": {
+      "consumption": "Brutto- und Endenergieverbrauch",
+      "district_heating": "Fernwärme",
+      "electricity": "Strom"
+    },
+    "title": "Energie"
+  },
+  "energy-industry": {
+    "sections": {
+      "energy_use": "Energieverbrauch",
+      "overview": "Überblick"
+    },
+    "title": "Energie & Industrie"
+  },
+  "f-gases": {
+    "sections": {
+      "overview": "Überblick"
+    },
+    "title": "Fluorierte Gase"
+  },
+  "fossil-fuels": {
+    "intro": "Monatlicher und jährlicher Verbrauch jener fossilen Energieträger, die den Großteil der energiebedingten Emissionen Österreichs verursachen. Noch unvollständige Jahre werden aus den bereits veröffentlichten Monaten hochgerechnet.",
+    "sections": {
+      "coal": "Kohle",
+      "natural_gas": "Erdgas",
+      "oil": "Öl"
+    },
+    "title": "Fossile Energieträger"
+  },
+  "lulucf": {
+    "sections": {
+      "land_use": "Landnutzung",
+      "overview": "Überblick"
+    },
+    "title": "LULUCF"
+  },
+  "overview": {
+    "intro": "Die Treibhausgasemissionen Österreichs und die Sektoren, aus denen sie stammen. Ziel dieser Seite ist es, den Weg zu null Emissionen mit öffentlich verfügbaren Daten nachzuvollziehen. Über die Navigation lässt sich jeder Sektor im Detail öffnen.",
+    "sections": {
+      "lulucf_shares": "THG inklusive LULUCF und Sektoranteile",
+      "overview": "Emissionen nach Sektoren",
+      "projection": "Aktuelle THG-Emissionsprojektion"
+    },
+    "title": "Überblick"
+  },
+  "transport": {
+    "sections": {
+      "energy_use": "Energieverbrauch",
+      "fuel_consumption": "Kraftstoffverbrauch",
+      "overview": "Überblick",
+      "rail": "Schiene",
+      "vehicles": "Fahrzeuge: Neuzulassungen und Bestand"
+    },
+    "title": "Verkehr"
+  },
+  "waste": {
+    "sections": {
+      "overview": "Überblick"
+    },
+    "title": "Abfallwirtschaft"
+  }
+}

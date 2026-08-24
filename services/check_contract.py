@@ -74,7 +74,8 @@ def check():
     # en/ serves German to an English reader -- invisible to a typecheck.
     for locale in sorted(os.path.basename(p) for p in glob.glob(LOCALES + "/*")):
         base = "%s/%s" % (LOCALES, locale)
-        if not os.path.isdir(base):
+        # _seed is the pipeline's own output, not a locale the app loads.
+        if not os.path.isdir(base) or locale.startswith("_"):
             continue
         try:
             titles = _load(base + "/charts.json")

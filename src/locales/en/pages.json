@@ -1,0 +1,81 @@
+{
+  "agriculture": {
+    "sections": {
+      "animal_products": "Animal products and consumption",
+      "energy_use": "Energy use",
+      "overview": "Overview"
+    },
+    "title": "Agriculture"
+  },
+  "buildings": {
+    "sections": {
+      "energy_use": "Energy use",
+      "heating_systems": "Heating systems",
+      "overview": "Overview"
+    },
+    "title": "Buildings"
+  },
+  "energy": {
+    "intro": "Electricity, district heating and the overall energy balance for Austria. Gross figures include the sector's own consumption and grid losses.",
+    "sections": {
+      "consumption": "Gross and final energy consumption",
+      "district_heating": "District heating",
+      "electricity": "Electricity"
+    },
+    "title": "Energy"
+  },
+  "energy-industry": {
+    "sections": {
+      "energy_use": "Energy use",
+      "overview": "Overview"
+    },
+    "title": "Energy & Industry"
+  },
+  "f-gases": {
+    "sections": {
+      "overview": "Overview"
+    },
+    "title": "Fluorinated gases"
+  },
+  "fossil-fuels": {
+    "intro": "Monthly and yearly consumption of the fossil fuels that drive most of Austria's energy-related emissions. Where a year is not yet complete, it is extrapolated from the months already published.",
+    "sections": {
+      "coal": "Coal",
+      "natural_gas": "Natural gas",
+      "oil": "Oil"
+    },
+    "title": "Fossil fuels"
+  },
+  "lulucf": {
+    "sections": {
+      "land_use": "Land use",
+      "overview": "Overview"
+    },
+    "title": "LULUCF"
+  },
+  "overview": {
+    "intro": "Austria's greenhouse gas emissions and the sectors they come from. The aim of this site is to track the transition towards zero emissions using publicly available data. Use the navigation to open a sector in detail.",
+    "sections": {
+      "lulucf_shares": "GHG including LULUCF, and sector shares",
+      "overview": "Emissions by sector",
+      "projection": "Current GHG emission projection"
+    },
+    "title": "Overview"
+  },
+  "transport": {
+    "sections": {
+      "energy_use": "Energy use",
+      "fuel_consumption": "Fuel consumption",
+      "overview": "Overview",
+      "rail": "Rail",
+      "vehicles": "Vehicles: new registrations and stock"
+    },
+    "title": "Transport"
+  },
+  "waste": {
+    "sections": {
+      "overview": "Overview"
+    },
+    "title": "Waste"
+  }
+}

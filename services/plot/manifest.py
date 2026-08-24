@@ -29,7 +29,12 @@ import numpy as np
 from paths import BASEPATH
 
 DATA_DIR = BASEPATH + "/public/data"
-SEED_DIR = BASEPATH + "/src/locales/en"
+# Written every run, never imported by the app. The live locale files under
+# src/locales/{de,en}/ are frontend-owned (D2) and carry hand-written UI chrome
+# as well as the generated labels -- writing the seed straight into them would
+# erase that on the next pipeline run. Diff the seed against them to find the
+# keys a newly added chart needs; check_contract.py reports the same thing.
+SEED_DIR = BASEPATH + "/src/locales/_seed"
 
 # Charts are addressed by id everywhere - locale key, data filename, manifest
 # entry. The Jekyll-era filenames all carry this prefix; it says nothing (every

@@ -1,0 +1,40 @@
+/*
+ * Global type scale.
+ *
+ * Vuetify sizes its typography in rem, so lowering the root size steps every
+ * label, caption and table cell down together instead of scattering overrides
+ * across components. The intent is to let the map and the chart carry the page:
+ * chrome text should be readable, not competitive.
+ *
+ * Spacing utilities are px-based and therefore unaffected, so the layout
+ * measurements the tests assert on stay meaningful.
+ */
+html {
+  font-size: 15px;
+}
+
+/* Phones already render at a smaller physical size; taking another step down
+   there would push captions under a comfortable reading size. */
+@media (max-width: 600px) {
+  html {
+    font-size: 15.5px;
+  }
+}
+
+/*
+ * Headings carry the document outline, not appearance.
+ *
+ * The pages are built from Vuetify cards whose text sizing comes from component
+ * and utility classes, so a heading element only has to stop contributing the
+ * browser's own block margins. Size and weight are left to the classes already
+ * on the element, which keeps h1-h6 free to mark structure wherever the outline
+ * needs it without moving anything on screen.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}

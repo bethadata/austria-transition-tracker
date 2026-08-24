@@ -1,0 +1,304 @@
+{
+  "agriculture_emissions_sectors": {
+    "info": "Auf die Gesamtemissionen des Umweltbundesamts skaliert; Sektordaten 2024 extrapoliert.",
+    "title": "THG-Emissionen Landwirtschaft nach Subsektoren"
+  },
+  "agriculture_final_energy_use": {
+    "title": "Landwirtschaft: Endenergieverbrauch"
+  },
+  "agriculture_final_energy_use_share": {
+    "title": "Landwirtschaft: Endenergieverbrauch – Anteile"
+  },
+  "animal_livestock_population": {
+    "title": "Rinder/Schweine/Schafe/Ziegen: Bestand"
+  },
+  "buildings_emissions_sectors": {
+    "info": "Auf die Gesamtemissionen des Umweltbundesamts skaliert; Sektordaten 2024 extrapoliert.",
+    "title": "THG-Emissionen Gebäude nach Subsektoren"
+  },
+  "buildings_final_energy_use": {
+    "title": "Gebäude: Endenergieverbrauch"
+  },
+  "buildings_final_energy_use_share": {
+    "title": "Gebäude: Endenergieverbrauch – Anteile"
+  },
+  "co2_emissions_sectors": {
+    "title": "Österreichische THG-Emissionen nach Sektoren (ohne LULUCF)"
+  },
+  "co2_emissions_sectors_shares": {
+    "title": "Anteile der österreichischen THG-Emissionen nach Sektoren (ohne LULUCF)"
+  },
+  "co2_emissions_sectors_with_lulucf": {
+    "title": "Österreichische THG-Emissionen nach Sektoren (mit LULUCF)"
+  },
+  "consumption_coke_oven_coke_monthly": {
+    "title": "Kokereikoks: monatlicher Verbrauch"
+  },
+  "consumption_coke_oven_coke_yearly": {
+    "info": "Hochrechnung aus den verfügbaren Monatsdaten, skaliert mit vergangenen Trends.",
+    "title": "Kokereikoks: jährlicher Verbrauch"
+  },
+  "consumption_diesel_monthly": {
+    "title": "Diesel: monatlicher Verbrauch"
+  },
+  "consumption_diesel_yearly": {
+    "info": "Hochrechnung aus den verfügbaren Monatsdaten, skaliert mit vergangenen Trends.",
+    "title": "Diesel: jährlicher Verbrauch"
+  },
+  "consumption_gasoline_monthly": {
+    "title": "Benzin: monatlicher Verbrauch"
+  },
+  "consumption_gasoline_yearly": {
+    "info": "Hochrechnung aus den verfügbaren Monatsdaten, skaliert mit vergangenen Trends.",
+    "title": "Benzin: jährlicher Verbrauch"
+  },
+  "consumption_hard_coal_coke_ovens_monthly": {
+    "title": "Steinkohle – Kokereien: monatlicher Verbrauch"
+  },
+  "consumption_hard_coal_coke_ovens_yearly": {
+    "info": "Hochrechnung aus den verfügbaren Monatsdaten, skaliert mit vergangenen Trends.",
+    "title": "Steinkohle – Kokereien: jährlicher Verbrauch"
+  },
+  "consumption_hard_coal_electricity_monthly": {
+    "title": "Steinkohle – Elektrizitätssektor: monatlicher Verbrauch"
+  },
+  "consumption_hard_coal_electricity_yearly": {
+    "info": "Hochrechnung aus den verfügbaren Monatsdaten, skaliert mit vergangenen Trends.",
+    "title": "Steinkohle – Elektrizitätssektor: jährlicher Verbrauch"
+  },
+  "consumption_hard_coal_industry_monthly": {
+    "title": "Steinkohle – Industrie: monatlicher Verbrauch"
+  },
+  "consumption_hard_coal_industry_yearly": {
+    "info": "Hochrechnung aus den verfügbaren Monatsdaten, skaliert mit vergangenen Trends.",
+    "title": "Steinkohle – Industrie: jährlicher Verbrauch"
+  },
+  "consumption_heating_oil_monthly": {
+    "title": "Heizöl: monatlicher Verbrauch"
+  },
+  "consumption_heating_oil_yearly": {
+    "info": "Hochrechnung aus den verfügbaren Monatsdaten, skaliert mit vergangenen Trends.",
+    "title": "Heizöl: jährlicher Verbrauch"
+  },
+  "consumption_natural_gas_monthly": {
+    "title": "Erdgas: monatlicher Verbrauch"
+  },
+  "consumption_natural_gas_yearly": {
+    "info": "Hochrechnung aus den verfügbaren Monatsdaten, skaliert mit vergangenen Trends.",
+    "title": "Erdgas: jährlicher Verbrauch"
+  },
+  "consumption_refinery_gas_monthly": {
+    "title": "Raffineriegas: monatlicher Verbrauch"
+  },
+  "consumption_refinery_gas_yearly": {
+    "info": "Hochrechnung aus den verfügbaren Monatsdaten, skaliert mit vergangenen Trends.",
+    "title": "Raffineriegas: jährlicher Verbrauch"
+  },
+  "dh_energy_use": {
+    "title": "Fernwärmeerzeugung (brutto): Energieträger"
+  },
+  "dh_energy_use_share": {
+    "title": "Fernwärmeerzeugung (brutto): Anteile der Energieträger"
+  },
+  "elec_energy_use": {
+    "info": "Hinweis: In den E-Control-Daten sind keine Abfalldaten enthalten.",
+    "title": "Jährliche Stromerzeugung Österreich (brutto): Energieträger"
+  },
+  "elec_energy_use_share": {
+    "info": "Hinweis: In den E-Control-Daten sind keine Abfalldaten enthalten.",
+    "title": "Jährliche Stromerzeugung Österreich (brutto): Anteile an der Erzeugung"
+  },
+  "elec_energy_use_share_cons": {
+    "info": "Hinweis: In den E-Control-Daten sind keine Abfalldaten enthalten.",
+    "title": "Jährliche Stromerzeugung Österreich (brutto): Anteile am Verbrauch"
+  },
+  "elec_prod_monthly": {
+    "title": "Monatliche Stromerzeugung Österreich (brutto): Energieträger"
+  },
+  "elec_prod_monthly_share": {
+    "title": "Monatliche Stromerzeugung Österreich (brutto): Anteile an der Erzeugung"
+  },
+  "elec_prod_monthly_share_cons": {
+    "title": "Monatliche Stromerzeugung Österreich (brutto): Anteile am Verbrauch"
+  },
+  "emissions_fuels_monthly": {
+    "title": "Österreichische CO₂-Emissionen nach Energieträgern: monatlich"
+  },
+  "emissions_fuels_yearly": {
+    "title": "Österreichische CO₂-Emissionen nach Energieträgern: jährlich (inkl. Projektion)"
+  },
+  "emissions_projection_yearly": {
+    "title": "Österreichische THG-Emissionen: Projektion"
+  },
+  "energy_industry_emissions_sectors": {
+    "info": "Auf die Gesamtemissionen des Umweltbundesamts skaliert; Sektordaten 2024 extrapoliert.",
+    "title": "THG-Emissionen Energie & Industrie nach Subsektoren"
+  },
+  "fertilizer_nitrogen": {
+    "title": "Mineraldünger: Stickstoffeinsatz"
+  },
+  "fluorinated_gases_emissions_sectors": {
+    "info": "Auf die Gesamtemissionen des Umweltbundesamts skaliert; Sektordaten 2024 extrapoliert.",
+    "title": "THG-Emissionen fluorierte Gase nach Subsektoren"
+  },
+  "gas_sectoral_consumption_monthly": {
+    "info": "Gebäudedaten vor 09/2023 nicht verfügbar.",
+    "title": "Österreich: monatlicher Erdgasverbrauch nach Sektoren"
+  },
+  "gas_sectoral_consumption_yearly": {
+    "info": "Gebäudedaten vor 09/2023 nicht verfügbar.",
+    "title": "Österreich: jährlicher Erdgasverbrauch nach Sektoren"
+  },
+  "gross_inland_consumption_absolute": {
+    "title": "Bruttoinlandsverbrauch Österreich: absolut"
+  },
+  "gross_inland_consumption_share": {
+    "title": "Bruttoinlandsverbrauch Österreich: Anteile"
+  },
+  "heating_oil_consumption": {
+    "title": "Heizöl: monatlicher Verbrauch Österreich"
+  },
+  "industry_final_energy_use": {
+    "title": "Industrie: Endenergieverbrauch"
+  },
+  "industry_final_energy_use_share": {
+    "title": "Industrie: Endenergieverbrauch – Anteile"
+  },
+  "kerosene_consumption": {
+    "title": "Kerosin / Flugturbinenkraftstoff: monatlicher Verbrauch Österreich (inkl. Biokraftstoffe)"
+  },
+  "land_use_abs": {
+    "title": "Landnutzung: absolute Fläche"
+  },
+  "land_use_rel": {
+    "title": "Landnutzung: Anteile"
+  },
+  "long_term_storage_c_disposal": {
+    "title": "Langfristige Kohlenstoffspeicherung in österreichischen Deponien"
+  },
+  "lulucf_emissions_sectors": {
+    "title": "THG-Emissionen LULUCF nach Subsektoren"
+  },
+  "meat_consumption_per_capita": {
+    "info": "Pro-Kopf-Verbrauch für Ernährungszwecke in kg",
+    "title": "Fleischkonsum in Österreich: pro Kopf"
+  },
+  "meat_consumption_total": {
+    "info": "Verbrauch für Ernährungszwecke pro Jahr",
+    "title": "Fleischkonsum in Österreich: gesamt"
+  },
+  "milk_consumption_per_capita": {
+    "info": "Pro-Kopf-Verbrauch für Ernährungszwecke in kg",
+    "title": "Milchproduktkonsum in Österreich: pro Kopf"
+  },
+  "milk_consumption_total": {
+    "info": "Verbrauch für Ernährungszwecke pro Jahr",
+    "title": "Milchproduktkonsum in Österreich: gesamt"
+  },
+  "monthly_registrations_brands_absolute": {
+    "info": "Nur die zehn stärksten Marken über alle Jahre.",
+    "title": "Monatliche E-Pkw-Neuzulassungen Österreich: Marken, absolut"
+  },
+  "monthly_registrations_brands_shares": {
+    "info": "Nur die zehn stärksten Marken über alle Jahre.",
+    "title": "Monatliche E-Pkw-Neuzulassungen Österreich: Markenanteile"
+  },
+  "natural_gas_coal_oil_energy_sector": {
+    "title": "Erdgas / Kohle / Öl: jährlicher Verbrauch, Strom- und Fernwärmeerzeugung"
+  },
+  "natural_gas_oil_coal_buildings": {
+    "title": "Erdgas / Öl / Kohle: jährlicher Verbrauch im Gebäudesektor"
+  },
+  "number_fuel_new_cars": {
+    "title": "Monatliche Pkw-Neuzulassungen Österreich: Antriebsart, absolut"
+  },
+  "number_fuel_new_cars_yearly": {
+    "info": "Daten 2025 bis einschließlich 11/2025",
+    "title": "Jährliche Pkw-Neuzulassungen Österreich: Antriebsart, absolut"
+  },
+  "number_fuel_new_lorries_gt3p5": {
+    "title": "Lkw-Neuzulassungen Österreich (>3,5 t): Antriebsart, absolut"
+  },
+  "number_fuel_new_lorries_le3p5": {
+    "title": "Lkw-Neuzulassungen Österreich (≤ 3,5 t): Antriebsart, absolut"
+  },
+  "number_fuel_stock_cars": {
+    "info": "Daten 2024 bis 12/2024. Hybride 2024 inklusive Plug-in-Hybride; „Sonstige“ vor 2013 inklusive Hybride.",
+    "title": "Pkw-Bestand Österreich: Antriebsart, absolut"
+  },
+  "number_heating_systems": {
+    "title": "Heizsysteme: absolute Anzahl nach Haupttypen"
+  },
+  "rail_tracks_abs": {
+    "title": "Streckenlängen Schiene Österreich: absolut"
+  },
+  "rail_tracks_rel": {
+    "title": "Streckenlängen Schiene Österreich: Anteile elektrifiziert / nicht elektrifiziert"
+  },
+  "raw_cow_milk": {
+    "title": "Kuhrohmilch: monatliche Anlieferung"
+  },
+  "road_biofuels_consumption": {
+    "title": "Biokraftstoffe Straßenverkehr: monatlicher Verbrauch"
+  },
+  "road_fuels_consumption": {
+    "title": "Kraftstoffe Straßenverkehr: monatlicher Verbrauch (inkl. Biokraftstoffe)"
+  },
+  "share_fuel_new_cars": {
+    "title": "Monatliche Pkw-Neuzulassungen Österreich: Anteile nach Antriebsart"
+  },
+  "share_fuel_new_cars_yearly": {
+    "info": "Daten 2025 bis einschließlich 11/2025",
+    "title": "Jährliche Pkw-Neuzulassungen Österreich: Anteile nach Antriebsart"
+  },
+  "share_fuel_new_lorries_gt3p5": {
+    "title": "Lkw-Neuzulassungen Österreich (>3,5 t): Anteile nach Antriebsart"
+  },
+  "share_fuel_new_lorries_le3p5": {
+    "title": "Lkw-Neuzulassungen Österreich (≤ 3,5 t): Anteile nach Antriebsart"
+  },
+  "share_fuel_stock_cars": {
+    "info": "Daten 2024 bis 12/2024. Hybride 2024 inklusive Plug-in-Hybride; „Sonstige“ vor 2013 inklusive Hybride.",
+    "title": "Pkw-Bestand Österreich: Anteile nach Antriebsart"
+  },
+  "share_heating_systems": {
+    "title": "Heizsysteme: Anteile nach Haupttypen"
+  },
+  "slaughtered_cattle_meat": {
+    "title": "Rinder: monatliche Schlachtungen"
+  },
+  "slaughtered_chicken_meat": {
+    "title": "Hühner: monatliche Schlachtungen"
+  },
+  "slaughtered_pig_meat": {
+    "title": "Schweine: monatliche Schlachtungen"
+  },
+  "total_final_energy_use": {
+    "title": "Endenergieverbrauch Österreich: absolut"
+  },
+  "total_final_energy_use_share": {
+    "title": "Endenergieverbrauch Österreich: Anteile"
+  },
+  "transport_emissions_sectors": {
+    "info": "Auf die Gesamtemissionen des Umweltbundesamts skaliert; Sektordaten 2024 extrapoliert.",
+    "title": "THG-Emissionen Verkehr nach Subsektoren"
+  },
+  "transport_final_energy_use": {
+    "title": "Verkehr: Endenergieverbrauch"
+  },
+  "transport_final_energy_use_share": {
+    "title": "Verkehr: Endenergieverbrauch – Anteile"
+  },
+  "waste_emissions_sectors": {
+    "info": "Auf die Gesamtemissionen des Umweltbundesamts skaliert; Sektordaten 2024 extrapoliert.",
+    "title": "THG-Emissionen Abfallwirtschaft nach Subsektoren"
+  },
+  "yearly_registrations_brands_absolute": {
+    "info": "Nur die zehn stärksten Marken über alle Jahre.",
+    "title": "Jährliche E-Pkw-Neuzulassungen Österreich: Marken, absolut"
+  },
+  "yearly_registrations_brands_shares": {
+    "info": "Nur die zehn stärksten Marken über alle Jahre.",
+    "title": "Jährliche E-Pkw-Neuzulassungen Österreich: Markenanteile"
+  }
+}

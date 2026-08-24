@@ -1,33 +1,4 @@
 {
-  "app": {
-    "tagline": "Tracking Austria's energy transition with public data",
-    "title": "Austria Transition Tracker"
-  },
-  "chart": {
-    "dataset": "Dataset",
-    "download": "Download data",
-    "download_hint": "Download this chart's data as JSON",
-    "error": "This chart could not be loaded.",
-    "legend": "Toggle legend",
-    "loading": "Loading…",
-    "no_data": "No data available",
-    "source": "Source",
-    "updated": "Updated",
-    "view": "View",
-    "view_area": "Area",
-    "view_bar": "Bars",
-    "view_line": "Lines"
-  },
-  "error": {
-    "back": "Back to the overview",
-    "manifest": "The chart index could not be loaded. Please reload the page.",
-    "not_found": "This page does not exist."
-  },
-  "footer": {
-    "data": "Data",
-    "note": "Private project. No guarantee is given on the accuracy of the data.",
-    "source_code": "Source code"
-  },
   "groups": {
     "chemicals": "Chemicals",
     "commercial": "Commercial",
@@ -50,14 +21,6 @@
     "total": "Total",
     "transport_equipment": "Transport equipment",
     "wood_industry": "Wood industry"
-  },
-  "nav": {
-    "about": "About",
-    "language": "Language",
-    "menu": "Menu",
-    "methodology": "Methodology",
-    "sectors": "Sectors",
-    "theme": "Toggle dark mode"
   },
   "series": {
     "12_month_average": "12-Month average",
