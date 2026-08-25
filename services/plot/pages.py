@@ -100,12 +100,6 @@ CHART_PAGES = {
     "waste_emissions_sectors": ("waste", "overview", 0),
     "long_term_storage_c_disposal": ("waste", "overview", 1),
     "fluorinated_gases_emissions_sectors": ("f-gases", "overview", 0),
-
-    # Built on every run but never referenced by any Jekyll page. Placed on the
-    # sector they describe rather than dropped -- they are current, working
-    # charts that the old site simply lost track of.
-    "natural_gas_oil_coal_buildings": ("buildings", "energy_use", 99),
-    "natural_gas_coal_oil_energy_sector": ("energy-industry", "energy_use", 99),
 }
 
 

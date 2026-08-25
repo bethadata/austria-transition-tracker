@@ -20,7 +20,6 @@ from plot import plot_energy
 from plot import plot_energy_balance
 from plot import plot_food_consumption
 from plot import plot_fossil_fuels
-from plot import plot_industry
 from plot import plot_transport
 from plot import plot_waste
 
@@ -39,7 +38,6 @@ def plot_all():
     plot_fossil_fuels.plot_ng_separation()
     plot_agriculture.plot()
     plot_transport.plot()
-    plot_industry.plot()
     plot_waste.plot()
     plot_emissions_sectors.plot()
     plot_energy.plot()

@@ -1,9 +1,33 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
+import FormulaBlock from '@/components/FormulaBlock.vue'
+
 const { t, tm, rt } = useI18n()
 
 const BASE = import.meta.env.BASE_URL
+
+/**
+ * The formulas, as LaTeX.
+ *
+ * They live here rather than in the locale files because mathematical notation
+ * is language-independent: a formula duplicated per locale is a formula that
+ * can silently drift between them, and there is nothing in it to translate.
+ *
+ * Restored from the source of the Jekyll page, with one correction --
+ * \hat{\sigma_{x}} put the hat over the whole subscripted symbol, which
+ * typesets as a hat floating above a wide expression; \hat{\sigma}_{x} is
+ * what was meant.
+ */
+const FORMULAS = {
+  scaling: String.raw`C_{f,y} = F^{cons}_{f,m,y} \cdot C_{f,m,y}`,
+  mean: String.raw`\overline{F^{cons}_{f,m}} = \frac{1}{N}\sum_y F^{cons}_{f,m,y}`,
+  sigma: String.raw`\hat{\sigma}_{F^{cons}_{f,m}} = \sqrt{\frac{1}{N-1.5}\sum_y \left(\overline{F^{cons}_{f,m}} - F^{cons}_{f,m,y}\right)^2}`,
+  estimate: String.raw`E^{estimated}_{y} = \sum_f C_{f,y} \cdot NCV_f \cdot e_f`,
+  scaled: String.raw`E^{scaled}_{y} = E^{estimated}_{y} \cdot \overline{F^{em}_y}`,
+  total: String.raw`E^{scaled}_{y} = \left(\sum_f C_{f,m,y} \cdot \overline{F^{cons}_{f,m}} \cdot NCV_f \cdot e_f\right) \cdot \overline{F^{em}_y}`,
+  uncertainty: String.raw`\sigma^{E,total}_{y} = \sum_f \left(C_{f,m,y} \cdot NCV_f \cdot e_f \cdot \overline{F^{em}_y} \cdot \hat{\sigma}_{F^{cons}_{f,m}}\right) + \left(\sum_f C_{f,m,y} \cdot \overline{F^{cons}_{f,m}} \cdot NCV_f \cdot e_f\right) \cdot \hat{\sigma}_{F^{em}_y}`,
+}
 
 const FIGURES = {
   step1: 'fossil_fuel_consumption_estimation.png',
@@ -57,11 +81,11 @@ function image(name: string): string {
       </div>
 
       <p class="text-body-medium mb-2">{{ t('about.methodology.step1.factors') }}</p>
-      <pre class="formula">{{ t('about.methodology.step1.formula_scaling') }}</pre>
+      <FormulaBlock :tex="FORMULAS.scaling" />
       <p class="text-body-medium mb-2">{{ t('about.methodology.step1.mean') }}</p>
-      <pre class="formula">{{ t('about.methodology.step1.formula_mean') }}</pre>
+      <FormulaBlock :tex="FORMULAS.mean" />
       <p class="text-body-medium mb-2">{{ t('about.methodology.step1.sigma') }}</p>
-      <pre class="formula">{{ t('about.methodology.step1.formula_sigma') }}</pre>
+      <FormulaBlock :tex="FORMULAS.sigma" />
 
       <p class="text-body-medium mb-4">{{ t('about.methodology.step1.caveat') }}</p>
       <v-img :src="image(FIGURES.step1)" :alt="t('about.methodology.step1.figure_alt')" class="figure" />
@@ -93,7 +117,7 @@ function image(name: string): string {
         </v-table>
       </div>
 
-      <pre class="formula">{{ t('about.methodology.step2.formula_estimate') }}</pre>
+      <FormulaBlock :tex="FORMULAS.estimate" />
       <p class="text-body-medium mb-4">{{ t('about.methodology.step2.biofuels') }}</p>
 
       <p class="text-body-medium mb-2">{{ t('about.methodology.step2.gap') }}</p>
@@ -104,7 +128,7 @@ function image(name: string): string {
       </ul>
 
       <p class="text-body-medium mb-2">{{ t('about.methodology.step2.scaling') }}</p>
-      <pre class="formula">{{ t('about.methodology.step2.formula_scaled') }}</pre>
+      <FormulaBlock :tex="FORMULAS.scaled" />
       <v-img :src="image(FIGURES.step2)" :alt="t('about.methodology.step2.figure_alt')" class="figure" />
     </section>
 
@@ -112,10 +136,10 @@ function image(name: string): string {
     <section class="mb-10">
       <h2 class="text-title-medium mb-2">{{ t('about.methodology.step3.title') }}</h2>
       <p class="text-body-medium mb-2">{{ t('about.methodology.step3.body') }}</p>
-      <pre class="formula">{{ t('about.methodology.step3.formula_total') }}</pre>
+      <FormulaBlock :tex="FORMULAS.total" />
 
       <p class="text-body-medium mb-2">{{ t('about.methodology.step3.uncertainty') }}</p>
-      <pre class="formula">{{ t('about.methodology.step3.formula_uncertainty') }}</pre>
+      <FormulaBlock :tex="FORMULAS.uncertainty" />
       <p class="text-body-medium mb-4">{{ t('about.methodology.step3.terms') }}</p>
 
       <p class="text-body-medium mb-4">{{ t('about.methodology.step3.other_sectors') }}</p>
@@ -128,26 +152,6 @@ function image(name: string): string {
 </template>
 
 <style scoped>
-/*
- * Formulas are set as monospace blocks rather than typeset maths.
- *
- * The Jekyll page wrote them as LaTeX between $$ delimiters but never loaded
- * MathJax, so they rendered as raw source. A monospace block is honest about
- * being notation and costs no dependency; adding KaTeX would be the upgrade.
- */
-.formula {
-  font-family: ui-monospace, 'SFMono-Regular', 'Cascadia Code', Consolas, monospace;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  padding: 0.75rem 1rem;
-  margin: 0 0 1rem;
-  border-radius: 4px;
-  background: rgb(var(--v-theme-surface-light, var(--v-theme-surface)));
-  border: 1px solid rgba(var(--v-border-color), 0.16);
-  overflow-x: auto;
-  white-space: pre;
-}
-
 .figure {
   border: 1px solid rgba(var(--v-border-color), 0.16);
   border-radius: 4px;

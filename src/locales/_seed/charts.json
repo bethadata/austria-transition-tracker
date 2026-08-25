@@ -142,11 +142,11 @@
     "title": "AT Fluorinated Gases GHG emissions by sub-sectors"
   },
   "gas_sectoral_consumption_monthly": {
-    "info": "Buildings data before 09/2023 not available.",
+    "info": "Bulidings data before 09/2023 not available.",
     "title": "Austria: monthly natural gas consumption by sector"
   },
   "gas_sectoral_consumption_yearly": {
-    "info": "Buildings data before 09/2023 not available.",
+    "info": "Bulidings data before 09/2023 not available.",
     "title": "Austria: yearly natural gas consumption by sector"
   },
   "gross_inland_consumption_absolute": {
@@ -203,12 +203,6 @@
     "info": "Only top 10 car brands (over all years) shown.",
     "title": "AT new monthly BEV registrations: car brands shares"
   },
-  "natural_gas_coal_oil_energy_sector": {
-    "title": "Natural gas / Coal / Oil: yearly consumption, electricity & district heat generation"
-  },
-  "natural_gas_oil_coal_buildings": {
-    "title": "Natural gas / Oil / Coal: yearly consumption Building sector"
-  },
   "number_fuel_new_cars": {
     "title": "AT new monthly car registrations: fuel type absolute number"
   },
@@ -223,7 +217,7 @@
     "title": "AT new lorry (≤3.5t) registrations: fuel type absolute number"
   },
   "number_fuel_stock_cars": {
-    "info": "Data of 2024 up to 12/2024. Hybrids in 2024 include plug-in hybrids; Other before 2013 includes hybrids.",
+    "info": "Data of 2024 until 12/2024, Hybrids of 2024 indclude also Plugin-Hybrids Others before 2013 include also Hybrids",
     "title": "AT registered cars: fuel type absolute number"
   },
   "number_heating_systems": {
@@ -258,7 +252,7 @@
     "title": "AT new lorry (≤3.5t) registrations: fuel type share"
   },
   "share_fuel_stock_cars": {
-    "info": "Data of 2024 up to 12/2024. Hybrids in 2024 include plug-in hybrids; Other before 2013 includes hybrids.",
+    "info": "Data of 2024 until 12/2024, Hybrids of 2024 indclude also Plugin-Hybrids Others before 2013 include also Hybrids",
     "title": "AT registered cars: fuel type share"
   },
   "share_heating_systems": {
@@ -271,7 +265,7 @@
     "title": "Chicken: monthly slaughtered"
   },
   "slaughtered_pig_meat": {
-    "title": "Pigs: monthly slaughtered"
+    "title": "Pigs: monthly sloughtered"
   },
   "total_final_energy_use": {
     "title": "AT final energy use: absolute"

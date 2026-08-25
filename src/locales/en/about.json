@@ -1,96 +1,56 @@
 {
-  "title": "About",
-  "motivation": {
-    "title": "Motivation",
-    "body": "This site is a purely private project, made out of interest in the sustainable transition and a wish to follow it as closely as publicly available data allows. No guarantee is given on the accuracy of the data. Feedback, constructive criticism and direct contributions are very welcome."
-  },
-  "sources": {
-    "title": "Data sources",
-    "intro": "Wherever possible the site uses data that can be retrieved automatically over an API. The most important sources are:",
-    "columns": ["Source", "Example data sets", "Access"],
-    "rows": [
-      {
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/data/database",
-        "examples": "Energy balances, monthly and yearly commodity statistics",
-        "access": "Automatic, via API"
-      },
-      {
-        "name": "Statistics Austria",
-        "url": "https://www.statistik.at/statistiken",
-        "examples": "Vehicle registrations, installed heating systems, food consumption",
-        "access": "Manual download"
-      },
-      {
-        "name": "Umweltbundesamt — National Inventory Report",
-        "url": "https://www.umweltbundesamt.at/studien-reports",
-        "examples": "Greenhouse gas emissions by sub-sector",
-        "access": "Manual download"
-      },
-      {
-        "name": "Umweltbundesamt — Klimadashboard",
-        "url": "https://www.umweltbundesamt.at/klima/dashboard",
-        "examples": "Greenhouse gas emissions by sector",
-        "access": "Manual download"
-      },
-      {
-        "name": "E-Control",
-        "url": "https://www.e-control.at/statistik",
-        "examples": "Monthly electricity generation and consumption",
-        "access": "Automatic, via download"
-      }
-    ]
-  },
-  "stack": {
-    "title": "How it is built",
-    "body": "The data pipeline is written in Python: it downloads and processes every data set and writes one JSON file per chart together with a manifest describing them. The frontend is a Vue 3 application with Vuetify, and the charts are drawn with Plotly. The whole site is static and hosted on GitHub Pages."
-  },
-  "privacy": {
-    "title": "Privacy",
-    "body": "This page is hosted on GitHub Pages. GitHub may collect information such as IP addresses when the site is visited; see GitHub's own documentation on GitHub Pages data collection and its general privacy statement. Beyond what GitHub collects, this site tracks nothing and sets no cookies. The language and theme you choose are stored in your browser's local storage and never leave your device."
-  },
   "disclaimer": {
-    "title": "Disclaimer",
-    "body": "The information on this website is provided for general information only. Efforts are made to keep it up to date and correct, but no representation or warranty of any kind is given as to completeness, accuracy, reliability or suitability. Any reliance you place on it is strictly at your own risk. The site links to other websites whose nature, content and availability are outside its control."
+    "body": "The information on this website is provided for general information only. Efforts are made to keep it up to date and correct, but no representation or warranty of any kind is given as to completeness, accuracy, reliability or suitability. Any reliance you place on it is strictly at your own risk. The site links to other websites whose nature, content and availability are outside its control.",
+    "title": "Disclaimer"
   },
   "methodology": {
-    "title": "Fossil fuel projection and emission estimation",
     "intro": "This page describes a simple, purely data-driven method for projecting fossil fuel consumption and the related CO₂ emissions within a year, using the monthly data eurostat publishes. The idea is to extrapolate the trend of the months already available to a full-year figure.",
     "step1": {
-      "title": "1 — Extrapolating fuel consumption",
       "body": "The monthly commodity balances for natural gas, petroleum products and solid fossil fuels are retrieved from eurostat:",
-      "columns": ["Fossil fuel category", "Database", "Unit", "Update delay"],
-      "rows": [
-        ["Natural gas", "NRG_CB_GASM", "TJ_GCV", "1 month"],
-        ["Oil", "NRG_CB_OILM", "THS_T", "2 months"],
-        ["Coal", "NRG_CB_SFFM", "THS_T", "2 months"]
+      "caveat": "The chart below applies the method to 2022 using factors from 2013–2021. The prediction is reasonable but carries a systematic error that statistics alone do not explain: unstable energy markets added uncertainty of their own. Full-year natural gas consumption, for instance, is overestimated from data up to summer 2022, because high prices in the second half of the year cut consumption in a way no past trend could anticipate. Extrapolated values must therefore be read with great caution. The projection on the start page always trains on data up to the last complete year.",
+      "columns": [
+        "Fossil fuel category",
+        "Database",
+        "Unit",
+        "Update delay"
       ],
       "factors": "When a year is not yet complete, it is extrapolated using scaling factors derived from past years. For each fuel f, month m and past year y from 2013 onwards, a factor relates the full-year consumption to the consumption up to that month:",
-      "formula_scaling": "C(f,y) = F_cons(f,m,y) · C(f,m,y)",
+      "figure_alt": "Fossil fuel consumption extrapolation compared with the actual outcome for 2022",
       "mean": "The monthly factors across years are taken to be normally distributed, and their mean is what scales the current year:",
-      "formula_mean": "F̄_cons(f,m) = (1/N) · Σ_y F_cons(f,m,y)",
+      "rows": [
+        [
+          "Natural gas",
+          "NRG_CB_GASM",
+          "TJ_GCV",
+          "1 month"
+        ],
+        [
+          "Oil",
+          "NRG_CB_OILM",
+          "THS_T",
+          "2 months"
+        ],
+        [
+          "Coal",
+          "NRG_CB_SFFM",
+          "THS_T",
+          "2 months"
+        ]
+      ],
       "sigma": "A standard-deviation estimator with the usual rule-of-thumb bias correction gives the uncertainty of the projection:",
-      "formula_sigma": "σ̂(F_cons(f,m)) = √( (1/(N−1.5)) · Σ_y ( F̄_cons(f,m) − F_cons(f,m,y) )² )",
-      "caveat": "The chart below applies the method to 2022 using factors from 2013–2021. The prediction is reasonable but carries a systematic error that statistics alone do not explain: unstable energy markets added uncertainty of their own. Full-year natural gas consumption, for instance, is overestimated from data up to summer 2022, because high prices in the second half of the year cut consumption in a way no past trend could anticipate. Extrapolated values must therefore be read with great caution. The projection on the start page always trains on data up to the last complete year.",
-      "figure_alt": "Fossil fuel consumption extrapolation compared with the actual outcome for 2022"
+      "title": "1 — Extrapolating fuel consumption"
     },
     "step2": {
-      "title": "2 — From fuel to emissions",
-      "body": "CO₂ emissions are calculated from these consumption figures using emission factors from the National Inventory Report and net calorific values from the Statistics Austria energy balances:",
-      "columns": ["Fossil fuel", "Database", "Entry", "NCV", "Emission factor"],
-      "rows": [
-        ["Natural gas", "NRG_CB_GASM", "Inland consumption (IC_CAL_MG)", "0.0372 TJ/1000 m³", "55.4 t CO₂/TJ"],
-        ["Gasoline", "NRG_CB_OILM", "Gross inland deliveries (GID_OBS)", "0.0418 TJ/t", "71.3 t CO₂/TJ"],
-        ["Diesel", "NRG_CB_OILM", "Gross inland deliveries (GID_OBS)", "0.0424 TJ/t", "71.3 t CO₂/TJ"],
-        ["Heating gas oil", "NRG_CB_OILM", "Gross inland deliveries (GID_OBS)", "0.0428 TJ/t", "75.0 t CO₂/TJ"],
-        ["Refinery gas", "NRG_CB_OILM", "Refinery fuel (RF)", "0.0306 TJ/t", "64.0 t CO₂/TJ"],
-        ["Hard coal — electricity", "NRG_CB_SFFM", "Transformation input, electricity and heat (TI_EHG_MAP)", "0.0299 TJ/t", "95.0 t CO₂/TJ"],
-        ["Hard coal — industry", "NRG_CB_SFFM", "Final consumption, industry (FC_IND)", "0.0299 TJ/t", "95.0 t CO₂/TJ"],
-        ["Hard coal — coke ovens", "NRG_CB_SFFM", "Transformation input, coke ovens (TI_CO)", "0.0299 TJ/t", "95.0 t CO₂/TJ"],
-        ["Coke oven coke", "NRG_CB_SFFM", "Gross inland deliveries, calculated (GID_CAL)", "0.0282 TJ/t", "94.6 t CO₂/TJ"]
-      ],
-      "formula_estimate": "E_estimated(y) = Σ_f C(f,y) · NCV(f) · e(f)",
       "biofuels": "Biofuel volumes (biodiesel and biogasoline) are subtracted from the diesel and gasoline figures first.",
+      "body": "CO₂ emissions are calculated from these consumption figures using emission factors from the National Inventory Report and net calorific values from the Statistics Austria energy balances:",
+      "columns": [
+        "Fossil fuel",
+        "Database",
+        "Entry",
+        "NCV",
+        "Emission factor"
+      ],
+      "figure_alt": "Estimated emissions before and after scaling, compared with reported emissions",
       "gap": "Comparing these estimates with the reported emissions of the energy-related sectors — Transport, Energy & Industry, Buildings — leaves a gap, with several systematic causes:",
       "gap_reasons": [
         "Process emissions from industry that are not fossil-fuel based are not included — mainly cement and lime production, roughly 2.5 Mt CO₂ in 2021.",
@@ -99,20 +59,137 @@
         "Not every fuel is covered.",
         "Integrated process routes in industry, especially steel and chemicals, are simplified."
       ],
+      "rows": [
+        [
+          "Natural gas",
+          "NRG_CB_GASM",
+          "Inland consumption (IC_CAL_MG)",
+          "0.0372 TJ/1000 m³",
+          "55.4 t CO₂/TJ"
+        ],
+        [
+          "Gasoline",
+          "NRG_CB_OILM",
+          "Gross inland deliveries (GID_OBS)",
+          "0.0418 TJ/t",
+          "71.3 t CO₂/TJ"
+        ],
+        [
+          "Diesel",
+          "NRG_CB_OILM",
+          "Gross inland deliveries (GID_OBS)",
+          "0.0424 TJ/t",
+          "71.3 t CO₂/TJ"
+        ],
+        [
+          "Heating gas oil",
+          "NRG_CB_OILM",
+          "Gross inland deliveries (GID_OBS)",
+          "0.0428 TJ/t",
+          "75.0 t CO₂/TJ"
+        ],
+        [
+          "Refinery gas",
+          "NRG_CB_OILM",
+          "Refinery fuel (RF)",
+          "0.0306 TJ/t",
+          "64.0 t CO₂/TJ"
+        ],
+        [
+          "Hard coal — electricity",
+          "NRG_CB_SFFM",
+          "Transformation input, electricity and heat (TI_EHG_MAP)",
+          "0.0299 TJ/t",
+          "95.0 t CO₂/TJ"
+        ],
+        [
+          "Hard coal — industry",
+          "NRG_CB_SFFM",
+          "Final consumption, industry (FC_IND)",
+          "0.0299 TJ/t",
+          "95.0 t CO₂/TJ"
+        ],
+        [
+          "Hard coal — coke ovens",
+          "NRG_CB_SFFM",
+          "Transformation input, coke ovens (TI_CO)",
+          "0.0299 TJ/t",
+          "95.0 t CO₂/TJ"
+        ],
+        [
+          "Coke oven coke",
+          "NRG_CB_SFFM",
+          "Gross inland deliveries, calculated (GID_CAL)",
+          "0.0282 TJ/t",
+          "94.6 t CO₂/TJ"
+        ]
+      ],
       "scaling": "To absorb these effects, the same approach is applied a second time: each year's estimate gets a scaling factor, and their mean scales the estimate up to the total emissions of the energy sectors.",
-      "formula_scaled": "E_scaled(y) = E_estimated(y) · F̄_em",
-      "figure_alt": "Estimated emissions before and after scaling, compared with reported emissions"
+      "title": "2 — From fuel to emissions"
     },
     "step3": {
-      "title": "3 — Putting the two together",
       "body": "Combining the consumption extrapolation with the emission scaling gives a CO₂ estimate for a year whose data is not yet complete:",
-      "formula_total": "E_scaled(y) = ( Σ_f C(f,m,y) · F̄_cons(f,m) · NCV(f) · e(f) ) · F̄_em",
-      "uncertainty": "The two statistical uncertainties propagate and add:",
-      "formula_uncertainty": "σ_total(y) = Σ_f ( C(f,m,y) · NCV(f) · e(f) · F̄_em · σ̂(F_cons(f,m)) ) + ( Σ_f C(f,m,y) · F̄_cons(f,m) · NCV(f) · e(f) ) · σ̂(F_em)",
-      "terms": "The first term is the uncertainty from extrapolating consumption, the second the uncertainty from scaling to emissions.",
-      "other_sectors": "Emissions from the non-energy sectors — Agriculture, Waste, Fluorinated gases — are added on top using a simpler rule: the average trend of the past three years is carried forward into the projection year.",
+      "figure_alt": "Projected 2022 emissions by month of available data, with the two uncertainty components",
       "figure_caption": "The figure shows the projected total for 2022 as a function of how many months of data were used. Early in the year the projection overshoots and it settles as more months arrive; the disrupted energy market of 2022 amplified that. The lower chart separates the two uncertainties: the one from consumption extrapolation falls as data accumulates, while the emission-scaling uncertainty stays roughly constant.",
-      "figure_alt": "Projected 2022 emissions by month of available data, with the two uncertainty components"
-    }
-  }
+      "other_sectors": "Emissions from the non-energy sectors — Agriculture, Waste, Fluorinated gases — are added on top using a simpler rule: the average trend of the past three years is carried forward into the projection year.",
+      "terms": "The first term is the uncertainty from extrapolating consumption, the second the uncertainty from scaling to emissions.",
+      "title": "3 — Putting the two together",
+      "uncertainty": "The two statistical uncertainties propagate and add:"
+    },
+    "title": "Fossil fuel projection and emission estimation"
+  },
+  "motivation": {
+    "body": "This site is a purely private project, made out of interest in the sustainable transition and a wish to follow it as closely as publicly available data allows. No guarantee is given on the accuracy of the data. Feedback, constructive criticism and direct contributions are very welcome.",
+    "title": "Motivation"
+  },
+  "privacy": {
+    "body": "This page is hosted on GitHub Pages. GitHub may collect information such as IP addresses when the site is visited; see GitHub's own documentation on GitHub Pages data collection and its general privacy statement. Beyond what GitHub collects, this site tracks nothing and sets no cookies. The language and theme you choose are stored in your browser's local storage and never leave your device.",
+    "title": "Privacy"
+  },
+  "sources": {
+    "columns": [
+      "Source",
+      "Example data sets",
+      "Access"
+    ],
+    "intro": "Wherever possible the site uses data that can be retrieved automatically over an API. The most important sources are:",
+    "rows": [
+      {
+        "access": "Automatic, via API",
+        "examples": "Energy balances, monthly and yearly commodity statistics",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/data/database"
+      },
+      {
+        "access": "Manual download",
+        "examples": "Vehicle registrations, installed heating systems, food consumption",
+        "name": "Statistics Austria",
+        "url": "https://www.statistik.at/statistiken"
+      },
+      {
+        "access": "Manual download",
+        "examples": "Greenhouse gas emissions by sub-sector",
+        "name": "Umweltbundesamt — National Inventory Report",
+        "url": "https://www.umweltbundesamt.at/studien-reports"
+      },
+      {
+        "access": "Manual download",
+        "examples": "Greenhouse gas emissions by sector",
+        "name": "Umweltbundesamt — Klimadashboard",
+        "url": "https://www.umweltbundesamt.at/klima/dashboard"
+      },
+      {
+        "access": "Automatic, via download",
+        "examples": "Monthly electricity generation and consumption",
+        "name": "E-Control",
+        "url": "https://www.e-control.at/statistik"
+      }
+    ],
+    "title": "Data sources"
+  },
+  "stack": {
+    "body": "The data pipeline is written in Python: it downloads and processes every data set and writes one JSON file per chart together with a manifest describing them. The frontend is a Vue 3 application with Vuetify, and the charts are drawn with Plotly. The whole site is static and hosted on GitHub Pages.",
+    "title": "How it is built"
+  },
+  "title": "About"
 }

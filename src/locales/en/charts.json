@@ -203,12 +203,6 @@
     "info": "Only top 10 car brands (over all years) shown.",
     "title": "AT new monthly BEV registrations: car brands shares"
   },
-  "natural_gas_coal_oil_energy_sector": {
-    "title": "Natural gas / Coal / Oil: yearly consumption, electricity & district heat generation"
-  },
-  "natural_gas_oil_coal_buildings": {
-    "title": "Natural gas / Oil / Coal: yearly consumption Building sector"
-  },
   "number_fuel_new_cars": {
     "title": "AT new monthly car registrations: fuel type absolute number"
   },

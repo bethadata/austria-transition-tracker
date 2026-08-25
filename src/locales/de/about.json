@@ -1,96 +1,56 @@
 {
-  "title": "Über",
-  "motivation": {
-    "title": "Motivation",
-    "body": "Diese Seite ist ein rein privates Projekt, entstanden aus Interesse an der nachhaltigen Transformation und dem Wunsch, sie so genau nachzuvollziehen, wie es öffentlich verfügbare Daten erlauben. Für die Richtigkeit der Daten wird keine Gewähr übernommen. Rückmeldungen, konstruktive Kritik und direkte Beiträge sind sehr willkommen."
-  },
-  "sources": {
-    "title": "Datenquellen",
-    "intro": "Wo immer möglich verwendet die Seite Daten, die automatisch über eine Schnittstelle abgerufen werden können. Die wichtigsten Quellen sind:",
-    "columns": ["Quelle", "Beispieldatensätze", "Zugriff"],
-    "rows": [
-      {
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/data/database",
-        "examples": "Energiebilanzen, monatliche und jährliche Aufkommensstatistiken",
-        "access": "Automatisch, über API"
-      },
-      {
-        "name": "Statistik Austria",
-        "url": "https://www.statistik.at/statistiken",
-        "examples": "Kfz-Zulassungen, installierte Heizsysteme, Nahrungsmittelverbrauch",
-        "access": "Manueller Download"
-      },
-      {
-        "name": "Umweltbundesamt — Nationaler Inventurbericht",
-        "url": "https://www.umweltbundesamt.at/studien-reports",
-        "examples": "Treibhausgasemissionen nach Subsektoren",
-        "access": "Manueller Download"
-      },
-      {
-        "name": "Umweltbundesamt — Klimadashboard",
-        "url": "https://www.umweltbundesamt.at/klima/dashboard",
-        "examples": "Treibhausgasemissionen nach Sektoren",
-        "access": "Manueller Download"
-      },
-      {
-        "name": "E-Control",
-        "url": "https://www.e-control.at/statistik",
-        "examples": "Monatliche Stromerzeugung und -verbrauch",
-        "access": "Automatisch, über Download"
-      }
-    ]
-  },
-  "stack": {
-    "title": "Technischer Aufbau",
-    "body": "Die Datenverarbeitung ist in Python geschrieben: Sie lädt alle Datensätze herunter, verarbeitet sie und schreibt pro Diagramm eine JSON-Datei sowie ein Manifest, das die Diagramme beschreibt. Das Frontend ist eine Vue-3-Anwendung mit Vuetify, die Diagramme werden mit Plotly gezeichnet. Die gesamte Seite ist statisch und wird über GitHub Pages ausgeliefert."
-  },
-  "privacy": {
-    "title": "Datenschutz",
-    "body": "Diese Seite wird über GitHub Pages gehostet. GitHub kann beim Besuch Daten wie IP-Adressen erfassen; Details dazu finden sich in der GitHub-Dokumentation zu GitHub Pages und in der allgemeinen Datenschutzerklärung von GitHub. Darüber hinaus erfasst diese Seite keine Daten und setzt keine Cookies. Die gewählte Sprache und das Farbschema werden im lokalen Speicher des Browsers abgelegt und verlassen das Gerät nicht."
-  },
   "disclaimer": {
-    "title": "Haftungsausschluss",
-    "body": "Die Informationen auf dieser Website dienen ausschließlich der allgemeinen Information. Es wird versucht, sie aktuell und korrekt zu halten; eine Zusicherung oder Gewährleistung hinsichtlich Vollständigkeit, Richtigkeit, Verlässlichkeit oder Eignung wird jedoch weder ausdrücklich noch stillschweigend gegeben. Jedes Vertrauen auf diese Informationen erfolgt auf eigenes Risiko. Die Seite verlinkt auf andere Websites, deren Art, Inhalt und Verfügbarkeit nicht in ihrem Einfluss stehen."
+    "body": "Die Informationen auf dieser Website dienen ausschließlich der allgemeinen Information. Es wird versucht, sie aktuell und korrekt zu halten; eine Zusicherung oder Gewährleistung hinsichtlich Vollständigkeit, Richtigkeit, Verlässlichkeit oder Eignung wird jedoch weder ausdrücklich noch stillschweigend gegeben. Jedes Vertrauen auf diese Informationen erfolgt auf eigenes Risiko. Die Seite verlinkt auf andere Websites, deren Art, Inhalt und Verfügbarkeit nicht in ihrem Einfluss stehen.",
+    "title": "Haftungsausschluss"
   },
   "methodology": {
-    "title": "Hochrechnung fossiler Energieträger und Emissionsabschätzung",
     "intro": "Diese Seite beschreibt eine einfache, rein datenbasierte Methode, um den Verbrauch fossiler Energieträger und die damit verbundenen CO₂-Emissionen innerhalb eines Jahres aus den monatlichen eurostat-Daten hochzurechnen. Die Grundidee ist, den Trend der bereits verfügbaren Monate auf das ganze Jahr fortzuschreiben.",
     "step1": {
-      "title": "1 — Hochrechnung des Verbrauchs",
       "body": "Verwendet werden die monatlichen Aufkommensbilanzen für Erdgas, Mineralölprodukte und feste fossile Brennstoffe von eurostat:",
-      "columns": ["Kategorie", "Datenbank", "Einheit", "Veröffentlichungsverzug"],
-      "rows": [
-        ["Erdgas", "NRG_CB_GASM", "TJ_GCV", "1 Monat"],
-        ["Öl", "NRG_CB_OILM", "THS_T", "2 Monate"],
-        ["Kohle", "NRG_CB_SFFM", "THS_T", "2 Monate"]
+      "caveat": "Die Abbildung unten wendet das Verfahren auf 2022 an, mit Faktoren aus den Jahren 2013–2021. Die Vorhersage ist brauchbar, enthält aber einen systematischen Fehler, den die Statistik allein nicht erklärt: Die instabilen Energiemärkte der letzten Jahre haben zusätzliche Unsicherheit gebracht. Der Erdgasjahresverbrauch wird etwa überschätzt, wenn nur Daten bis Sommer 2022 einfließen — die hohen Preise im zweiten Halbjahr führten zu einem Rückgang, den kein vergangener Trend vorwegnehmen konnte. Hochgerechnete Werte sind daher mit großer Vorsicht zu lesen. Die Projektion auf der Startseite trainiert immer auf Daten bis zum letzten vollständigen Jahr.",
+      "columns": [
+        "Kategorie",
+        "Datenbank",
+        "Einheit",
+        "Veröffentlichungsverzug"
       ],
       "factors": "Ist ein Jahr noch nicht vollständig, wird es mit Skalierungsfaktoren aus vergangenen Jahren hochgerechnet. Für jeden Energieträger f, jeden Monat m und jedes vergangene Jahr y ab 2013 beschreibt ein Faktor das Verhältnis zwischen dem Jahresendverbrauch und dem Verbrauch bis zu diesem Monat:",
-      "formula_scaling": "C(f,y) = F_cons(f,m,y) · C(f,m,y)",
+      "figure_alt": "Hochrechnung des Verbrauchs fossiler Energieträger im Vergleich zum tatsächlichen Wert 2022",
       "mean": "Die monatlichen Faktoren über alle Jahre werden als normalverteilt angenommen; ihr Mittelwert skaliert das laufende Jahr:",
-      "formula_mean": "F̄_cons(f,m) = (1/N) · Σ_y F_cons(f,m,y)",
+      "rows": [
+        [
+          "Erdgas",
+          "NRG_CB_GASM",
+          "TJ_GCV",
+          "1 Monat"
+        ],
+        [
+          "Öl",
+          "NRG_CB_OILM",
+          "THS_T",
+          "2 Monate"
+        ],
+        [
+          "Kohle",
+          "NRG_CB_SFFM",
+          "THS_T",
+          "2 Monate"
+        ]
+      ],
       "sigma": "Ein Schätzer der Standardabweichung mit der üblichen Faustregel-Korrektur liefert die Unsicherheit der Hochrechnung:",
-      "formula_sigma": "σ̂(F_cons(f,m)) = √( (1/(N−1,5)) · Σ_y ( F̄_cons(f,m) − F_cons(f,m,y) )² )",
-      "caveat": "Die Abbildung unten wendet das Verfahren auf 2022 an, mit Faktoren aus den Jahren 2013–2021. Die Vorhersage ist brauchbar, enthält aber einen systematischen Fehler, den die Statistik allein nicht erklärt: Die instabilen Energiemärkte der letzten Jahre haben zusätzliche Unsicherheit gebracht. Der Erdgasjahresverbrauch wird etwa überschätzt, wenn nur Daten bis Sommer 2022 einfließen — die hohen Preise im zweiten Halbjahr führten zu einem Rückgang, den kein vergangener Trend vorwegnehmen konnte. Hochgerechnete Werte sind daher mit großer Vorsicht zu lesen. Die Projektion auf der Startseite trainiert immer auf Daten bis zum letzten vollständigen Jahr.",
-      "figure_alt": "Hochrechnung des Verbrauchs fossiler Energieträger im Vergleich zum tatsächlichen Wert 2022"
+      "title": "1 — Hochrechnung des Verbrauchs"
     },
     "step2": {
-      "title": "2 — Vom Energieträger zur Emission",
-      "body": "Die CO₂-Emissionen werden aus diesen Verbrauchswerten berechnet, mit Emissionsfaktoren aus dem Nationalen Inventurbericht und Heizwerten aus den Energiebilanzen der Statistik Austria:",
-      "columns": ["Energieträger", "Datenbank", "Position", "Heizwert", "Emissionsfaktor"],
-      "rows": [
-        ["Erdgas", "NRG_CB_GASM", "Inlandsverbrauch (IC_CAL_MG)", "0,0372 TJ/1000 m³", "55,4 t CO₂/TJ"],
-        ["Benzin", "NRG_CB_OILM", "Bruttoinlandslieferungen (GID_OBS)", "0,0418 TJ/t", "71,3 t CO₂/TJ"],
-        ["Diesel", "NRG_CB_OILM", "Bruttoinlandslieferungen (GID_OBS)", "0,0424 TJ/t", "71,3 t CO₂/TJ"],
-        ["Heizöl", "NRG_CB_OILM", "Bruttoinlandslieferungen (GID_OBS)", "0,0428 TJ/t", "75,0 t CO₂/TJ"],
-        ["Raffineriegas", "NRG_CB_OILM", "Raffineriebrennstoff (RF)", "0,0306 TJ/t", "64,0 t CO₂/TJ"],
-        ["Steinkohle — Strom", "NRG_CB_SFFM", "Umwandlungseinsatz Strom und Wärme (TI_EHG_MAP)", "0,0299 TJ/t", "95,0 t CO₂/TJ"],
-        ["Steinkohle — Industrie", "NRG_CB_SFFM", "Endverbrauch Industrie (FC_IND)", "0,0299 TJ/t", "95,0 t CO₂/TJ"],
-        ["Steinkohle — Kokereien", "NRG_CB_SFFM", "Umwandlungseinsatz Kokereien (TI_CO)", "0,0299 TJ/t", "95,0 t CO₂/TJ"],
-        ["Kokereikoks", "NRG_CB_SFFM", "Bruttoinlandslieferungen, berechnet (GID_CAL)", "0,0282 TJ/t", "94,6 t CO₂/TJ"]
-      ],
-      "formula_estimate": "E_estimated(y) = Σ_f C(f,y) · NCV(f) · e(f)",
       "biofuels": "Die Mengen an Biokraftstoffen (Biodiesel und Biobenzin) werden zuvor von den Diesel- und Benzinwerten abgezogen.",
+      "body": "Die CO₂-Emissionen werden aus diesen Verbrauchswerten berechnet, mit Emissionsfaktoren aus dem Nationalen Inventurbericht und Heizwerten aus den Energiebilanzen der Statistik Austria:",
+      "columns": [
+        "Energieträger",
+        "Datenbank",
+        "Position",
+        "Heizwert",
+        "Emissionsfaktor"
+      ],
+      "figure_alt": "Abgeschätzte Emissionen vor und nach der Skalierung im Vergleich zu den gemeldeten Emissionen",
       "gap": "Vergleicht man diese Abschätzung mit den gemeldeten Emissionen der energiebezogenen Sektoren — Verkehr, Energie & Industrie, Gebäude — bleibt eine Lücke, die mehrere systematische Ursachen hat:",
       "gap_reasons": [
         "Prozessemissionen der Industrie, die nicht auf fossilen Brennstoffen beruhen, fehlen — vor allem Zement- und Kalkherstellung, rund 2,5 Mt CO₂ im Jahr 2021.",
@@ -99,20 +59,137 @@
         "Nicht alle Energieträger sind erfasst.",
         "Integrierte Prozessrouten in der Industrie, besonders in der Stahl- und Chemieindustrie, sind vereinfacht abgebildet."
       ],
+      "rows": [
+        [
+          "Erdgas",
+          "NRG_CB_GASM",
+          "Inlandsverbrauch (IC_CAL_MG)",
+          "0,0372 TJ/1000 m³",
+          "55,4 t CO₂/TJ"
+        ],
+        [
+          "Benzin",
+          "NRG_CB_OILM",
+          "Bruttoinlandslieferungen (GID_OBS)",
+          "0,0418 TJ/t",
+          "71,3 t CO₂/TJ"
+        ],
+        [
+          "Diesel",
+          "NRG_CB_OILM",
+          "Bruttoinlandslieferungen (GID_OBS)",
+          "0,0424 TJ/t",
+          "71,3 t CO₂/TJ"
+        ],
+        [
+          "Heizöl",
+          "NRG_CB_OILM",
+          "Bruttoinlandslieferungen (GID_OBS)",
+          "0,0428 TJ/t",
+          "75,0 t CO₂/TJ"
+        ],
+        [
+          "Raffineriegas",
+          "NRG_CB_OILM",
+          "Raffineriebrennstoff (RF)",
+          "0,0306 TJ/t",
+          "64,0 t CO₂/TJ"
+        ],
+        [
+          "Steinkohle — Strom",
+          "NRG_CB_SFFM",
+          "Umwandlungseinsatz Strom und Wärme (TI_EHG_MAP)",
+          "0,0299 TJ/t",
+          "95,0 t CO₂/TJ"
+        ],
+        [
+          "Steinkohle — Industrie",
+          "NRG_CB_SFFM",
+          "Endverbrauch Industrie (FC_IND)",
+          "0,0299 TJ/t",
+          "95,0 t CO₂/TJ"
+        ],
+        [
+          "Steinkohle — Kokereien",
+          "NRG_CB_SFFM",
+          "Umwandlungseinsatz Kokereien (TI_CO)",
+          "0,0299 TJ/t",
+          "95,0 t CO₂/TJ"
+        ],
+        [
+          "Kokereikoks",
+          "NRG_CB_SFFM",
+          "Bruttoinlandslieferungen, berechnet (GID_CAL)",
+          "0,0282 TJ/t",
+          "94,6 t CO₂/TJ"
+        ]
+      ],
       "scaling": "Um diese Effekte aufzufangen, wird dasselbe Verfahren ein zweites Mal angewandt: Jede Jahresabschätzung erhält einen Skalierungsfaktor, und deren Mittelwert skaliert die Abschätzung auf die Gesamtemissionen der Energiesektoren hoch.",
-      "formula_scaled": "E_scaled(y) = E_estimated(y) · F̄_em",
-      "figure_alt": "Abgeschätzte Emissionen vor und nach der Skalierung im Vergleich zu den gemeldeten Emissionen"
+      "title": "2 — Vom Energieträger zur Emission"
     },
     "step3": {
-      "title": "3 — Beides zusammengeführt",
       "body": "Die Verbindung von Verbrauchshochrechnung und Emissionsskalierung ergibt eine CO₂-Abschätzung für ein Jahr, dessen Daten noch unvollständig sind:",
-      "formula_total": "E_scaled(y) = ( Σ_f C(f,m,y) · F̄_cons(f,m) · NCV(f) · e(f) ) · F̄_em",
-      "uncertainty": "Die beiden statistischen Unsicherheiten pflanzen sich fort und addieren sich:",
-      "formula_uncertainty": "σ_total(y) = Σ_f ( C(f,m,y) · NCV(f) · e(f) · F̄_em · σ̂(F_cons(f,m)) ) + ( Σ_f C(f,m,y) · F̄_cons(f,m) · NCV(f) · e(f) ) · σ̂(F_em)",
-      "terms": "Der erste Term beschreibt die Unsicherheit aus der Verbrauchshochrechnung, der zweite jene aus der Emissionsskalierung.",
-      "other_sectors": "Die Emissionen der nicht energiebezogenen Sektoren — Landwirtschaft, Abfallwirtschaft, fluorierte Gase — werden nach einer einfacheren Regel ergänzt: Der durchschnittliche Trend der letzten drei Jahre wird ins Projektionsjahr fortgeschrieben.",
+      "figure_alt": "Projizierte Emissionen 2022 nach Anzahl verfügbarer Monate, mit beiden Unsicherheitsanteilen",
       "figure_caption": "Die Abbildung zeigt die projizierten Gesamtemissionen für 2022, aufgetragen über der Zahl der verwendeten Monate. Früh im Jahr überschätzt die Projektion und nähert sich mit jedem weiteren Monat an; die Marktverwerfungen 2022 haben diesen Effekt verstärkt. Die untere Abbildung trennt die beiden Unsicherheiten: Jene aus der Verbrauchshochrechnung sinkt mit zunehmender Datenlage, jene aus der Emissionsskalierung bleibt annähernd konstant.",
-      "figure_alt": "Projizierte Emissionen 2022 nach Anzahl verfügbarer Monate, mit beiden Unsicherheitsanteilen"
-    }
-  }
+      "other_sectors": "Die Emissionen der nicht energiebezogenen Sektoren — Landwirtschaft, Abfallwirtschaft, fluorierte Gase — werden nach einer einfacheren Regel ergänzt: Der durchschnittliche Trend der letzten drei Jahre wird ins Projektionsjahr fortgeschrieben.",
+      "terms": "Der erste Term beschreibt die Unsicherheit aus der Verbrauchshochrechnung, der zweite jene aus der Emissionsskalierung.",
+      "title": "3 — Beides zusammengeführt",
+      "uncertainty": "Die beiden statistischen Unsicherheiten pflanzen sich fort und addieren sich:"
+    },
+    "title": "Hochrechnung fossiler Energieträger und Emissionsabschätzung"
+  },
+  "motivation": {
+    "body": "Diese Seite ist ein rein privates Projekt, entstanden aus Interesse an der nachhaltigen Transformation und dem Wunsch, sie so genau nachzuvollziehen, wie es öffentlich verfügbare Daten erlauben. Für die Richtigkeit der Daten wird keine Gewähr übernommen. Rückmeldungen, konstruktive Kritik und direkte Beiträge sind sehr willkommen.",
+    "title": "Motivation"
+  },
+  "privacy": {
+    "body": "Diese Seite wird über GitHub Pages gehostet. GitHub kann beim Besuch Daten wie IP-Adressen erfassen; Details dazu finden sich in der GitHub-Dokumentation zu GitHub Pages und in der allgemeinen Datenschutzerklärung von GitHub. Darüber hinaus erfasst diese Seite keine Daten und setzt keine Cookies. Die gewählte Sprache und das Farbschema werden im lokalen Speicher des Browsers abgelegt und verlassen das Gerät nicht.",
+    "title": "Datenschutz"
+  },
+  "sources": {
+    "columns": [
+      "Quelle",
+      "Beispieldatensätze",
+      "Zugriff"
+    ],
+    "intro": "Wo immer möglich verwendet die Seite Daten, die automatisch über eine Schnittstelle abgerufen werden können. Die wichtigsten Quellen sind:",
+    "rows": [
+      {
+        "access": "Automatisch, über API",
+        "examples": "Energiebilanzen, monatliche und jährliche Aufkommensstatistiken",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/data/database"
+      },
+      {
+        "access": "Manueller Download",
+        "examples": "Kfz-Zulassungen, installierte Heizsysteme, Nahrungsmittelverbrauch",
+        "name": "Statistik Austria",
+        "url": "https://www.statistik.at/statistiken"
+      },
+      {
+        "access": "Manueller Download",
+        "examples": "Treibhausgasemissionen nach Subsektoren",
+        "name": "Umweltbundesamt — Nationaler Inventurbericht",
+        "url": "https://www.umweltbundesamt.at/studien-reports"
+      },
+      {
+        "access": "Manueller Download",
+        "examples": "Treibhausgasemissionen nach Sektoren",
+        "name": "Umweltbundesamt — Klimadashboard",
+        "url": "https://www.umweltbundesamt.at/klima/dashboard"
+      },
+      {
+        "access": "Automatisch, über Download",
+        "examples": "Monatliche Stromerzeugung und -verbrauch",
+        "name": "E-Control",
+        "url": "https://www.e-control.at/statistik"
+      }
+    ],
+    "title": "Datenquellen"
+  },
+  "stack": {
+    "body": "Die Datenverarbeitung ist in Python geschrieben: Sie lädt alle Datensätze herunter, verarbeitet sie und schreibt pro Diagramm eine JSON-Datei sowie ein Manifest, das die Diagramme beschreibt. Das Frontend ist eine Vue-3-Anwendung mit Vuetify, die Diagramme werden mit Plotly gezeichnet. Die gesamte Seite ist statisch und wird über GitHub Pages ausgeliefert.",
+    "title": "Technischer Aufbau"
+  },
+  "title": "Über"
 }

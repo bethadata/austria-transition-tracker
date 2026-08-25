@@ -2,7 +2,6 @@ import { createRouter, createWebHashHistory, type RouteRecordRaw } from 'vue-rou
 
 import AboutView from '@/views/AboutView.vue'
 import ChartPageView from '@/views/ChartPageView.vue'
-import MethodologyView from '@/views/MethodologyView.vue'
 
 /**
  * The seven sector routes, in the order the navigation lists them.
@@ -45,7 +44,12 @@ export const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     ...chartRoutes,
-    { path: '/methodology', component: MethodologyView },
+    {
+      path: '/methodology',
+      // Lazily loaded: it is the only route that needs KaTeX, and bundling that
+      // into the shell would put ~260 kB of typesetting on every chart page.
+      component: () => import('@/views/MethodologyView.vue'),
+    },
     { path: '/about', component: AboutView },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],

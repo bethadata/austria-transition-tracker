@@ -26,6 +26,7 @@ export default defineConfig({
         // page mounts, so it is split out rather than carried by the shell.
         manualChunks(id: string) {
           if (id.includes('plotly.js')) return 'plotly'
+          if (id.includes('katex')) return 'katex'
           return undefined
         },
       },
