@@ -7,7 +7,7 @@ the transport, buildings, industry, agriculture, waste, F-gas and land-use secto
 
 ![The overview page: reported greenhouse gas emissions by sector since 1990, with the national total drawn over the stack](assets/screenshot.png)
 
-**Live demo:** [bethadata.github.io/austria-transition-tracker-v2](https://bethadata.github.io/austria-transition-tracker-v2/)
+**Live demo:** [bethadata.github.io/austria-transition-tracker](https://bethadata.github.io/austria-transition-tracker/)
 
 ---
 

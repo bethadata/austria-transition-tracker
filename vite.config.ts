@@ -8,7 +8,7 @@ import vuetify from 'vite-plugin-vuetify'
 // sub-path rather than the domain root. Vite rewrites absolute hrefs in
 // index.html with this, but not site.webmanifest and not fetch() calls -- those
 // use install_favicon.py --base and import.meta.env.BASE_URL respectively.
-const BASE = '/austria-transition-tracker-v2/'
+const BASE = '/austria-transition-tracker/'
 
 export default defineConfig({
   base: BASE,

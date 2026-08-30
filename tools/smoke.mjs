@@ -20,7 +20,7 @@
  */
 import { chromium } from '@playwright/test'
 
-const BASE = process.env.SMOKE_BASE ?? 'http://localhost:4175/austria-transition-tracker-v2/'
+const BASE = process.env.SMOKE_BASE ?? 'http://localhost:4175/austria-transition-tracker/'
 
 const PAGES = [
   { hash: '#/', name: 'overview', minCharts: 6 },
