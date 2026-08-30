@@ -11,6 +11,7 @@
     "legend": "Toggle legend",
     "loading": "Loading…",
     "no_data": "No data available",
+    "preliminary": "Newest value is provisional.",
     "source": "Source",
     "updated": "Updated",
     "view": "View",
@@ -24,9 +25,11 @@
     "not_found": "This page does not exist."
   },
   "footer": {
+    "bluesky": "Bluesky profile",
     "data": "Data",
-    "note": "Private project. No guarantee is given on the accuracy of the data.",
-    "source_code": "Source code"
+    "github": "Source code on GitHub",
+    "last_updated": "Last updated {date}",
+    "note": "Private project. No guarantee is given on the accuracy of the data."
   },
   "groups": {
     "chemicals": "Chemicals",
@@ -62,6 +65,7 @@
   "series": {
     "12_month_average": "12-Month average",
     "agriculture": "Agriculture",
+    "air_conditioners": "Air conditioners",
     "aluminium_industry": "Aluminium industry",
     "ambient_heat": "Ambient heat",
     "audi": "Audi",
@@ -106,8 +110,7 @@
     "energy_and_industry": "Energy & Industry",
     "energy_sectors": "Energy sectors",
     "energy_use": "Energy use",
-    "extrapolated_jul_dec": "Extrapolated: Jul - Dec",
-    "extrapolated_jun_dec": "Extrapolated: Jun - Dec",
+    "extrapolated_rest_of_year": "Extrapolated: {month} – Dec",
     "fermentation_cows": "Fermentation (cows)",
     "fertilizer": "Fertilizer",
     "fluorinated_gases": "Fluorinated Gases",
@@ -138,10 +141,8 @@
     "mopeds_and_motorcycles": "Mopeds and Motorcycles",
     "natural_gas": "Natural gas",
     "non_electrified": "Non-electrified",
-    "observed_jan_jun": "Observed: Jan - Jun",
-    "observed_jan_may": "Observed: Jan - May",
-    "observed_jul_dec": "Observed: Jul - Dec",
-    "observed_jun_dec": "Observed: Jun - Dec",
+    "observed_rest_of_year": "Observed: {month} – Dec",
+    "observed_to_date": "Observed: Jan – {month}",
     "oil": "Oil",
     "organic_fertilizer_manure_management": "Organic fertilizer (manure) management",
     "other": "Other",
@@ -151,7 +152,7 @@
     "petroleum_refining": "Petroleum refining",
     "pig": "Pig",
     "pigmeat": "Pigmeat",
-    "projeted_emissions": "Projected emissions",
+    "projected_emissions": "Projected emissions",
     "public_electricity_heat": "Public electricity / heat",
     "pulp_paper": "Pulp / Paper",
     "pv": "PV",

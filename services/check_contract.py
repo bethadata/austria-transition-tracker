@@ -1,6 +1,6 @@
 """Validate the manifest against the data files and the locale seed.
 
-Run after create_charts.py. Every failure here is a class of bug that renders as
+Run after pipeline.py. Every failure here is a class of bug that renders as
 a blank or silently wrong chart rather than as an error: a chart with no data
 file, a series named in the manifest but absent from the data, a chart id with
 no title in the locale files. Cheap to check, invisible if it is not checked.
@@ -11,10 +11,7 @@ import json
 import os
 import sys
 
-from paths import BASEPATH
-
-DATA_DIR = BASEPATH + "/public/data"
-LOCALES = BASEPATH + "/src/locales"
+from paths import PUBLIC_DATA, LOCALES
 
 
 def _load(path):
@@ -24,7 +21,7 @@ def _load(path):
 
 def check():
     problems = []
-    manifest = _load(DATA_DIR + "/manifest.json")
+    manifest = _load(PUBLIC_DATA + "/manifest.json")
     charts = manifest["charts"]
     ids = [c["id"] for c in charts]
 
@@ -32,7 +29,7 @@ def check():
     if dupes:
         problems.append("duplicate chart ids: %s" % ", ".join(sorted(dupes)))
 
-    on_disk = {os.path.basename(p)[:-5] for p in glob.glob(DATA_DIR + "/*.json")}
+    on_disk = {os.path.basename(p)[:-5] for p in glob.glob(PUBLIC_DATA + "/*.json")}
     on_disk.discard("manifest")
     missing = set(ids) - on_disk
     orphaned = on_disk - set(ids)
@@ -42,13 +39,20 @@ def check():
         problems.append("data files with no manifest entry: %s" % ", ".join(sorted(orphaned)))
 
     for c in charts:
+        for key in c.get("labels") or {}:
+            # A label parameter for a series the chart does not have is a
+            # renamed series that nobody updated: the legend keeps its
+            # {month} placeholder unfilled, which renders literally.
+            if key not in c["series"]:
+                problems.append("%s: label params for unknown series %r"
+                                % (c["id"], key))
         if not c.get("page"):
-            problems.append("%s: no page (add it to plot/pages.py)" % c["id"])
+            problems.append("%s: no page (add it to charts/pages.py)" % c["id"])
         if not c.get("series"):
             problems.append("%s: no series" % c["id"])
         if c["id"] not in on_disk:
             continue
-        data = _load("%s/%s.json" % (DATA_DIR, c["id"]))
+        data = _load("%s/%s.json" % (PUBLIC_DATA, c["id"]))
         if "groups" in data:
             if set(data["groups"]) != set(c.get("groups") or []):
                 problems.append("%s: groups differ between manifest and data" % c["id"])

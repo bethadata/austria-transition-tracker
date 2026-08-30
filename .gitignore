@@ -60,12 +60,19 @@ REFACTOR.md
 # ----------------------
 # Raw data
 # ----------------------
-# Only the two API-cached sources are ignored — scrape_data.py reproduces them.
-# The manual drops (statistik_austria/, umweltbundesamt/, unfcc/,
+# Only the two API-cached sources are ignored — scrape.py reproduces them.
+# The manual drops (statistik_austria/, umweltbundesamt/, eea/,
 # national_inventory_report/, other/) stay tracked: they cannot be re-downloaded
 # by the pipeline, so git is the only backup they have.
 services/data_raw/eurostat/
 services/data_raw/e_control/
+# The one exception among the manual drops: the National Inventory Report is a
+# ~12 MB PDF, and unlike the spreadsheets next to it, it is a published document
+# that stays downloadable from umweltbundesamt.at. Nothing reads it directly --
+# download/national_inventory.py extracts the six lulucf_<use>.txt grids from it
+# and those are tracked, so the repo keeps the numbers without the binary.
+# Ignored by glob rather than by name so the next edition is covered too.
+services/data_raw/national_inventory_report/*.pdf
 
 # ----------------------
 # Frontend build

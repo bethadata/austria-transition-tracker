@@ -1,5 +1,5 @@
 /**
- * The data contract, mirroring services/plot/manifest.py.
+ * The data contract, mirroring services/charts/manifest.py.
  *
  * Nothing here carries human-readable text. Every label the reader sees is
  * looked up from the locale files by one of these ids: `charts.<id>.title`,
@@ -38,6 +38,23 @@ export interface ChartSpec {
   uncertainty?: string[]
   /** Series stacked as areas even when the chart type is not itself an area. */
   areas?: string[]
+  /**
+   * Interpolation values for a series' legend label, keyed by series.
+   *
+   * The fuel-consumption charts need the month their data reaches ("Observed:
+   * Jan – Jun"). Encoding it in the series *key* meant four new locale keys in
+   * both locales every month the data advanced, and a missed one renders as the
+   * literal key. So the key is stable, the locale string carries a {month}
+   * placeholder, and only the number travels -- which is also what lets each
+   * locale spell the month itself.
+   */
+  labels?: Record<string, { month?: number }>
+  /**
+   * The newest point is provisional -- a Statistik Austria "vorlaeufige Daten"
+   * drop rather than a final figure. Set by the pipeline, absent otherwise, so
+   * the caveat stops being rendered on its own once the final figure lands.
+   */
+  preliminary?: boolean
   source?: ChartSource
 }
 
@@ -62,4 +79,10 @@ export interface ChartData {
   series?: Record<string, Column>
   /** ... and `groups` charts carry one block per selectable dataset. */
   groups?: Record<string, DataBlock>
+  /**
+   * Error-bar half-widths, keyed by series and aligned to `x`, for the series
+   * the manifest lists under `uncertainty`. The manifest names *which* series
+   * carries a band; only this says how wide it is.
+   */
+  uncertainty?: Record<string, Column>
 }

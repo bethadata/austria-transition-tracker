@@ -1,4 +1,8 @@
 {
+  "ai": {
+    "body": "Parts of the code and some of the wording on this site were produced with the help of large language models (GPT and Claude Code among them). All generated code was reviewed; the project architecture, the design, the models and the ideas behind the calculations are entirely my own.",
+    "title": "AI disclaimer"
+  },
   "disclaimer": {
     "body": "The information on this website is provided for general information only. Efforts are made to keep it up to date and correct, but no representation or warranty of any kind is given as to completeness, accuracy, reliability or suitability. Any reliance you place on it is strictly at your own risk. The site links to other websites whose nature, content and availability are outside its control.",
     "title": "Disclaimer"
@@ -140,10 +144,16 @@
   },
   "motivation": {
     "body": "This site is a purely private project, made out of interest in the sustainable transition and a wish to follow it as closely as publicly available data allows. No guarantee is given on the accuracy of the data. Feedback, constructive criticism and direct contributions are very welcome.",
+    "links_text": "The full source code, including the data pipeline, is available on {repo}. Have a look at my other projects as well, such as the {population} or the {power}.",
+    "population_link": "Austria Population Tracker",
+    "power_link": "Austria Power Sim",
+    "repo_link": "GitHub",
     "title": "Motivation"
   },
   "privacy": {
-    "body": "This page is hosted on GitHub Pages. GitHub may collect information such as IP addresses when the site is visited; see GitHub's own documentation on GitHub Pages data collection and its general privacy statement. Beyond what GitHub collects, this site tracks nothing and sets no cookies. The language and theme you choose are stored in your browser's local storage and never leave your device.",
+    "body": "This page is hosted on GitHub Pages. GitHub may collect information such as IP addresses when the site is visited; for details see {link1} and GitHub's general {link2}. Beyond what GitHub collects, this site tracks nothing and sets no cookies. The language and theme you choose are stored in your browser's local storage and never leave your device.",
+    "link1": "GitHub Pages data collection",
+    "link2": "privacy statement",
     "title": "Privacy"
   },
   "sources": {
@@ -162,7 +172,7 @@
       },
       {
         "access": "Manual download",
-        "examples": "Vehicle registrations, installed heating systems, food consumption",
+        "examples": "Vehicle registrations, installed heating systems, air conditioners, food consumption",
         "name": "Statistics Austria",
         "url": "https://www.statistik.at/statistiken"
       },
@@ -177,6 +187,12 @@
         "examples": "Greenhouse gas emissions by sector",
         "name": "Umweltbundesamt — Klimadashboard",
         "url": "https://www.umweltbundesamt.at/klima/dashboard"
+      },
+      {
+        "access": "Manual download",
+        "examples": "Greenhouse gas inventory by CRF sector and sub-sector",
+        "name": "European Environment Agency — Greenhouse gases data viewer",
+        "url": "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers"
       },
       {
         "access": "Automatic, via download",

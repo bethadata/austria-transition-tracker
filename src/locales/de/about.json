@@ -1,4 +1,8 @@
 {
+  "ai": {
+    "body": "Teile des Codes und einzelne sprachliche Überarbeitungen dieser Seite sind mit Unterstützung von Large Language Models (unter anderem GPT und Claude Code) entstanden. Der generierte Code wurde durchgängig überprüft; Projektarchitektur, Gestaltung, Modelle und die zugrunde liegenden Rechenideen stammen aus eigener Hand.",
+    "title": "Hinweis zu KI-Unterstützung"
+  },
   "disclaimer": {
     "body": "Die Informationen auf dieser Website dienen ausschließlich der allgemeinen Information. Es wird versucht, sie aktuell und korrekt zu halten; eine Zusicherung oder Gewährleistung hinsichtlich Vollständigkeit, Richtigkeit, Verlässlichkeit oder Eignung wird jedoch weder ausdrücklich noch stillschweigend gegeben. Jedes Vertrauen auf diese Informationen erfolgt auf eigenes Risiko. Die Seite verlinkt auf andere Websites, deren Art, Inhalt und Verfügbarkeit nicht in ihrem Einfluss stehen.",
     "title": "Haftungsausschluss"
@@ -139,11 +143,17 @@
     "title": "Hochrechnung fossiler Energieträger und Emissionsabschätzung"
   },
   "motivation": {
-    "body": "Diese Seite ist ein rein privates Projekt, entstanden aus Interesse an der nachhaltigen Transformation und dem Wunsch, sie so genau nachzuvollziehen, wie es öffentlich verfügbare Daten erlauben. Für die Richtigkeit der Daten wird keine Gewähr übernommen. Rückmeldungen, konstruktive Kritik und direkte Beiträge sind sehr willkommen.",
+    "body": "Die Seite ist ein rein privates Projekt, entstanden aus Interesse an der nachhaltigen Transformation und dem Wunsch, sie so genau nachzuvollziehen, wie es öffentlich verfügbare Daten erlauben. Für die Richtigkeit der Daten wird keine Gewähr übernommen. Rückmeldungen, konstruktive Kritik und direkte Beiträge sind willkommen.",
+    "links_text": "Der gesamte Quellcode inklusive der Datenaufbereitung ist auf {repo} verfügbar. Schau dir auch meine anderen Projekte an, etwa den {population} oder den {power}.",
+    "population_link": "Austria Population Tracker",
+    "power_link": "Austria Power Sim",
+    "repo_link": "GitHub",
     "title": "Motivation"
   },
   "privacy": {
-    "body": "Diese Seite wird über GitHub Pages gehostet. GitHub kann beim Besuch Daten wie IP-Adressen erfassen; Details dazu finden sich in der GitHub-Dokumentation zu GitHub Pages und in der allgemeinen Datenschutzerklärung von GitHub. Darüber hinaus erfasst diese Seite keine Daten und setzt keine Cookies. Die gewählte Sprache und das Farbschema werden im lokalen Speicher des Browsers abgelegt und verlassen das Gerät nicht.",
+    "body": "Die Homepage wird über GitHub Pages gehostet. GitHub kann beim Besuch Daten wie IP-Adressen erfassen; Details dazu finden sich unter {link1} und in der allgemeinen {link2}. Darüber hinaus erfasst diese Seite keine Daten und setzt keine Cookies. Die gewählte Sprache und das Farbschema werden im lokalen Speicher des Browsers abgelegt und verlassen das Gerät nicht.",
+    "link1": "Datenerhebung durch GitHub Pages",
+    "link2": "Datenschutzerklärung von GitHub",
     "title": "Datenschutz"
   },
   "sources": {
@@ -162,7 +172,7 @@
       },
       {
         "access": "Manueller Download",
-        "examples": "Kfz-Zulassungen, installierte Heizsysteme, Nahrungsmittelverbrauch",
+        "examples": "Kfz-Zulassungen, installierte Heizsysteme, Klimaanlagen, Nahrungsmittelverbrauch",
         "name": "Statistik Austria",
         "url": "https://www.statistik.at/statistiken"
       },
@@ -179,6 +189,12 @@
         "url": "https://www.umweltbundesamt.at/klima/dashboard"
       },
       {
+        "access": "Manueller Download",
+        "examples": "Treibhausgasinventar nach CRF-Sektoren und Subsektoren",
+        "name": "European Environment Agency — Greenhouse gases data viewer",
+        "url": "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers"
+      },
+      {
         "access": "Automatisch, über Download",
         "examples": "Monatliche Stromerzeugung und -verbrauch",
         "name": "E-Control",
@@ -188,8 +204,8 @@
     "title": "Datenquellen"
   },
   "stack": {
-    "body": "Die Datenverarbeitung ist in Python geschrieben: Sie lädt alle Datensätze herunter, verarbeitet sie und schreibt pro Diagramm eine JSON-Datei sowie ein Manifest, das die Diagramme beschreibt. Das Frontend ist eine Vue-3-Anwendung mit Vuetify, die Diagramme werden mit Plotly gezeichnet. Die gesamte Seite ist statisch und wird über GitHub Pages ausgeliefert.",
-    "title": "Technischer Aufbau"
+    "body": "Die Datenverarbeitung läuft mit Python: Download aller Daten, Verarbeitung und Erstellung der Plot-Daten. Das Frontend ist eine Vue-3-Anwendung mit Vuetify, die Diagramme zeichnet Plotly. Die gesamte Seite ist statisch und wird über GitHub Pages ausgeliefert.",
+    "title": "Stack"
   },
   "title": "Über"
 }

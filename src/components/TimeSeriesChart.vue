@@ -65,8 +65,30 @@ const effectiveView = computed<ToggleView | 'area_neg'>(() => {
   return 'line'
 })
 
+/**
+ * A series' legend label, with any manifest-supplied parameters filled in.
+ *
+ * `spec.labels` carries numbers, not text -- currently only the month a fuel
+ * chart's data reaches. The month is spelled here, in the reader's language,
+ * from a locale-aware formatter rather than a table: the pipeline emitting `6`
+ * and the locale string saying `{month}` is what keeps the series key stable as
+ * the data advances.
+ */
 function label(key: string): string {
-  return t(`common.series.${key}`)
+  const params = props.spec.labels?.[key]
+  if (!params) return t(`common.series.${key}`)
+  const filled: Record<string, string> = {}
+  if (params.month) filled.month = monthName(params.month)
+  return t(`common.series.${key}`, filled)
+}
+
+const monthFormat = computed(
+  () => new Intl.DateTimeFormat(locale.value, { month: 'short' }),
+)
+
+function monthName(month: number): string {
+  // Day 1 of an arbitrary non-leap year: only the month is read back out.
+  return monthFormat.value.format(new Date(2001, month - 1, 1)).replace('.', '')
 }
 
 function buildTraces(): Partial<Plotly.PlotData>[] {
@@ -84,8 +106,15 @@ function buildTraces(): Partial<Plotly.PlotData>[] {
 
     // A total is never stacked into the area it totals: it is drawn as a line
     // on top, in ink, or the stack would double-count it.
-    const stacked = (view === 'area' || view === 'area_neg') && !isTotal
-    const asBar = view === 'bar' && !isTotal
+    //
+    // `areas` is the second route into a stack: it names the series that are
+    // filled even on a chart whose type is `line`. The projection chart is the
+    // one that needs it -- two sector areas summing to the historic total, with
+    // the total and the projection drawn as lines over them -- and without it
+    // the areas rendered as four unrelated lines.
+    const inAreas = props.spec.areas?.includes(key) ?? false
+    const stacked = ((view === 'area' || view === 'area_neg') && !isTotal) || (view === 'line' && inAreas)
+    const asBar = view === 'bar' && !isTotal && !inAreas
 
     const trace: Partial<Plotly.PlotData> = {
       x: b.x,
@@ -120,12 +149,19 @@ function buildTraces(): Partial<Plotly.PlotData>[] {
       trace.marker = { color: chrome.primary }
     }
 
-    if (props.spec.uncertainty?.includes(key)) {
-      const band = b.series[key] ?? []
+    // The band travels in the data file, not the manifest: the manifest only
+    // says which series has one. Nulls become 0 rather than being passed
+    // through -- Plotly reads a null half-width as "draw nothing", but only
+    // after logging it, and every historic year of a projection is one.
+    const band = props.data.uncertainty?.[key]
+    if (band && props.spec.uncertainty?.includes(key)) {
       trace.error_y = {
         type: 'data',
-        array: band.map(() => 0),
-        visible: false,
+        array: band.map((v) => v ?? 0),
+        visible: true,
+        color,
+        thickness: 1.5,
+        width: 5,
       }
     }
 

@@ -110,12 +110,18 @@ onMounted(async () => {
       </v-list>
     </v-navigation-drawer>
 
+    <!--
+      The footer lives inside v-main, not beside it. Vuetify offsets v-main for
+      the navigation drawer; a footer outside the layout starts at x=0 instead
+      and its first ~250px disappear behind the rail, which clipped the
+      disclaimer to its second half on every desktop viewport.
+    -->
     <v-main>
       <v-container fluid class="pa-4 pa-md-6">
         <router-view />
       </v-container>
-    </v-main>
 
-    <AppFooter />
+      <AppFooter />
+    </v-main>
   </v-app>
 </template>

@@ -10,8 +10,10 @@
     "preview": "vite preview --port 4175",
     "typecheck": "vue-tsc --noEmit",
     "test:smoke": "node tools/smoke.mjs",
-    "data": "cd services && .venv/Scripts/python.exe create_charts.py",
-    "data:check": "cd services && .venv/Scripts/python.exe check_contract.py"
+    "data": "cd services && poetry run python pipeline.py",
+    "data:check": "cd services && poetry run python check_contract.py",
+    "data:scrape": "cd services && poetry run python scrape.py",
+    "data:figures": "cd services && poetry run python -m figures.methodology"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",

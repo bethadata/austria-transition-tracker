@@ -332,6 +332,17 @@ docs = ["ipython", "matplotlib", "numpydoc", "sphinx"]
 tests = ["pytest", "pytest-cov", "pytest-xdist"]
 
 [[package]]
+name = "defusedxml"
+version = "0.7.1"
+description = "XML bomb protection for Python stdlib modules"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+files = [
+    {file = "defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61"},
+    {file = "defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"},
+]
+
+[[package]]
 name = "et-xmlfile"
 version = "2.0.0"
 description = "An implementation of lxml.xmlfile for the standard library"
@@ -700,31 +711,6 @@ python-dateutil = ">=2.7"
 dev = ["meson-python (>=0.13.1,<0.17.0)", "pybind11 (>=2.13.2,!=2.13.3)", "setuptools (>=64)", "setuptools_scm (>=7)"]
 
 [[package]]
-name = "narwhals"
-version = "2.18.0"
-description = "Extremely lightweight compatibility layer between dataframe libraries"
-optional = false
-python-versions = ">=3.9"
-files = [
-    {file = "narwhals-2.18.0-py3-none-any.whl", hash = "sha256:68378155ee706ac9c5b25868ef62ecddd62947b6df7801a0a156bc0a615d2d0d"},
-    {file = "narwhals-2.18.0.tar.gz", hash = "sha256:1de5cee338bc17c338c6278df2c38c0dd4290499fcf70d75e0a51d5f22a6e960"},
-]
-
-[package.extras]
-cudf = ["cudf-cu12 (>=24.10.0)"]
-dask = ["dask[dataframe] (>=2024.8)"]
-duckdb = ["duckdb (>=1.1)"]
-ibis = ["ibis-framework (>=6.0.0)", "packaging", "pyarrow-hotfix", "rich"]
-modin = ["modin"]
-pandas = ["pandas (>=1.1.3)"]
-polars = ["polars (>=0.20.4)"]
-pyarrow = ["pyarrow (>=13.0.0)"]
-pyspark = ["pyspark (>=3.5.0)"]
-pyspark-connect = ["pyspark[connect] (>=3.5.0)"]
-sql = ["duckdb (>=1.1)", "sqlparse"]
-sqlframe = ["sqlframe (>=3.22.0,!=3.39.3)"]
-
-[[package]]
 name = "numpy"
 version = "2.4.3"
 description = "Fundamental package for array computing in Python"
@@ -804,6 +790,19 @@ files = [
     {file = "numpy-2.4.3-pp311-pypy311_pp73-win_amd64.whl", hash = "sha256:4b42639cdde6d24e732ff823a3fa5b701d8acad89c4142bc1d0bd6dc85200ba5"},
     {file = "numpy-2.4.3.tar.gz", hash = "sha256:483a201202b73495f00dbc83796c6ae63137a9bdade074f7648b3e32613412dd"},
 ]
+
+[[package]]
+name = "odfpy"
+version = "1.4.1"
+description = "Python API and tools to manipulate OpenDocument files"
+optional = false
+python-versions = "*"
+files = [
+    {file = "odfpy-1.4.1.tar.gz", hash = "sha256:db766a6e59c5103212f3cc92ec8dd50a0f3a02790233ed0b52148b70d3c438ec"},
+]
+
+[package.dependencies]
+defusedxml = "*"
 
 [[package]]
 name = "openpyxl"
@@ -1028,29 +1027,6 @@ mic = ["olefile"]
 test-arrow = ["arro3-compute", "arro3-core", "nanoarrow", "pyarrow"]
 tests = ["check-manifest", "coverage (>=7.4.2)", "defusedxml", "markdown2", "olefile", "packaging", "pyroma (>=5)", "pytest", "pytest-cov", "pytest-timeout", "pytest-xdist", "trove-classifiers (>=2024.10.12)"]
 xmp = ["defusedxml"]
-
-[[package]]
-name = "plotly"
-version = "6.6.0"
-description = "An open-source interactive data visualization library for Python"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "plotly-6.6.0-py3-none-any.whl", hash = "sha256:8d6daf0f87412e0c0bfe72e809d615217ab57cc715899a1e5145135a7800d1d0"},
-    {file = "plotly-6.6.0.tar.gz", hash = "sha256:b897f15f3b02028d69f755f236be890ba950d0a42d7dfc619b44e2d8cea8748c"},
-]
-
-[package.dependencies]
-narwhals = ">=1.15.1"
-packaging = "*"
-
-[package.extras]
-dev = ["plotly[dev-optional]"]
-dev-build = ["build", "jupyter", "plotly[dev-core]"]
-dev-core = ["pytest", "requests", "ruff (==0.11.12)"]
-dev-optional = ["anywidget", "colorcet", "fiona (<=1.9.6)", "geopandas", "inflect", "numpy", "orjson", "pandas", "pdfrw", "pillow", "plotly-geo", "plotly[dev-build]", "plotly[kaleido]", "polars[timezone]", "pyarrow", "pyshp", "pytz", "scikit-image", "scipy", "shapely", "statsmodels", "vaex", "xarray"]
-express = ["numpy"]
-kaleido = ["kaleido (>=1.1.0)"]
 
 [[package]]
 name = "pydantic"
@@ -1389,4 +1365,4 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "2cfbc69c1275c71ba8357b3c772dac08ea3d5a55137894335e79ec07600fb2f2"
+content-hash = "625b47a18353c12fe2e49bbb06933b77cc584fd13b902f0aa260052212276d01"

@@ -26,7 +26,13 @@ const known = computed(() => !store.ready || store.pages.has(props.page))
 <template>
   <div>
     <h1 class="text-headline-small mb-2">{{ t(`pages.${page}.title`) }}</h1>
-    <p v-if="hasIntro" class="text-body-medium text-medium-emphasis mb-6" style="max-width: 68ch">
+    <!--
+      The intro runs the full content width rather than the ~68ch measure a
+      column of prose would want. It is one short paragraph sitting above a grid
+      of full-width cards, so a narrow measure reads as a stray column against
+      the charts below instead of as a considered text block.
+    -->
+    <p v-if="hasIntro" class="text-body-medium text-medium-emphasis mb-6">
       {{ t(introKey) }}
     </p>
 

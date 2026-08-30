@@ -1,4 +1,12 @@
 /*
+ * Declared first, and deliberately: everything below that could collide with a
+ * Vuetify utility goes into this layer. See the heading reset at the bottom for
+ * why -- unlayered author CSS outranks every layered rule in Vuetify's
+ * stylesheet, so a rule here wins even when it has lower specificity.
+ */
+@layer app-reset;
+
+/*
  * Global type scale.
  *
  * Vuetify sizes its typography in rem, so lowering the root size steps every
@@ -24,17 +32,56 @@ html {
 /*
  * Headings carry the document outline, not appearance.
  *
+ * In `app-reset` rather than bare, because Vuetify 4 ships its spacing helpers
+ * inside cascade layers and an unlayered author rule beats every layered one no
+ * matter how specific it is. Unlayered, this `margin: 0` silently defeated
+ * `mb-1`, `mb-2` and `mb-6` on every heading in the app -- the type-class trap
+ * again, a page that merely looks a little tight rather than broken. `:where()`
+ * does not help: layer order is decided before specificity. The layer is
+ * declared at the top of this file, which Vite emits before `vuetify/styles`,
+ * so it sorts below Vuetify's layers and loses to the helpers by design.
+ *
  * The pages are built from Vuetify cards whose text sizing comes from component
  * and utility classes, so a heading element only has to stop contributing the
  * browser's own block margins. Size and weight are left to the classes already
  * on the element, which keeps h1-h6 free to mark structure wherever the outline
  * needs it without moving anything on screen.
  */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
+@layer app-reset {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+}
+
+/*
+ * Prose blocks in the card-based content pages.
+ *
+ * Vuetify's reset strips the paragraph margin, which is right for the labels
+ * and table cells that make up most of the UI and wrong for the About page, so
+ * the rhythm is put back only where the text is actually prose.
+ */
+.prose p {
+  margin-bottom: 0.85rem;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/*
+ * Card headings on the About page wrap.
+ *
+ * `.v-card-title` is single-line by design -- nowrap plus an ellipsis -- which
+ * is fine for a chart card and wrong for a heading in a third-width column:
+ * "Hinweis zu KI-Unterstuetzung" rendered as "Hinweis zu KI-Unt...". Scoped to
+ * the page rather than applied globally, so card titles elsewhere keep the
+ * single-line behaviour their layouts assume.
+ */
+.about-page .v-card-title {
+  white-space: normal;
 }

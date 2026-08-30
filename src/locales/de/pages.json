@@ -9,6 +9,7 @@
   },
   "buildings": {
     "sections": {
+      "cooling": "Kühlung",
       "energy_use": "Energieverbrauch",
       "heating_systems": "Heizsysteme",
       "overview": "Überblick"
@@ -38,7 +39,7 @@
     "title": "Fluorierte Gase"
   },
   "fossil-fuels": {
-    "intro": "Monatlicher und jährlicher Verbrauch jener fossilen Energieträger, die den Großteil der energiebedingten Emissionen Österreichs verursachen. Noch unvollständige Jahre werden aus den bereits veröffentlichten Monaten hochgerechnet.",
+    "intro": "Monatlicher und jährlicher Verbrauch der fossilen Energieträger, die den Großteil der energiebedingten Emissionen Österreichs verursachen. Noch unvollständige Jahre werden aus den bereits veröffentlichten Monaten hochgerechnet.",
     "sections": {
       "coal": "Kohle",
       "natural_gas": "Erdgas",
@@ -54,7 +55,7 @@
     "title": "LULUCF"
   },
   "overview": {
-    "intro": "Die Treibhausgasemissionen Österreichs und die Sektoren, aus denen sie stammen. Ziel dieser Seite ist es, den Weg zu null Emissionen mit öffentlich verfügbaren Daten nachzuvollziehen. Über die Navigation lässt sich jeder Sektor im Detail öffnen.",
+    "intro": "Die Treibhausgasemissionen Österreichs und sektorale Anteile. Ziel dieser Seite ist es, den Weg zu null Emissionen mit öffentlich verfügbaren Daten nachzuvollziehen. Detaillierte Daten zu jedem Sektor sind über die jeweilige Spezial-Seite (Navitation links) enthalten.",
     "sections": {
       "lulucf_shares": "THG inklusive LULUCF und Sektoranteile",
       "overview": "Emissionen nach Sektoren",

@@ -19,6 +19,7 @@
     },
     {
       "id": "share_heating_systems",
+      "initial": "bar",
       "order": 5,
       "page": "buildings",
       "section": "heating_systems",
@@ -35,7 +36,12 @@
         "key": "statistik_austria"
       },
       "time_res": "yearly",
-      "type": "area",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
       "unit": "share_pct"
     },
     {
@@ -66,6 +72,30 @@
       "unit": "number"
     },
     {
+      "id": "number_air_conditioners",
+      "initial": "bar",
+      "order": 6,
+      "page": "buildings",
+      "section": "cooling",
+      "series": [
+        "air_conditioners"
+      ],
+      "source": {
+        "key": "statistik_austria"
+      },
+      "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
+      "uncertainty": [
+        "air_conditioners"
+      ],
+      "unit": "number"
+    },
+    {
       "id": "consumption_natural_gas_monthly",
       "order": 0,
       "page": "fossil-fuels",
@@ -84,13 +114,24 @@
     },
     {
       "id": "consumption_natural_gas_yearly",
+      "labels": {
+        "extrapolated_rest_of_year": {
+          "month": 7
+        },
+        "observed_rest_of_year": {
+          "month": 7
+        },
+        "observed_to_date": {
+          "month": 6
+        }
+      },
       "order": 1,
       "page": "fossil-fuels",
       "section": "natural_gas",
       "series": [
-        "observed_jan_jun",
-        "observed_jul_dec",
-        "extrapolated_jul_dec",
+        "observed_to_date",
+        "observed_rest_of_year",
+        "extrapolated_rest_of_year",
         "total"
       ],
       "source": {
@@ -123,13 +164,24 @@
     },
     {
       "id": "consumption_gasoline_yearly",
+      "labels": {
+        "extrapolated_rest_of_year": {
+          "month": 7
+        },
+        "observed_rest_of_year": {
+          "month": 7
+        },
+        "observed_to_date": {
+          "month": 6
+        }
+      },
       "order": 5,
       "page": "fossil-fuels",
       "section": "oil",
       "series": [
-        "observed_jan_jun",
-        "observed_jul_dec",
-        "extrapolated_jul_dec",
+        "observed_to_date",
+        "observed_rest_of_year",
+        "extrapolated_rest_of_year",
         "total"
       ],
       "source": {
@@ -162,13 +214,24 @@
     },
     {
       "id": "consumption_diesel_yearly",
+      "labels": {
+        "extrapolated_rest_of_year": {
+          "month": 7
+        },
+        "observed_rest_of_year": {
+          "month": 7
+        },
+        "observed_to_date": {
+          "month": 6
+        }
+      },
       "order": 7,
       "page": "fossil-fuels",
       "section": "oil",
       "series": [
-        "observed_jan_jun",
-        "observed_jul_dec",
-        "extrapolated_jul_dec",
+        "observed_to_date",
+        "observed_rest_of_year",
+        "extrapolated_rest_of_year",
         "total"
       ],
       "source": {
@@ -199,13 +262,24 @@
     },
     {
       "id": "consumption_heating_oil_yearly",
+      "labels": {
+        "extrapolated_rest_of_year": {
+          "month": 7
+        },
+        "observed_rest_of_year": {
+          "month": 7
+        },
+        "observed_to_date": {
+          "month": 6
+        }
+      },
       "order": 9,
       "page": "fossil-fuels",
       "section": "oil",
       "series": [
-        "observed_jan_jun",
-        "observed_jul_dec",
-        "extrapolated_jul_dec",
+        "observed_to_date",
+        "observed_rest_of_year",
+        "extrapolated_rest_of_year",
         "total"
       ],
       "source": {
@@ -236,13 +310,24 @@
     },
     {
       "id": "consumption_refinery_gas_yearly",
+      "labels": {
+        "extrapolated_rest_of_year": {
+          "month": 7
+        },
+        "observed_rest_of_year": {
+          "month": 7
+        },
+        "observed_to_date": {
+          "month": 6
+        }
+      },
       "order": 11,
       "page": "fossil-fuels",
       "section": "oil",
       "series": [
-        "observed_jan_jun",
-        "observed_jul_dec",
-        "extrapolated_jul_dec",
+        "observed_to_date",
+        "observed_rest_of_year",
+        "extrapolated_rest_of_year",
         "total"
       ],
       "source": {
@@ -273,13 +358,24 @@
     },
     {
       "id": "consumption_hard_coal_electricity_yearly",
+      "labels": {
+        "extrapolated_rest_of_year": {
+          "month": 6
+        },
+        "observed_rest_of_year": {
+          "month": 6
+        },
+        "observed_to_date": {
+          "month": 5
+        }
+      },
       "order": 13,
       "page": "fossil-fuels",
       "section": "coal",
       "series": [
-        "observed_jan_may",
-        "observed_jun_dec",
-        "extrapolated_jun_dec",
+        "observed_to_date",
+        "observed_rest_of_year",
+        "extrapolated_rest_of_year",
         "total"
       ],
       "source": {
@@ -310,13 +406,24 @@
     },
     {
       "id": "consumption_hard_coal_industry_yearly",
+      "labels": {
+        "extrapolated_rest_of_year": {
+          "month": 6
+        },
+        "observed_rest_of_year": {
+          "month": 6
+        },
+        "observed_to_date": {
+          "month": 5
+        }
+      },
       "order": 15,
       "page": "fossil-fuels",
       "section": "coal",
       "series": [
-        "observed_jan_may",
-        "observed_jun_dec",
-        "extrapolated_jun_dec",
+        "observed_to_date",
+        "observed_rest_of_year",
+        "extrapolated_rest_of_year",
         "total"
       ],
       "source": {
@@ -347,13 +454,24 @@
     },
     {
       "id": "consumption_hard_coal_coke_ovens_yearly",
+      "labels": {
+        "extrapolated_rest_of_year": {
+          "month": 6
+        },
+        "observed_rest_of_year": {
+          "month": 6
+        },
+        "observed_to_date": {
+          "month": 5
+        }
+      },
       "order": 17,
       "page": "fossil-fuels",
       "section": "coal",
       "series": [
-        "observed_jan_may",
-        "observed_jun_dec",
-        "extrapolated_jun_dec",
+        "observed_to_date",
+        "observed_rest_of_year",
+        "extrapolated_rest_of_year",
         "total"
       ],
       "source": {
@@ -384,13 +502,24 @@
     },
     {
       "id": "consumption_coke_oven_coke_yearly",
+      "labels": {
+        "extrapolated_rest_of_year": {
+          "month": 6
+        },
+        "observed_rest_of_year": {
+          "month": 6
+        },
+        "observed_to_date": {
+          "month": 5
+        }
+      },
       "order": 19,
       "page": "fossil-fuels",
       "section": "coal",
       "series": [
-        "observed_jan_may",
-        "observed_jun_dec",
-        "extrapolated_jun_dec",
+        "observed_to_date",
+        "observed_rest_of_year",
+        "extrapolated_rest_of_year",
         "total"
       ],
       "source": {
@@ -437,7 +566,7 @@
       "series": [
         "energy_sectors",
         "other_sectors",
-        "projeted_emissions",
+        "projected_emissions",
         "historic_emissions"
       ],
       "source": {
@@ -447,7 +576,7 @@
       "total": "historic_emissions",
       "type": "line",
       "uncertainty": [
-        "projeted_emissions"
+        "projected_emissions"
       ],
       "unit": "emissions_mtco2e"
     },
@@ -634,6 +763,7 @@
         "gasoline_12_month_average"
       ],
       "source": {
+        "code": "NRG_CB_OILM",
         "key": "eurostat"
       },
       "time_res": "monthly",
@@ -652,6 +782,7 @@
         "blended_biogasoline_12_month_average"
       ],
       "source": {
+        "code": "NRG_CB_OILM",
         "key": "eurostat"
       },
       "time_res": "monthly",
@@ -749,7 +880,7 @@
         "code": "road_eqr_carpda",
         "key": "eurostat_statistik_austria"
       },
-      "time_res": "monthly",
+      "time_res": "yearly",
       "toggle": [
         "area",
         "bar",
@@ -776,7 +907,7 @@
         "code": "road_eqr_carpda",
         "key": "eurostat_statistik_austria"
       },
-      "time_res": "monthly",
+      "time_res": "yearly",
       "toggle": [
         "area",
         "bar",
@@ -790,6 +921,7 @@
       "initial": "bar",
       "order": 10,
       "page": "transport",
+      "preliminary": true,
       "section": "vehicles",
       "series": [
         "electric",
@@ -817,6 +949,7 @@
       "initial": "bar",
       "order": 11,
       "page": "transport",
+      "preliminary": true,
       "section": "vehicles",
       "series": [
         "electric",
@@ -1024,6 +1157,7 @@
     },
     {
       "id": "co2_emissions_sectors",
+      "initial": "bar",
       "order": 0,
       "page": "overview",
       "section": "overview",
@@ -1040,12 +1174,18 @@
         "key": "uba"
       },
       "time_res": "yearly",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
       "total": "total",
-      "type": "area",
+      "type": "toggle",
       "unit": "emissions_mtco2e"
     },
     {
       "id": "co2_emissions_sectors_shares",
+      "initial": "bar",
       "order": 5,
       "page": "overview",
       "section": "lulucf_shares",
@@ -1061,7 +1201,12 @@
         "key": "uba"
       },
       "time_res": "yearly",
-      "type": "area",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
       "unit": "emission_share_pct"
     },
     {
@@ -1302,6 +1447,7 @@
     },
     {
       "id": "dh_energy_use_share",
+      "initial": "bar",
       "order": 11,
       "page": "energy",
       "section": "district_heating",
@@ -1318,7 +1464,12 @@
         "key": "eurostat_energy_balances"
       },
       "time_res": "yearly",
-      "type": "area",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
       "unit": "share_pct"
     },
     {
@@ -1353,6 +1504,7 @@
     },
     {
       "id": "elec_energy_use_share",
+      "initial": "bar",
       "order": 8,
       "page": "energy",
       "section": "electricity",
@@ -1371,11 +1523,17 @@
         "key": "eurostat_econtrol_spliced"
       },
       "time_res": "yearly",
-      "type": "bar",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
       "unit": "share_pct"
     },
     {
       "id": "elec_energy_use_share_cons",
+      "initial": "bar",
       "order": 9,
       "page": "energy",
       "section": "electricity",
@@ -1394,11 +1552,17 @@
         "key": "eurostat_econtrol_spliced"
       },
       "time_res": "yearly",
-      "type": "bar",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
       "unit": "share_pct"
     },
     {
       "id": "elec_prod_monthly",
+      "initial": "area",
       "order": 4,
       "page": "energy",
       "section": "electricity",
@@ -1417,11 +1581,17 @@
         "key": "e_control"
       },
       "time_res": "monthly",
-      "type": "area",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
       "unit": "energy_twh"
     },
     {
       "id": "elec_prod_monthly_share",
+      "initial": "area",
       "order": 5,
       "page": "energy",
       "section": "electricity",
@@ -1439,7 +1609,12 @@
         "key": "e_control"
       },
       "time_res": "monthly",
-      "type": "area",
+      "toggle": [
+        "area",
+        "bar",
+        "line"
+      ],
+      "type": "toggle",
       "unit": "share_pct"
     },
     {
@@ -1934,12 +2109,12 @@
         "tesla",
         "vw",
         "bmw",
-        "audi",
         "skoda",
+        "audi",
         "byd",
         "renault",
-        "hyundai",
         "cupra",
+        "hyundai",
         "mercedes",
         "kia",
         "other",
@@ -1968,12 +2143,12 @@
         "tesla",
         "vw",
         "bmw",
-        "audi",
         "skoda",
+        "audi",
         "byd",
         "renault",
-        "hyundai",
         "cupra",
+        "hyundai",
         "mercedes",
         "kia",
         "other"
@@ -2000,12 +2175,12 @@
         "tesla",
         "vw",
         "bmw",
-        "audi",
         "skoda",
+        "audi",
         "byd",
         "renault",
-        "hyundai",
         "cupra",
+        "hyundai",
         "mercedes",
         "kia",
         "other",
@@ -2014,7 +2189,7 @@
       "source": {
         "key": "statistik_austria"
       },
-      "time_res": "monthly",
+      "time_res": "yearly",
       "toggle": [
         "area",
         "bar",
@@ -2034,12 +2209,12 @@
         "tesla",
         "vw",
         "bmw",
-        "audi",
         "skoda",
+        "audi",
         "byd",
         "renault",
-        "hyundai",
         "cupra",
+        "hyundai",
         "mercedes",
         "kia",
         "other"
@@ -2047,7 +2222,7 @@
       "source": {
         "key": "statistik_austria"
       },
-      "time_res": "monthly",
+      "time_res": "yearly",
       "toggle": [
         "area",
         "bar",
@@ -2109,5 +2284,5 @@
       "unit": "share_pct"
     }
   ],
-  "generated": "2026-08-25"
+  "generated": "2026-08-29"
 }

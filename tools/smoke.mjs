@@ -9,6 +9,11 @@
  *     `charts.something.title`, so the assertion is that no visible text
  *     matches /^(charts|common|pages|about)\./.
  *  2. A chart whose data failed to load leaves a card with no <svg> in it.
+ *  3. An interpolation placeholder the manifest did not fill -- a legend that
+ *     reads "Observed: Jan – {month}". Series labels live in Plotly's SVG, so
+ *     check 1 could not see them: innerText skips SVG text entirely, which meant
+ *     a missing `common.series.*` key would have gone unnoticed in the one place
+ *     series labels are actually shown.
  *
  * Run against `npm run preview` (port 4175), which serves the real build with
  * the real base path -- the one place a BASE_URL mistake actually shows up.
@@ -22,7 +27,7 @@ const PAGES = [
   { hash: '#/energy', name: 'energy', minCharts: 12 },
   { hash: '#/fossil-fuels', name: 'fossil-fuels', minCharts: 20 },
   { hash: '#/sectors/transport', name: 'transport', minCharts: 22 },
-  { hash: '#/sectors/buildings', name: 'buildings', minCharts: 6 },
+  { hash: '#/sectors/buildings', name: 'buildings', minCharts: 7 },
   { hash: '#/sectors/agriculture', name: 'agriculture', minCharts: 13 },
   { hash: '#/sectors/energy-industry', name: 'energy-industry', minCharts: 3 },
   { hash: '#/sectors/lulucf', name: 'lulucf', minCharts: 3 },
@@ -33,6 +38,8 @@ const PAGES = [
 ]
 
 const UNTRANSLATED = /(^|\s)(charts|common|pages|about)\.[a-z0-9_.]+/i
+/** A {name} the locale string asked for and nothing supplied. */
+const UNFILLED = /\{[a-z_]+\}/i
 
 const failures = []
 const notes = []
@@ -109,6 +116,23 @@ for (const locale of ['de', 'en']) {
         )
       }
       if (empty > 0) notes.push(`${locale} ${target.name}: ${empty} chart(s) report no data`)
+
+      // Legend and axis labels live in Plotly's SVG, which innerText does not
+      // reach -- so they are collected separately and checked for the same two
+      // failures as the HTML text.
+      const svgText = await page.evaluate(() =>
+        Array.from(document.querySelectorAll('.js-plotly-plot text'))
+          .map((el) => el.textContent ?? '')
+          .join(' | '),
+      )
+      const svgKey = svgText.match(UNTRANSLATED)
+      if (svgKey) {
+        fail(`${locale} ${target.name}: untranslated key in a chart -> ${svgKey[0].trim()}`)
+      }
+      const unfilled = (bodyText + ' | ' + svgText).match(UNFILLED)
+      if (unfilled) {
+        fail(`${locale} ${target.name}: unfilled placeholder -> ${unfilled[0]}`)
+      }
 
       // A rendered plot must actually contain traces.
       const traceless = await page.evaluate(() =>

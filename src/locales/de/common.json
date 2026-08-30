@@ -11,6 +11,7 @@
     "legend": "Legende ein-/ausblenden",
     "loading": "Wird geladen…",
     "no_data": "Keine Daten verfügbar",
+    "preliminary": "Jüngster Wert vorläufig.",
     "source": "Quelle",
     "updated": "Stand",
     "view": "Ansicht",
@@ -24,9 +25,11 @@
     "not_found": "Diese Seite existiert nicht."
   },
   "footer": {
+    "bluesky": "Bluesky-Profil",
     "data": "Daten",
-    "note": "Privates Projekt. Für die Richtigkeit der Daten wird keine Gewähr übernommen.",
-    "source_code": "Quellcode"
+    "github": "Quellcode auf GitHub",
+    "last_updated": "Zuletzt aktualisiert {date}",
+    "note": "Privates Projekt. Für die Richtigkeit der Daten wird keine Gewähr übernommen."
   },
   "groups": {
     "chemicals": "Chemie",
@@ -62,6 +65,7 @@
   "series": {
     "12_month_average": "12-Monats-Mittel",
     "agriculture": "Landwirtschaft",
+    "air_conditioners": "Klimaanlagen",
     "aluminium_industry": "Aluminiumindustrie",
     "ambient_heat": "Umgebungswärme",
     "audi": "Audi",
@@ -106,8 +110,7 @@
     "energy_and_industry": "Energie & Industrie",
     "energy_sectors": "Energiesektoren",
     "energy_use": "Energieeinsatz",
-    "extrapolated_jul_dec": "Hochgerechnet: Jul–Dez",
-    "extrapolated_jun_dec": "Hochgerechnet: Jun–Dez",
+    "extrapolated_rest_of_year": "Projiziert: {month} – Dez",
     "fermentation_cows": "Fermentation (Rinder)",
     "fertilizer": "Düngemittel",
     "fluorinated_gases": "Fluorierte Gase",
@@ -138,10 +141,8 @@
     "mopeds_and_motorcycles": "Mopeds und Motorräder",
     "natural_gas": "Erdgas",
     "non_electrified": "Nicht elektrifiziert",
-    "observed_jan_jun": "Gemessen: Jän–Jun",
-    "observed_jan_may": "Gemessen: Jän–Mai",
-    "observed_jul_dec": "Gemessen: Jul–Dez",
-    "observed_jun_dec": "Gemessen: Jun–Dez",
+    "observed_rest_of_year": "Beobachtet: {month} – Dez",
+    "observed_to_date": "Beobachtet: Jan – {month}",
     "oil": "Öl",
     "organic_fertilizer_manure_management": "Wirtschaftsdünger (Mist) – Management",
     "other": "Sonstige",
@@ -151,7 +152,7 @@
     "petroleum_refining": "Mineralölraffination",
     "pig": "Schweine",
     "pigmeat": "Schweinefleisch",
-    "projeted_emissions": "Projizierte Emissionen",
+    "projected_emissions": "Projizierte Emissionen",
     "public_electricity_heat": "Öffentliche Strom- / Wärmeerzeugung",
     "pulp_paper": "Zellstoff / Papier",
     "pv": "Photovoltaik",

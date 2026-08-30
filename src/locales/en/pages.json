@@ -9,6 +9,7 @@
   },
   "buildings": {
     "sections": {
+      "cooling": "Cooling",
       "energy_use": "Energy use",
       "heating_systems": "Heating systems",
       "overview": "Overview"

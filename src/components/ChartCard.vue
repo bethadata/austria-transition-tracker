@@ -43,6 +43,15 @@ const title = computed(() => t(`charts.${props.spec.id}.title`))
 const infoKey = computed(() => `charts.${props.spec.id}.info`)
 const hasInfo = computed(() => te(infoKey.value))
 
+/**
+ * The provisional-data caveat is one shared string keyed off a manifest flag,
+ * not part of the chart's own `info`. A chart has exactly one `info` key per
+ * locale, so anything conditional written into it can only ever describe one of
+ * the two cases -- which is how this note came to state a date that was two
+ * refreshes old.
+ */
+const isPreliminary = computed(() => props.spec.preliminary === true)
+
 const sourceText = computed(() => {
   const source = props.spec.source
   if (!source) return null
@@ -84,6 +93,9 @@ async function download() {
       <h3 class="text-title-small">{{ title }}</h3>
       <p v-if="hasInfo" class="text-body-small text-medium-emphasis mt-1 mb-0">
         {{ t(infoKey) }}
+      </p>
+      <p v-if="isPreliminary" class="text-body-small text-medium-emphasis mt-1 mb-0">
+        {{ t('common.chart.preliminary') }}
       </p>
     </div>
 
@@ -131,42 +143,53 @@ async function download() {
         style="max-width: 190px"
       />
 
-      <v-btn-toggle
-        v-if="spec.toggle?.length"
-        v-model="view"
-        density="compact"
-        variant="outlined"
-        divided
-        mandatory
-      >
-        <v-btn
+      <!--
+        A segmented control, not three icon buttons in a box. As icons alone the
+        three chart glyphs are near-indistinguishable at 16px and the selected
+        one was told apart only by a slightly darker fill, so the reader could
+        not see which view they were looking at without clicking. The label
+        carries the meaning; the icon is recognition, not the message.
+      -->
+      <div v-if="spec.toggle?.length" class="view-toggle" role="group">
+        <button
           v-for="option in spec.toggle"
           :key="option"
-          :value="option"
-          size="small"
-          :icon="VIEW_ICONS[option]"
+          type="button"
+          class="view-toggle__option text-label-small"
+          :class="{ 'view-toggle__option--active': view === option }"
+          :aria-pressed="view === option"
           :aria-label="t(`common.chart.view_${option}`)"
+          @click="view = option"
+        >
+          <v-icon :icon="VIEW_ICONS[option]" size="15" />
+          <span>{{ t(`common.chart.view_${option}`) }}</span>
+        </button>
+      </div>
+
+      <!--
+        `ml-auto` on a group rather than a v-spacer between siblings: the row
+        wraps on a phone, and a spacer only pushes on the line it happens to sit
+        on -- the download button then wrapped alone to the left of the next
+        line while the legend button stayed right on the first.
+      -->
+      <div class="d-flex align-center ga-1 ml-auto">
+        <v-btn
+          v-if="spec.series.length > 1"
+          :icon="showLegend ? 'mdi-format-list-bulleted' : 'mdi-format-list-bulleted-type'"
+          variant="text"
+          size="small"
+          :aria-label="t('common.chart.legend')"
+          @click="showLegend = !showLegend"
         />
-      </v-btn-toggle>
-
-      <v-spacer />
-
-      <v-btn
-        v-if="spec.series.length > 1"
-        :icon="showLegend ? 'mdi-format-list-bulleted' : 'mdi-format-list-bulleted-type'"
-        variant="text"
-        size="small"
-        :aria-label="t('common.chart.legend')"
-        @click="showLegend = !showLegend"
-      />
-      <v-btn
-        icon="mdi-download-outline"
-        variant="text"
-        size="small"
-        :aria-label="t('common.chart.download')"
-        :title="t('common.chart.download_hint')"
-        @click="download"
-      />
+        <v-btn
+          icon="mdi-download-outline"
+          variant="text"
+          size="small"
+          :aria-label="t('common.chart.download')"
+          :title="t('common.chart.download_hint')"
+          @click="download"
+        />
+      </div>
     </div>
 
     <div v-if="sourceText" class="px-4 pb-3">
@@ -176,3 +199,49 @@ async function download() {
     </div>
   </v-card>
 </template>
+
+<style scoped>
+/*
+ * Tokens rather than literal colours: the card sits on `surface` in both
+ * themes, and a hardcoded grey would go invisible in one of them.
+ */
+.view-toggle {
+  display: inline-flex;
+  border: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.view-toggle__option {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border: 0;
+  background: transparent;
+  color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.view-toggle__option + .view-toggle__option {
+  border-left: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
+}
+
+.view-toggle__option:hover {
+  background: rgba(var(--v-theme-on-surface), 0.05);
+}
+
+.view-toggle__option:focus-visible {
+  outline: 2px solid rgb(var(--v-theme-primary));
+  outline-offset: -2px;
+}
+
+/* Selected state is carried by fill *and* colour *and* weight -- one of the
+   three alone is what made the old toggle unreadable. */
+.view-toggle__option--active {
+  background: rgba(var(--v-theme-primary), 0.14);
+  color: rgb(var(--v-theme-primary));
+  font-weight: 600;
+}
+</style>

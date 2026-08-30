@@ -1,23 +1,42 @@
 [tool.poetry]
 name = "austria-transition-tracker-data"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+description = "Data pipeline for the Austria Transition Tracker: scrape, model, and emit the frontend chart contract."
+authors = ["Bernhard Thaler <bernhard.thaler@lec.tugraz.at>"]
 license = "MIT"
-readme = "README.md"
+# The repository README is one level up, outside this Poetry project.
+readme = "../README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+# pandas and numpy are the pipeline's real workhorses -- every source reader and
+# every series operation. They used to be undeclared, arriving transitively via
+# `eurostat`, so a change in that package's own requirements could have moved
+# them under the project without anything here saying so.
+pandas = ">=2.2,<4"
+numpy = ">=1.26,<3"
 eurostat = "^1.1.1"
-plotly = "^6.6.0"
-matplotlib = "^3.10.8"
 openpyxl = "^3.1.5"
-loguru = "^0.7.3"
+# The other half of pandas' spreadsheet support: Statistik Austria's export
+# portal switched from .xlsx to .ods in 2026 and the older files keep their old
+# format, so both engines have to be present. pandas picks one off the extension.
+odfpy = "^1.4.1"
 requests = "^2.32.5"
+loguru = "^0.7.3"
+# Only figures/methodology.py, which is a hand-run step. Kept as a main
+# dependency rather than moved to a group because it is part of what the
+# repository produces, not part of developing it.
+matplotlib = "^3.10.8"
+# The local scheduler (scheduler.py). Not needed to build the charts.
 uvicorn = "^0.41.0"
 apscheduler = "^3.11.2"
 fastapi = "^0.135.1"
 
+# plotly was removed on 2026-08-25. The pipeline stopped drawing when the HTML
+# writer was deleted; the charts are rendered in the browser from JSON now
+# (src/components/TimeSeriesChart.vue, plotly.js-basic-dist-min). The archived
+# figure builders in archive/plotly_figures.py import it and are not runnable
+# without it, which is intentional -- they are a record, not a fallback.
 
 [build-system]
 requires = ["poetry-core"]

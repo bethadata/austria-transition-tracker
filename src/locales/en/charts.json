@@ -1,153 +1,182 @@
 {
   "agriculture_emissions_sectors": {
-    "info": "scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
+    "info": "Scaled to UBA totals, later years carried forward.",
+    "note": {
+      "p1": "The largest source of emissions in Austrian agriculture is enteric fermentation in cattle, which releases methane (CH₄). The overall cattle population is therefore the most important driver of agricultural greenhouse gas emissions.",
+      "p2": "The other large sources are the management of organic fertilizer (manure and slurry) and the nitrogen fertilization of agricultural soils. Both release nitrous oxide (N₂O), whose global warming potential is 265 (IPCC 2013).",
+      "p3": "Energy-related emissions within the sector, from mobile machinery and stationary combustion, are also attributed to agriculture."
+    },
     "title": "AT Agriculture GHG emissions by sub-sectors"
   },
   "agriculture_final_energy_use": {
-    "title": "Agriculture: final energy use"
+    "title": "AT Agriculture: final energy use"
   },
   "agriculture_final_energy_use_share": {
-    "title": "Agriculture: final energy use - shares"
+    "title": "AT Agriculture: final energy use - shares"
   },
   "animal_livestock_population": {
-    "title": "Cow/Pig/Sheep/Goats: population"
+    "title": "AT Cow/Pig/Sheep/Goats: population"
   },
   "buildings_emissions_sectors": {
-    "info": "scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
+    "info": "Scaled to UBA totals, later years carried forward.",
+    "note": {
+      "p1": "Emissions from the Austrian buildings sector come mostly from natural gas and heating oil burned for space and domestic water heating. Both private household buildings and commercial buildings are included.",
+      "p2": "The two largest shares of the sector's energy use are, however, biomass and electricity — visible in the energy use charts further down."
+    },
     "title": "AT Buildings GHG emissions by sub-sectors"
   },
   "buildings_final_energy_use": {
-    "title": "Buildings: final energy use"
+    "title": "AT Buildings: final energy use"
   },
   "buildings_final_energy_use_share": {
-    "title": "Buildings: final energy use - shares"
+    "title": "AT Buildings: final energy use - shares"
   },
   "co2_emissions_sectors": {
-    "title": "Austrian GHG emissions by sectors (without LULUCF)"
+    "note": {
+      "p1": "The chart shows Austria's reported greenhouse gas emissions by sector, as accounted for in the national inventory, with total emissions drawn in black. Land use is not included here; it is shown separately further down the page.",
+      "p2": "Every sector in the chart has a page of its own, reachable from the navigation, with its sub-sectors and the activity data behind them. Beyond the sectors, the {energy} and {fossil_fuels} pages track the broader trends.",
+      "p3": "New data sets are added as time and availability allow — suggestions are very welcome. Data sources and technical details are on the {about} page."
+    },
+    "title": "AT GHG emissions by sectors (without LULUCF)"
   },
   "co2_emissions_sectors_shares": {
-    "title": "Austrian GHG emission shares by sectors (without LULUCF)"
+    "title": "AT GHG emission shares by sectors (without LULUCF)"
   },
   "co2_emissions_sectors_with_lulucf": {
-    "title": "Austrian GHG emissions by sectors (with LULUCF)"
+    "title": "AT GHG emissions by sectors (with LULUCF)"
   },
   "consumption_coke_oven_coke_monthly": {
-    "title": "Coke oven coke: monthly consumption"
+    "title": "AT Coke oven coke: monthly consumption"
   },
   "consumption_coke_oven_coke_yearly": {
-    "info": "Extrapolations based on monthly available data scaled with past trends",
-    "title": "Coke oven coke: yearly consumption"
+    "info": "Extrapolated from monthly data, scaled with past trends.",
+    "title": "AT Coke oven coke: yearly consumption"
   },
   "consumption_diesel_monthly": {
-    "title": "Diesel: monthly consumption"
+    "title": "AT Diesel: monthly consumption"
   },
   "consumption_diesel_yearly": {
-    "info": "Extrapolations based on monthly available data scaled with past trends",
-    "title": "Diesel: yearly consumption"
+    "info": "Extrapolated from monthly data, scaled with past trends.",
+    "title": "AT Diesel: yearly consumption"
   },
   "consumption_gasoline_monthly": {
-    "title": "Gasoline: monthly consumption"
+    "title": "AT Gasoline: monthly consumption"
   },
   "consumption_gasoline_yearly": {
-    "info": "Extrapolations based on monthly available data scaled with past trends",
-    "title": "Gasoline: yearly consumption"
+    "info": "Extrapolated from monthly data, scaled with past trends.",
+    "title": "AT Gasoline: yearly consumption"
   },
   "consumption_hard_coal_coke_ovens_monthly": {
-    "title": "Hard coal - coke ovens: monthly consumption"
+    "title": "AT Hard coal - coke ovens: monthly consumption"
   },
   "consumption_hard_coal_coke_ovens_yearly": {
-    "info": "Extrapolations based on monthly available data scaled with past trends",
-    "title": "Hard coal - coke ovens: yearly consumption"
+    "info": "Extrapolated from monthly data, scaled with past trends.",
+    "title": "AT Hard coal - coke ovens: yearly consumption"
   },
   "consumption_hard_coal_electricity_monthly": {
-    "title": "Hard coal - electricity sector: monthly consumption"
+    "title": "AT Hard coal - electricity sector: monthly consumption"
   },
   "consumption_hard_coal_electricity_yearly": {
-    "info": "Extrapolations based on monthly available data scaled with past trends",
-    "title": "Hard coal - electricity sector: yearly consumption"
+    "info": "Extrapolated from monthly data, scaled with past trends.",
+    "title": "AT Hard coal - electricity sector: yearly consumption"
   },
   "consumption_hard_coal_industry_monthly": {
-    "title": "Hard coal - industry sector: monthly consumption"
+    "title": "AT Hard coal - industry sector: monthly consumption"
   },
   "consumption_hard_coal_industry_yearly": {
-    "info": "Extrapolations based on monthly available data scaled with past trends",
-    "title": "Hard coal - industry sector: yearly consumption"
+    "info": "Extrapolated from monthly data, scaled with past trends.",
+    "title": "AT Hard coal - industry sector: yearly consumption"
   },
   "consumption_heating_oil_monthly": {
-    "title": "Heating gas oil: monthly consumption"
+    "title": "AT Heating gas oil: monthly consumption"
   },
   "consumption_heating_oil_yearly": {
-    "info": "Extrapolations based on monthly available data scaled with past trends",
-    "title": "Heating gas oil: yearly consumption"
+    "info": "Extrapolated from monthly data, scaled with past trends.",
+    "title": "AT Heating gas oil: yearly consumption"
   },
   "consumption_natural_gas_monthly": {
-    "title": "Natural gas: monthly consumption"
+    "title": "AT Natural gas: monthly consumption"
   },
   "consumption_natural_gas_yearly": {
-    "info": "Extrapolations based on monthly available data scaled with past trends",
-    "title": "Natural gas: yearly consumption"
+    "info": "Extrapolated from monthly data, scaled with past trends.",
+    "title": "AT Natural gas: yearly consumption"
   },
   "consumption_refinery_gas_monthly": {
-    "title": "Refinery gas: monthly consumption"
+    "title": "AT Refinery gas: monthly consumption"
   },
   "consumption_refinery_gas_yearly": {
-    "info": "Extrapolations based on monthly available data scaled with past trends",
-    "title": "Refinery gas: yearly consumption"
+    "info": "Extrapolated from monthly data, scaled with past trends.",
+    "title": "AT Refinery gas: yearly consumption"
   },
   "dh_energy_use": {
-    "title": "District heat generation (gross): energy"
+    "title": "AT District heat generation (gross): energy"
   },
   "dh_energy_use_share": {
-    "title": "District heat generation (gross): energy shares"
+    "title": "AT District heat generation (gross): energy shares"
   },
   "elec_energy_use": {
-    "info": "Note: no Waste-data available in E-control data.",
-    "title": "Yearly electricity production AT (gross): energy"
+    "info": "E-Control data contains no waste data.",
+    "title": "AT Yearly electricity production (gross): energy"
   },
   "elec_energy_use_share": {
-    "info": "Note: no Waste-data available in E-control data.",
-    "title": "Yearly electricity production AT (gross): shares of production"
+    "info": "E-Control data contains no waste data.",
+    "title": "AT Yearly electricity production (gross): shares of production"
   },
   "elec_energy_use_share_cons": {
-    "info": "Note: no Waste-data available in E-control data.",
-    "title": "Yearly electricity production AT (gross): shares of consumption"
+    "info": "E-Control data contains no waste data.",
+    "title": "AT Yearly electricity production (gross): shares of consumption"
   },
   "elec_prod_monthly": {
-    "title": "Monthly electricity production AT (gross): energy"
+    "title": "AT Monthly electricity production (gross): energy"
   },
   "elec_prod_monthly_share": {
-    "title": "Monthly electricity production AT (gross): shares of production"
+    "title": "AT Monthly electricity production (gross): shares of production"
   },
   "elec_prod_monthly_share_cons": {
-    "title": "Monthly electricity production AT (gross): shares of consumption"
+    "title": "AT Monthly electricity production (gross): shares of consumption"
   },
   "emissions_fuels_monthly": {
-    "title": "Austrian CO2 emissions by fuels: monthly"
+    "title": "AT CO2 emissions by fuels: monthly"
   },
   "emissions_fuels_yearly": {
-    "title": "Austrian CO2 emissions by fuels: yearly (incl. projection)"
+    "title": "AT CO2 emissions by fuels: yearly (incl. projection)"
   },
   "emissions_projection_yearly": {
-    "title": "Austrian GHG emissions: projection"
+    "note": {
+      "p1": "Official, detailed emission statistics only appear several months after the year they describe. Timely fossil fuel consumption data still allows a rough projection, shown on the left with its uncertainty bars; the method is written up in full under {methodology}.",
+      "p2": "In short: the fossil fuel consumption eurostat reports is extrapolated to the full year and converted through emission factors into energy-sector emissions (transport, buildings, energy & industry, process emissions included). The remaining sectors — agriculture, waste, fluorinated gases — are carried forward along their current trend.",
+      "p3": "The model is deliberately simple and rests on past data and temporal correlation. Extrapolated values must therefore be read with great care, especially early in the year.",
+      "p4": "Estimated monthly and yearly emissions for every fuel considered are shown below. Consumption of the individual fuels is on the {fossil_fuels} page."
+    },
+    "title": "AT GHG emissions: projection"
   },
   "energy_industry_emissions_sectors": {
-    "info": "scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
+    "info": "Scaled to UBA totals, later years carried forward.",
+    "note": {
+      "p1": "CO₂ emissions in the energy and industry sector come from a range of sub-sectors, and process emissions have to be told apart from energy-related ones. Energy-related emissions come from burning fossil fuels to produce power or heat; process emissions are a by-product of industrial production and do not necessarily rest on fossil fuels at all — cement production is the classic case.",
+      "p2": "The largest absolute contributions are electricity and district heat generation (mainly natural gas), process and energy emissions in iron and steel (coal and natural gas), energy-related emissions of other industries such as pulp and paper (natural gas and oil), refineries (oil), and process emissions in the chemical industry (natural gas for ammonia production) and the mineral industry (cement and lime)."
+    },
     "title": "AT Energy & Industry GHG emissions by sub-sectors"
   },
   "fertilizer_nitrogen": {
-    "title": "Inorganic fertilizer: Nitrogen consumption"
+    "title": "AT Inorganic fertilizer: nitrogen consumption"
   },
   "fluorinated_gases_emissions_sectors": {
-    "info": "scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
+    "info": "Scaled to UBA totals, later years carried forward.",
+    "note": {
+      "p1": "Fluorinated gases are a group of fluorine-containing molecules (SF₆, NF₃, PFCs, HFCs) used across a range of industries and products.",
+      "p2": "The main driver today is hydrofluorocarbons (HFCs) as refrigerants in refrigeration and stationary air conditioning. They were adopted widely from 1993 to replace the ozone-depleting HCFCs; their use is now restricted in the EU and emissions have begun to fall.",
+      "p3": "The rest comes from mobile air conditioning in cars, also declining under EU restrictions, and from a range of smaller uses grouped under “Other” — foam blowing agents, and SF₆ insulation in particle accelerators and high-voltage electrical equipment."
+    },
     "title": "AT Fluorinated Gases GHG emissions by sub-sectors"
   },
   "gas_sectoral_consumption_monthly": {
-    "info": "Buildings data before 09/2023 not available.",
-    "title": "Austria: monthly natural gas consumption by sector"
+    "info": "Buildings split out only from 09/2023, before that in Industry/Other.",
+    "title": "AT natural gas consumption by sector: monthly"
   },
   "gas_sectoral_consumption_yearly": {
-    "info": "Buildings data before 09/2023 not available.",
-    "title": "Austria: yearly natural gas consumption by sector"
+    "info": "Buildings split out only from 09/2023, before that in Industry/Other.",
+    "title": "AT natural gas consumption by sector: yearly"
   },
   "gross_inland_consumption_absolute": {
     "title": "AT gross inland consumption: absolute"
@@ -156,44 +185,51 @@
     "title": "AT gross inland consumption: shares"
   },
   "heating_oil_consumption": {
-    "title": "Heating oil: monthly consumption Austria"
+    "title": "AT Heating oil: monthly consumption"
   },
   "industry_final_energy_use": {
-    "title": "Industry: final energy use"
+    "title": "AT Industry: final energy use"
   },
   "industry_final_energy_use_share": {
-    "title": "Industry: final energy use - shares"
+    "title": "AT Industry: final energy use - shares"
   },
   "kerosene_consumption": {
-    "title": "Kerosene / Aviation fuel: monthly consumption Austria (incl. biofuels)"
+    "title": "AT Kerosene / Aviation fuel: monthly consumption (incl. biofuels)"
   },
   "land_use_abs": {
-    "title": "Land use: absolute area"
+    "info": "Areas are reported for 1990, 1995, 2000, 2005 and annually from 2010; the axis is five-yearly before 2010.",
+    "title": "AT Land use: absolute area"
   },
   "land_use_rel": {
-    "title": "Land use: shares"
+    "info": "Areas are reported for 1990, 1995, 2000, 2005 and annually from 2010; the axis is five-yearly before 2010.",
+    "title": "AT Land use: shares"
   },
   "long_term_storage_c_disposal": {
-    "title": "Austrian long-term Storage of C in Waste Disposal Sites"
+    "title": "AT long-term storage of C in waste disposal sites"
   },
   "lulucf_emissions_sectors": {
+    "note": {
+      "p1": "LULUCF is short for Land Use, Land Use Change and Forestry. The sector covers every greenhouse gas emission tied to how land in Austria is used, and to changes between land use types.",
+      "p2": "As the chart shows, the sector can act as a substantial emission sink, because it also accounts for the CO₂ bound in forests, in soil and in land mass generally. When land use changes — grassland or forest turned into settlement, say — emissions arise from the different amounts of carbon the two types can store.",
+      "p3": "Forest land has always been the largest contributor and dictates the trend of the sector as a whole. Growing forest mass made LULUCF a net sink in Austria for decades; that trend has weakened in recent years, and individual years with net positive emissions have occurred."
+    },
     "title": "AT LULUCF GHG emissions by sub-sectors"
   },
   "meat_consumption_per_capita": {
     "info": "Human consumption per capita in kg",
-    "title": "Meat consumption in Austria: per capita"
+    "title": "AT Meat consumption: per capita"
   },
   "meat_consumption_total": {
     "info": "Human consumption per year",
-    "title": "Meat consumption in Austria: total"
+    "title": "AT Meat consumption: total"
   },
   "milk_consumption_per_capita": {
-    "info": "Food consumption per capita in kg",
-    "title": "Milk product consumption in Austria: per capita"
+    "info": "Human consumption per capita in kg",
+    "title": "AT Milk product consumption: per capita"
   },
   "milk_consumption_total": {
-    "info": "Food consumption per year",
-    "title": "Milk product consumption in Austria: total"
+    "info": "Human consumption per year",
+    "title": "AT Milk product consumption: total"
   },
   "monthly_registrations_brands_absolute": {
     "info": "Only top 10 car brands (over all years) shown.",
@@ -203,11 +239,15 @@
     "info": "Only top 10 car brands (over all years) shown.",
     "title": "AT new monthly BEV registrations: car brands shares"
   },
+  "number_air_conditioners": {
+    "info": "Mikrozensus sample; error bars: coefficient of variation.",
+    "title": "AT Air conditioners installed in households"
+  },
   "number_fuel_new_cars": {
     "title": "AT new monthly car registrations: fuel type absolute number"
   },
   "number_fuel_new_cars_yearly": {
-    "info": "Data 2025 up to 11/2025",
+    "info": "The newest year covers the months published so far.",
     "title": "AT new yearly car registrations: fuel type absolute number"
   },
   "number_fuel_new_lorries_gt3p5": {
@@ -217,11 +257,11 @@
     "title": "AT new lorry (≤3.5t) registrations: fuel type absolute number"
   },
   "number_fuel_stock_cars": {
-    "info": "Data of 2024 up to 12/2024. Hybrids in 2024 include plug-in hybrids; Other before 2013 includes hybrids.",
+    "info": "Plug-in hybrids count as hybrids where the source does not split them.",
     "title": "AT registered cars: fuel type absolute number"
   },
   "number_heating_systems": {
-    "title": "Heating system absolute numbers: main types"
+    "title": "AT Heating system absolute numbers: main types"
   },
   "rail_tracks_abs": {
     "title": "AT rail track lengths: absolute length"
@@ -230,19 +270,19 @@
     "title": "AT rail track lengths: shares electrified/non-electrified"
   },
   "raw_cow_milk": {
-    "title": "Raw cow milk: monthly deliveries"
+    "title": "AT Raw cow milk: monthly deliveries"
   },
   "road_biofuels_consumption": {
-    "title": "Road biofuels: monthly consumption (incl. biofuels)"
+    "title": "AT Road biofuels: monthly consumption"
   },
   "road_fuels_consumption": {
-    "title": "Road fuels: monthly consumption (incl. biofuels)"
+    "title": "AT Road fuels: monthly consumption (incl. biofuels)"
   },
   "share_fuel_new_cars": {
     "title": "AT new monthly car registrations: fuel type share"
   },
   "share_fuel_new_cars_yearly": {
-    "info": "Data 2025 up to 11/2025",
+    "info": "The newest year covers the months published so far.",
     "title": "AT new yearly car registrations: fuel type share"
   },
   "share_fuel_new_lorries_gt3p5": {
@@ -252,20 +292,20 @@
     "title": "AT new lorry (≤3.5t) registrations: fuel type share"
   },
   "share_fuel_stock_cars": {
-    "info": "Data of 2024 up to 12/2024. Hybrids in 2024 include plug-in hybrids; Other before 2013 includes hybrids.",
+    "info": "Plug-in hybrids count as hybrids where the source does not split them.",
     "title": "AT registered cars: fuel type share"
   },
   "share_heating_systems": {
-    "title": "Heating system shares: main types"
+    "title": "AT Heating system shares: main types"
   },
   "slaughtered_cattle_meat": {
-    "title": "Cattle/cows: monthly slaughtered"
+    "title": "AT Cattle/cows: monthly slaughtered"
   },
   "slaughtered_chicken_meat": {
-    "title": "Chicken: monthly slaughtered"
+    "title": "AT Chicken: monthly slaughtered"
   },
   "slaughtered_pig_meat": {
-    "title": "Pigs: monthly slaughtered"
+    "title": "AT Pigs: monthly slaughtered"
   },
   "total_final_energy_use": {
     "title": "AT final energy use: absolute"
@@ -274,17 +314,27 @@
     "title": "AT final energy use: shares"
   },
   "transport_emissions_sectors": {
-    "info": "scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
+    "info": "Scaled to UBA totals, later years carried forward.",
+    "note": {
+      "p1": "Transport emissions, as accounted for under the international reporting standards, come almost entirely from burning gasoline and diesel on the road — passenger cars and duty vehicles. Shipping, rail, domestic aviation and mobile military vehicles contribute little and are grouped under “Other”.",
+      "p2": "International aviation is not part of the national emission statistics, although the kerosene burned for it contributes substantially in reality — see the kerosene consumption chart further down.",
+      "p3": "The data on this page is mostly road transport: monthly fuel consumption, and new registrations and stock of the vehicle classes by type of motor energy."
+    },
     "title": "AT Transport GHG emissions by sub-sectors"
   },
   "transport_final_energy_use": {
-    "title": "Transport: final energy use"
+    "title": "AT Transport: final energy use"
   },
   "transport_final_energy_use_share": {
-    "title": "Transport: final energy use - shares"
+    "title": "AT Transport: final energy use - shares"
   },
   "waste_emissions_sectors": {
-    "info": "scaled to match total emissions from UBA, 2024 sectoral data extrapolated",
+    "info": "Scaled to UBA totals, later years carried forward.",
+    "note": {
+      "p1": "Waste sector emissions have historically been dominated by methane (CH₄) from biological waste in landfills. Stricter legislation and policy measures have cut the amount of untreated waste going to landfill considerably.",
+      "p2": "Today most of the sector's emissions come from incinerating waste in power plants to produce electricity and heat. The net CO₂ here comes from the non-biogenic fraction — plastics and industrial waste.",
+      "p3": "Smaller fractions are CH₄ and N₂O from biological waste treatment (composting) and from waste water treatment in sewage plants."
+    },
     "title": "AT Waste GHG emissions by sub-sectors"
   },
   "yearly_registrations_brands_absolute": {
